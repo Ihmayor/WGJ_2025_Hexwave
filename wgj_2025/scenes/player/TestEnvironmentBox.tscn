@@ -16,7 +16,7 @@ sky = SubResource("Sky_rvbi6")
 albedo_color = Color(0.341176, 1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_esuob"]
-size = Vector3(183.201, 1, 132.363)
+size = Vector3(34.0794, 1, 43.5743)
 
 [node name="TestEnvironmentBox" type="Node3D"]
 
@@ -30,12 +30,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.9301, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08637, 3.09249)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12368, -0.698718, 3.01676)
-size = Vector3(181.663, 0.337769, 138.115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.79053, -0.698718, -4.57407)
+use_collision = true
+size = Vector3(32.6185, 0.337769, 46.0688)
 material = SubResource("StandardMaterial3D_kjqca")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="CSGBox3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91371, 0, 9.45874)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.924717, 0, -0.263489)
 shape = SubResource("BoxShape3D_esuob")
+
+[node name="Room" type="Node3D" parent="."]
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Room"]
+transform = Transform3D(-0.0254442, 0, -0.999676, 0, 1, 0, 0.999676, 0, -0.0254442, -13.7163, 1.93311, 4.75103)
+use_collision = true
+size = Vector3(14.7163, 9.18164, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.44706, 3.3491, -1.49232)
+use_collision = true
+size = Vector3(14.7163, 9.18164, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85815, 0.966553, 10.6942)
+use_collision = true
+size = Vector3(14.7163, 9.18164, 1)
