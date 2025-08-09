@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdv4ul414qhpm"]
+
+[ext_resource type="PackedScene" uid="uid://dyijl5yqkko16" path="res://scenes/player/Character.tscn" id="1_esuob"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_esuob"]
+
+[sub_resource type="Sky" id="Sky_rvbi6"]
+sky_material = SubResource("ShaderMaterial_esuob")
+
+[sub_resource type="Environment" id="Environment_esuob"]
+background_mode = 1
+background_color = Color(0.82606, 0.82606, 0.82606, 1)
+sky = SubResource("Sky_rvbi6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjqca"]
+albedo_color = Color(0.341176, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_esuob"]
+size = Vector3(183.201, 1, 132.363)
+
+[node name="TestEnvironmentBox" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_esuob")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.9301, 0)
+
+[node name="Character" parent="." instance=ExtResource("1_esuob")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08637, 3.09249)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.12368, -0.698718, 3.01676)
+size = Vector3(181.663, 0.337769, 138.115)
+material = SubResource("StandardMaterial3D_kjqca")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="CSGBox3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.91371, 0, 9.45874)
+shape = SubResource("BoxShape3D_esuob")

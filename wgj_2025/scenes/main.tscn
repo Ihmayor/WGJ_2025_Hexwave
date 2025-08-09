@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://drt3803wrif7i"]
+[gd_scene load_steps=2 format=3 uid="uid://drt3803wrif7i"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Script" uid="uid://bb0t2ovl7wifo" path="res://addons/beehave/nodes/beehave_tree.gd" id="1_o5qli"]
+
+[node name="BasicNPCTree" type="Node" node_paths=PackedStringArray("blackboard", "actor")]
+script = ExtResource("1_o5qli")
+blackboard = NodePath("@Node@24316")
+actor = NodePath("")
+metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
+
+[node name="FmodListener2D" type="FmodListener2D" parent="."]
