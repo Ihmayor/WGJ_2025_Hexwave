@@ -41,6 +41,21 @@ material = SubResource("StandardMaterial3D_kjqca")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.924717, 0, -0.263489)
 shape = SubResource("BoxShape3D_esuob")
 
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.18445, 1.93311, 18.1927)
+use_collision = true
+size = Vector3(35.7413, 9.18164, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.587649, -1.04318, -46.1033)
+use_collision = true
+size = Vector3(35.7413, 9.18164, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D2/CSGBox3D2"]
+transform = Transform3D(-0.000593454, 0, 1, 0, 1, 0, -1, 0, -0.000593454, -17.7897, -1.85473, 21.9682)
+use_collision = true
+size = Vector3(51.1628, 9.18164, 1)
+
 [node name="Room" type="Node3D" parent="."]
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Room"]

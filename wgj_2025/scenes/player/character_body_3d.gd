@@ -4,7 +4,7 @@ class_name Player extends CharacterBody3D
 @export var movement_speed:float = 1000
 @export_range (0.0, 1.0) var mouse_sensitivity:float = 0.25
 @export var _gravity: float = -30.0
-@export var acceleration: float = 20
+@export var acceleration: float = 10
 
 var _camera_input_direction  = Vector2.ZERO
 @onready var _camera_pivot : Node3D = %CameraPivot
@@ -21,12 +21,14 @@ func _unhandled_input(event: InputEvent) -> void:
 	var is_camera_motion = event is InputEventMouseMotion
 	if is_camera_motion:
 		_camera_input_direction = event.screen_relative * mouse_sensitivity
+	
+
 
 
 func _physics_process(delta: float) -> void:
 	#Handle Camera
 	_camera_pivot.rotation.x += _camera_input_direction.y * delta
-	_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, - PI/6.0, PI/3.0) # -30*  and -60* prevents overmovement of camera
+	_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, - PI/4.0, PI/3.0) # -30*  and -60* prevents overmovement of camera
 	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
 	
 	_camera_input_direction = Vector2.ZERO
@@ -41,7 +43,9 @@ func _physics_process(delta: float) -> void:
 	var y_velocity:= velocity.y
 	velocity.y = 0.0
 	velocity.y = y_velocity + _gravity * delta
-	velocity = velocity.move_toward(move_direction * movement_speed, delta * acceleration);
+	velocity = velocity.move_toward(move_direction * movement_speed, clamp(delta * acceleration, 0, 2));
+	if raw_input == Vector2.ZERO:
+		velocity = Vector3.ZERO
+		
 	move_and_slide()
-	
 	
