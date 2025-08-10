@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_33l4w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iapa4"]
-size = Vector3(0.464722, 1.28027, 1.06155)
+size = Vector3(0.351898, 0.549315, 0.172614)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h5g4e"]
 
@@ -21,7 +21,7 @@ edgy_check_amount = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.45162, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, -3.34838, -4.03454, 0.0171258)
+transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, 0.128544, -6.41014, 0.0766568)
 shape = SubResource("BoxShape3D_iapa4")
 
 [node name="Area3D" type="Area3D" parent="."]
