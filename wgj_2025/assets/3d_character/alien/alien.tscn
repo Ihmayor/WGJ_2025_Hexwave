@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://be6owi1oov24k"]
+
+[ext_resource type="PackedScene" uid="uid://c47dwkvxt6tw6" path="res://assets/3d_character/alien/Alien.fbx" id="1_816kv"]
+
+[node name="Alien" instance=ExtResource("1_816kv")]
