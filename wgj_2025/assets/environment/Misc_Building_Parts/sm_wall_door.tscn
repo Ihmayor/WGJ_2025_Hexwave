@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxhug74cn4sr6"]
+
+[ext_resource type="PackedScene" uid="uid://4fc18qlvu4ih" path="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Wall_Door.fbx" id="1_abmqn"]
+
+[node name="sm_Wall_Door" instance=ExtResource("1_abmqn")]

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcquno55bwxet"]
+
+[ext_resource type="PackedScene" uid="uid://b3dxdoktuthg5" path="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Wall_Half.fbx" id="1_irlqa"]
+
+[node name="sm_Wall_Half" instance=ExtResource("1_irlqa")]

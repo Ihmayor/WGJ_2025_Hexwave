@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bysfwywrx8ywl"]
+
+[ext_resource type="Script" uid="uid://c74b18mqkuoui" path="res://scenes/player/npc_reseter.gd" id="1_b4owl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h5g4e"]
+
+[node name="NPC_Reseter" type="CSGCylinder3D"]
+transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, 0, 0, 0)
+script = ExtResource("1_b4owl")
+glam_check_amount = 1
+business_check_amount = 1
+edgy_check_amount = 1
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(3.145, 0, 0, 0, 3.145, 0, 0, 0, 3.145, 0, 0, 0)
+shape = SubResource("BoxShape3D_h5g4e")
+debug_color = Color(0.812453, 0.154106, 0.174079, 0.42)

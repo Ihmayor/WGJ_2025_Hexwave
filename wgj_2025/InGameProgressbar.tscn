@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp5q0vgua5fs3"]
+
+[ext_resource type="Script" uid="uid://2kjh1xustxyv" path="res://in_game_progressbar.gd" id="1_nsi03"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_vgqmg"]
+viewport_path = NodePath("SubViewport")
+
+[node name="ProgressBar" type="Sprite3D"]
+texture = SubResource("ViewportTexture_vgqmg")
+script = ExtResource("1_nsi03")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+size = Vector2i(400, 200)

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0blkk7kiqyox"]
+
+[ext_resource type="PackedScene" uid="uid://ci80hdr38ha50" path="res://assets/environment/Envio_FBX/sm_Curb1x1.fbx" id="1_l2i0h"]
+
+[node name="sm_Curb1x1" instance=ExtResource("1_l2i0h")]

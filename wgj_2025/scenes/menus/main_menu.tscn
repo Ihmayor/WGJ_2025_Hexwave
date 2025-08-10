@@ -1,21 +1,12 @@
-[gd_scene load_steps=58 format=4 uid="uid://daabskcdhrpea"]
+[gd_scene load_steps=54 format=4 uid="uid://bstchotob4hjx"]
 
-[ext_resource type="Theme" uid="uid://btmloybn8qk8w" path="res://assets/ui/wgj_main_theme.tres" id="1_mqx1g"]
+[ext_resource type="Theme" path="res://assets/ui/wgj_main_theme.tres" id="1_mqx1g"]
 [ext_resource type="Script" path="res://scenes/menus/viewport_container.gd" id="2_d26fo"]
 [ext_resource type="PackedScene" uid="uid://dynbxfyimjvcv" path="res://scenes/menus/fade_transition.tscn" id="4_cec7w"]
 [ext_resource type="Texture2D" uid="uid://davitmtlsnsqw" path="res://assets/ui/PLACEHOLDER_title_bg.jpg" id="6_n35mk"]
 [ext_resource type="PackedScene" uid="uid://bvuixmv4n68a6" path="res://scenes/menus/options_menu.tscn" id="6_ntl50"]
 [ext_resource type="Script" path="res://scenes/menus/main_menu_audio.gd" id="7_oty5u"]
 [ext_resource type="Texture2D" uid="uid://b8dvywhwj5teg" path="res://assets/ui/PLACEHOLDER_alien_title.webp" id="11_ulf6g"]
-
-[sub_resource type="Resource" id="Resource_8r73w"]
-metadata/__load_path__ = "res://common/audio/sfx/ui/UI_QUEST_ACCEPT.wav"
-
-[sub_resource type="Resource" id="Resource_1hnlc"]
-metadata/__load_path__ = "res://common/audio/sfx/ui/UI_QUEST_COMPLETE.wav"
-
-[sub_resource type="Resource" id="Resource_50h1w"]
-metadata/__load_path__ = "res://common/audio/sfx/interact/INTERACT_HARVEST.wav"
 
 [sub_resource type="Theme" id="Theme_kjcgm"]
 
@@ -814,10 +805,6 @@ offset_left = 1383.0
 offset_top = 4.0
 offset_right = 3303.0
 offset_bottom = 1084.0
-script = ExtResource("7_oty5u")
-navigate_sound = SubResource("Resource_8r73w")
-open_sound = SubResource("Resource_1hnlc")
-close_sound = SubResource("Resource_50h1w")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0

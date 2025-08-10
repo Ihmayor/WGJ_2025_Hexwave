@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://benk4mr23va0s"]
+
+[ext_resource type="Script" uid="uid://cvo67fip0rmjs" path="res://scenes/ui_meter/glamour_stat.gd" id="1_gtyec"]
+[ext_resource type="Texture2D" uid="uid://c6mc8e57hb0sl" path="res://assets/ui/icons/style-icon-glamour.png" id="2_gtyec"]
+
+[node name="GlamourStat" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gtyec")
+
+[node name="MeterBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 53.0
+fill_mode = 3
+texture_under = ExtResource("2_gtyec")
+texture_progress = ExtResource("2_gtyec")
+tint_progress = Color(0.415686, 0.690196, 0.607843, 1)
