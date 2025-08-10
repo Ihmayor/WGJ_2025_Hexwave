@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ceb1b5uu14w5b"]
+[gd_scene load_steps=4 format=3 uid="uid://ceb1b5uu14w5b"]
 
 [ext_resource type="PackedScene" uid="uid://cb7m21w86ie3u" path="res://assets/environment/Envio_FBX/sm_Floor.fbx" id="1_188us"]
 
@@ -7,7 +7,15 @@ vertex_color_use_as_albedo = true
 albedo_color = Color(0.155, 0.31, 0.206667, 1)
 roughness = 0.8
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_miysk"]
+data = PackedVector3Array(0, 0.05, -8, 0, 0.05, 0, -8, 0.05, 0, -8, 0.05, 0, -8, 0.05, -8, 0, 0.05, -8, 0, 0, -8, 0, 0.05, -8, -8, 0.05, -8, -8, 0.05, -8, -8, 0, -8, 0, 0, -8, 0, 0, 0, 0, 0, -8, -8, 0, -8, -8, 0, -8, -8, 0, 0, 0, 0, 0, 0, 0.05, 0, 0, 0, 0, -8, 0, 0, -8, 0, 0, -8, 0.05, 0, 0, 0.05, 0, 0, 0, -8, 0, 0, 0, 0, 0.05, 0, 0, 0.05, 0, 0, 0.05, -8, 0, 0, -8, -8, 0.05, -8, -8, 0.05, 0, -8, 0, 0, -8, 0, 0, -8, 0, -8, -8, 0.05, -8)
+
 [node name="sm_Floor" instance=ExtResource("1_188us")]
 
 [node name="Floor" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_3byvg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" index="0"]
+shape = SubResource("ConcavePolygonShape3D_miysk")

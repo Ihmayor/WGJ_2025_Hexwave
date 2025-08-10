@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c6mc8e57hb0sl" path="res://assets/ui/icons/style-icon-glamour.png" id="2_gtyec"]
 
 [node name="GlamourStat" type="Control"]
+custom_minimum_size = Vector2(50, 100)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

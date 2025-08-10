@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bw5iuibsotcv7" path="res://assets/models/AlienSizeRef.fbx" id="2_tebh2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_upm8o"]
-radius = 0.454185
-height = 1.10547
+radius = 0.40572
+height = 0.927087
 
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_upm8o")

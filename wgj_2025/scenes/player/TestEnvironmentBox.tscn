@@ -118,12 +118,11 @@ Stats = ExtResource("3_qwc0q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2607, 0, -1.63258)
 Stats = ExtResource("4_n1eib")
 
-[node name="Player" parent="." node_paths=PackedStringArray("reset_point", "_camera") instance=ExtResource("1_esuob")]
+[node name="Player" parent="." node_paths=PackedStringArray("reset_point") instance=ExtResource("1_esuob")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08553, 0.765648, -5.25937)
 self_stats = ExtResource("2_h5g4e")
 reset_point = NodePath("../Home")
-_camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(0.0574157, -0.66631, 0.743461, 0.0736257, 0.745488, 0.66244, -0.995632, 0.0167033, 0.0918602, 20.955, 18.9923, 2.44137)
