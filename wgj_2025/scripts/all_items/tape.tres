@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_sac8j")
-edgy_stat = 0
-business_stat = 0
-glamour_stat = 0
+icon_for_item = "res://assets/ui/icons-clothes/torso_tape.png"
+business_stat = 1
+glamour_stat = 1
+edgy_stat = 2
+item_location = "upper"
 metadata/_custom_type_script = "uid://iqwcs3e4ne8o"

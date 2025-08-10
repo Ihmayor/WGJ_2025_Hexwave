@@ -1,11 +1,10 @@
 [gd_scene load_steps=54 format=4 uid="uid://bstchotob4hjx"]
 
-[ext_resource type="Theme" path="res://assets/ui/wgj_main_theme.tres" id="1_mqx1g"]
+[ext_resource type="Theme" uid="uid://btmloybn8qk8w" path="res://assets/ui/wgj_main_theme.tres" id="1_mqx1g"]
 [ext_resource type="Script" path="res://scenes/menus/viewport_container.gd" id="2_d26fo"]
 [ext_resource type="PackedScene" uid="uid://dynbxfyimjvcv" path="res://scenes/menus/fade_transition.tscn" id="4_cec7w"]
 [ext_resource type="Texture2D" uid="uid://davitmtlsnsqw" path="res://assets/ui/PLACEHOLDER_title_bg.jpg" id="6_n35mk"]
 [ext_resource type="PackedScene" uid="uid://bvuixmv4n68a6" path="res://scenes/menus/options_menu.tscn" id="6_ntl50"]
-[ext_resource type="Script" path="res://scenes/menus/main_menu_audio.gd" id="7_oty5u"]
 [ext_resource type="Texture2D" uid="uid://b8dvywhwj5teg" path="res://assets/ui/PLACEHOLDER_alien_title.webp" id="11_ulf6g"]
 
 [sub_resource type="Theme" id="Theme_kjcgm"]
