@@ -1,5 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://be6owi1oov24k"]
+[gd_scene load_steps=3 format=3 uid="uid://be6owi1oov24k"]
 
 [ext_resource type="PackedScene" uid="uid://c47dwkvxt6tw6" path="res://assets/3d_character/alien/Alien.fbx" id="1_816kv"]
+[ext_resource type="Script" uid="uid://csf6fj8auh122" path="res://assets/3d_character/alien/alien_animation.gd" id="2_qbj2v"]
 
 [node name="Alien" instance=ExtResource("1_816kv")]
+script = ExtResource("2_qbj2v")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/rotation = Quaternion(-0.00207003, -0.0295889, -0.0202097, 0.999356)
+bones/1/rotation = Quaternion(-0.00845672, 0.00468754, 0.00541741, 0.999939)
+bones/2/rotation = Quaternion(0.000174247, 0.00307111, 0.0121205, 0.999922)
+bones/3/rotation = Quaternion(0.000169861, 0.00318493, 0.0120963, 0.999922)
+bones/4/rotation = Quaternion(-0.0187771, 0.00651472, -0.00414248, 0.999794)
+bones/5/rotation = Quaternion(0.0338714, 0.0286141, -0.0180216, 0.998854)
+bones/8/rotation = Quaternion(-0.636509, -0.38207, 0.530237, -0.409545)
+bones/9/rotation = Quaternion(0.439601, 0.378658, 0.172753, 0.795943)
+bones/10/rotation = Quaternion(0.00417004, 0.000141454, 0.170026, 0.985431)
+bones/13/rotation = Quaternion(0.634444, -0.39682, 0.50596, 0.428974)
+bones/14/rotation = Quaternion(0.525716, 0.034463, 0.0705865, 0.847026)
+bones/15/rotation = Quaternion(0.00421628, -8.98866e-05, -0.184913, 0.982746)
+bones/18/rotation = Quaternion(0.00918877, 0.0868006, 0.992478, -0.0858396)
+bones/19/rotation = Quaternion(-0.368742, -0.0617852, 0.0605449, 0.925498)
+bones/20/rotation = Quaternion(0.517991, -0.0693987, -0.131586, 0.84235)
+bones/21/rotation = Quaternion(0.485138, 0.00207391, -0.00115057, 0.874434)
+bones/24/rotation = Quaternion(-0.0210087, 0.119817, 0.99075, 0.0601384)
+bones/25/rotation = Quaternion(-0.349904, 0.0168691, -0.0291487, 0.93618)
+bones/26/rotation = Quaternion(0.548662, 0.0381549, 0.0998668, 0.829181)
+bones/27/rotation = Quaternion(0.417822, 8.72277e-05, -4.01592e-05, 0.908529)
+
+[node name="AnimationPlayer" parent="." index="1"]
+unique_name_in_owner = true
+autoplay = "Armature|Idle"

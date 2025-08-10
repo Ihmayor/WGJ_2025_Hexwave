@@ -43,6 +43,10 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
+[global_group]
+
+roof=""
+
 [input]
 
 move_up={

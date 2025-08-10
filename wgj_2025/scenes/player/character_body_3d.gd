@@ -6,6 +6,7 @@ class_name Player extends CharacterBody3D
 @export var movement_speed:float = 2
 @export var _gravity: float = -30.0
 @export var acceleration: float = 4
+@export var toggle_gravity: bool = true
 
 var _camera_input_direction  = Vector2.ZERO
 @onready var _camera: Camera3D = %MainCamera3D
@@ -30,7 +31,8 @@ func _physics_process(delta: float) -> void:
 	#Store old velocity
 	var y_velocity:= velocity.y
 	velocity.y = 0.0
-	velocity.y += _gravity
+	if (toggle_gravity):
+		velocity.y += _gravity
 	
 	if move_direction:
 		var move_dir: Vector3 = Vector3.ZERO

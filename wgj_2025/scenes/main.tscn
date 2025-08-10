@@ -24,13 +24,13 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o5qli"]
 
-[sub_resource type="Sky" id="Sky_rvbi6"]
+[sub_resource type="Sky" id="Sky_yc10j"]
 sky_material = SubResource("ShaderMaterial_o5qli")
 
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 1
 background_color = Color(0.82606, 0.82606, 0.82606, 1)
-sky = SubResource("Sky_rvbi6")
+sky = SubResource("Sky_yc10j")
 
 [sub_resource type="Resource" id="Resource_o6xl0"]
 script = ExtResource("5_tefeu")
@@ -128,6 +128,8 @@ near = 0.001
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("1_o6xl0")
+
+[node name="Node3D" type="Node3D" parent="MainCamera3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0wfyh")
