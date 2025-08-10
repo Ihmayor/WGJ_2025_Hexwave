@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_2u6w7")
-edgy_stat = 4
-business_stat = 4
-glamour_stat = 2
+icon_for_item = "res://assets/ui/icons-clothes/head_sock.png"
+business_stat = 1
+glamour_stat = 0
+edgy_stat = 2
+item_location = "top"
 metadata/_custom_type_script = "uid://iqwcs3e4ne8o"

@@ -36,6 +36,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
+
+enabled=PackedStringArray()
+
+[editor_plugins]
+
 enabled=PackedStringArray()
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
