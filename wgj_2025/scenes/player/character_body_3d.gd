@@ -45,15 +45,3 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 	if (event.is_action_pressed("open_inventory")):
 		%DressupUI.visible = !%DressupUI.visible
-
-
-func add_stats(stats_to_add:ItemStats):
-	self_stats.current_inventory.append(stats_to_add)
-	self_stats.glamour_stat += stats_to_add.glamour_stat
-	self_stats.edgy_stat += stats_to_add.edgy_stat
-	self_stats.business_stat += stats_to_add.business_stat
-
-func remove_stats(stats_to_remove:ItemStats):
-	self_stats.glamour_stat -= stats_to_remove.glamour_stat
-	self_stats.edgy_stat -= stats_to_remove.edgy_stat
-	self_stats.business_stat -= stats_to_remove.business_stat

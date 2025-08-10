@@ -1,9 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cdv4ul414qhpm"]
+[gd_scene load_steps=25 format=3 uid="uid://cdv4ul414qhpm"]
 
 [ext_resource type="PackedScene" uid="uid://dyijl5yqkko16" path="res://scenes/player/Character.tscn" id="1_esuob"]
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_h5g4e"]
 [ext_resource type="Resource" uid="uid://re1s72hsi0bq" path="res://scripts/all_items/mini_top_hat.tres" id="2_j4vmv"]
 [ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="3_h5g4e"]
+[ext_resource type="Resource" uid="uid://cvbxob12nmpf0" path="res://scripts/all_items/tutu.tres" id="3_qwc0q"]
+[ext_resource type="Resource" uid="uid://ytmfsv1d78ck" path="res://scripts/all_items/spaghetti_and_meatballs.tres" id="4_n1eib"]
 [ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="4_thrr0"]
 [ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="6_4ht7p"]
 [ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="7_iapa4"]
@@ -108,6 +110,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44704, 0, -5.98261)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95104, 0, 3.07155)
 Stats = ExtResource("2_j4vmv")
 
+[node name="Plant_Example_Pickable_Item3" parent="." instance=ExtResource("3_h5g4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.912, 0, 5.31079)
+Stats = ExtResource("3_qwc0q")
+
+[node name="Plant_Example_Pickable_Item4" parent="." instance=ExtResource("3_h5g4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2607, 0, -1.63258)
+Stats = ExtResource("4_n1eib")
+
 [node name="Player" parent="." node_paths=PackedStringArray("reset_point", "_camera") instance=ExtResource("1_esuob")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08553, 0.765648, -5.25937)
@@ -177,6 +187,7 @@ offset_top = 112.0
 offset_right = 54.0
 offset_bottom = 152.0
 script = ExtResource("4_thrr0")
+PlayerData = ExtResource("2_h5g4e")
 
 [node name="Label" type="Label" parent="CanvasLayer/PickUpUI"]
 unique_name_in_owner = true
@@ -190,7 +201,6 @@ text = "Press 'E' to pickup"
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PickUpUI"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
