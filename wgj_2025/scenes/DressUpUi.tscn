@@ -266,53 +266,69 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 columns = 4
 
-[node name="TextureButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+[node name="BottomTextureButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
-[node name="TextureButton2" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+[node name="BottomTextureButton2" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
-[node name="TextureButton3" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+[node name="BottomTextureButton3" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
-[node name="TextureButton4" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+[node name="BottomTextureButton4" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
-[node name="TextureButton5" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+[node name="BottomTextureButton5" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
-[node name="TextureButton6" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+[node name="BottomTextureButotn6" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
-[node name="TextureButton7" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+[node name="BottomTextureButton7" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
-[node name="TextureButton8" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+[node name="BottomTextureButton8" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(70, 70)

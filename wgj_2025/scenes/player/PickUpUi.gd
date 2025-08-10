@@ -12,7 +12,6 @@ func _physics_process(delta: float) -> void:
 			if (item_in_view != null):
 				%Player.add_stats(item_in_view.Stats)
 				item_in_view.queue_free()
-				
 		progressbar.value += 10
 		
 func _unhandled_input(event: InputEvent) -> void:

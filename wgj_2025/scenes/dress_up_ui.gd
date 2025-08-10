@@ -53,18 +53,22 @@ func _ready():
 			child.disabled = true
 	
 	#TODO: remove these
-	player_found_item("tie", "bottom")
-	add_to_inventory_ui("upper")
-	add_to_inventory_ui("top")
+	#player_found_item("tie", "bottom")
+	#add_to_inventory_ui("upper")
+	#add_to_inventory_ui("top")
 
 func _physics_process(delta: float) -> void:
 	#Check if Player Data has new items
 	if current_inventory_amount < PlayerData.current_inventory.size():
 		current_inventory_amount +=1
 		var found_item:ItemStats = PlayerData.current_inventory.back()
-		player_found_item(found_item.resource_name, str(found_item.item_location))
+		print(found_item.resource_path)
+		player_found_item(found_item.resource_path, found_item.item_location)
 
 func player_found_item(item_id: String, category: String):
+	print("triggered player found item")
+	print(item_id)
+	print(category)
 	match category:
 		"top":
 			top_clothing.append(item_id)
@@ -77,28 +81,34 @@ func player_found_item(item_id: String, category: String):
 			add_to_inventory_ui("bottom")
 
 func add_to_inventory_ui(category: String):
-	var items: Array[String]
+	var items: Array[ItemStats]
 	var container: GridContainer
-
+	print("player_found_item, category")
+	print(category)
 	match category:
 		"top":
-			items = top_clothing
+			items = PlayerData.current_inventory.filter(func(n): return n.item_location == "top")
 			container = top_grid
 		"upper":
-			items = upper_clothing
+			items = PlayerData.current_inventory.filter(func(n): return n.item_location == "upper")
 			container =  upper_grid
+			print(items)
 		"bottom":
-			items = bottom_clothing
+			items = PlayerData.current_inventory.filter(func(n): return n.item_location == "bottom")
 			container = bottom_grid
 
 	# Update buttons for each category
 	var buttons = container.get_children()
+	print(items.size())
+	print("Current Inventory:")
+	print(PlayerData.current_inventory.get(0).item_location)
 	for i in range(len(items)): #TODO: check that buttons are not out of range (should not happen though)
 		if buttons[i] is TextureButton and buttons[i].disabled:
-			buttons[i].texture_normal = clothing_items.get(items[i], clothing_items["empty"])
+			print(items[i])
+			buttons[i].texture_normal = ResourceLoader.load(items[i].icon_for_item)
 			#Tell the buttons what stat they're connected with
 			if buttons[i] is EquipButton:
-				(buttons[i] as EquipButton).set_related_item(null, i)
+				(buttons[i] as EquipButton).set_related_item(items[i], i)
 				disable_selection_press.connect((buttons[i] as EquipButton).deselect)
 			buttons[i].disabled = false
 			
@@ -133,6 +143,16 @@ func _on_upper_button_pressed() -> void:
 func _on_bottom_button_pressed() -> void:
 	selected_category = "bottom"
 	selected_item_index = -1
+
+	#Hook up top buttons with the buttons in their column 
+	%BottomTextureButton._on_main_button_pressed(self, selected_category)
+	%BottomTextureButton2._on_main_button_pressed(self, selected_category)
+	%BottomTextureButton3._on_main_button_pressed(self, selected_category)
+	%BottomTextureButton4._on_main_button_pressed(self, selected_category)
+	%BottomTextureButton5._on_main_button_pressed(self, selected_category)
+	%BottomTextureButton6._on_main_button_pressed(self, selected_category)
+	%BottomTextureButton7._on_main_button_pressed(self, selected_category)
+	%BottomTextureButton8._on_main_button_pressed(self, selected_category)
 
 func set_new_selected_item(new_item, category:String, index: int):
 	# Deselect and remove the stats of the deselected item

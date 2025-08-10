@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdv4ul414qhpm"]
+[gd_scene load_steps=23 format=3 uid="uid://cdv4ul414qhpm"]
 
 [ext_resource type="PackedScene" uid="uid://dyijl5yqkko16" path="res://scenes/player/Character.tscn" id="1_esuob"]
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_h5g4e"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="10_7r45t"]
 [ext_resource type="Texture2D" uid="uid://slsdesuddqbl" path="res://assets/ui/progress.png" id="11_1cjgq"]
 [ext_resource type="PackedScene" uid="uid://bysfwywrx8ywl" path="res://scenes/assets/npc_blockers/npc_reseter.tscn" id="11_7r45t"]
+[ext_resource type="PackedScene" uid="uid://0aa6wg6yn4t3" path="res://scenes/DressUpUi.tscn" id="12_o601j"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_esuob"]
 
@@ -361,6 +362,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_qwc0q")
 }
 autoplay = "panic"
+
+[node name="DressupUI" parent="CanvasLayer" instance=ExtResource("12_o601j")]
+unique_name_in_owner = true
+visible = false
 
 [node name="NPC_Blocker" parent="." instance=ExtResource("7_iw8ku")]
 transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, 1.3445, 1.49545, -1.04748)

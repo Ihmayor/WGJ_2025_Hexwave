@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_io3uv")
-edgy_stat = 0
+icon_for_item = "\"res://scenes/assets/placeholderTie.PNG\""
 business_stat = 0
 glamour_stat = 0
+edgy_stat = 0
+item_location = 0
 metadata/_custom_type_script = "uid://iqwcs3e4ne8o"
