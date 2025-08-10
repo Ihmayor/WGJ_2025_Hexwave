@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://be6owi1oov24k"]
+[gd_scene load_steps=2 format=3 uid="uid://be6owi1oov24k"]
 
 [ext_resource type="PackedScene" uid="uid://c47dwkvxt6tw6" path="res://assets/3d_character/alien/Alien.fbx" id="1_816kv"]
-[ext_resource type="Script" uid="uid://csf6fj8auh122" path="res://assets/3d_character/alien/alien_animation.gd" id="2_qbj2v"]
 
 [node name="Alien" instance=ExtResource("1_816kv")]
 
@@ -35,7 +34,6 @@ bones/10/rotation = Quaternion(-0.0195824, 0.000143682, -0.007334, 0.999781)
 bones/10/scale = Vector3(1, 1, 1)
 bones/11/position = Vector3(2.58271e-09, 0.174841, 3.97329e-08)
 bones/11/rotation = Quaternion(1.0521e-09, 3.20462e-10, -1.41044e-09, 1)
-bones/11/scale = Vector3(1, 1, 1)
 bones/13/position = Vector3(-0.0438879, 0.0718339, -7.71358e-05)
 bones/13/rotation = Quaternion(0.55253, -0.44105, 0.553518, 0.440231)
 bones/13/scale = Vector3(1, 1, 1)
@@ -47,13 +45,11 @@ bones/15/rotation = Quaternion(-0.0195091, -9.14672e-05, 0.00468533, 0.999799)
 bones/15/scale = Vector3(1, 1, 1)
 bones/16/position = Vector3(-2.08554e-09, 0.174838, -4.13388e-08)
 bones/16/rotation = Quaternion(-2.29024e-09, -1.14248e-09, 1.08582e-10, 1)
-bones/16/scale = Vector3(1, 1, 1)
 bones/18/position = Vector3(0.0723113, -0.0301865, -0.013491)
 bones/18/rotation = Quaternion(-0.00020016, 0.0540429, 0.998532, 0.00374134)
 bones/18/scale = Vector3(1, 1, 1.00003)
 bones/19/position = Vector3(-9.57001e-09, 0.137514, 1.61692e-09)
 bones/19/rotation = Quaternion(-0.0811444, -0.000536102, 0.00662134, 0.99668)
-bones/19/scale = Vector3(1, 1, 1)
 bones/20/position = Vector3(-3.04311e-10, 0.0961438, -3.0664e-09)
 bones/20/rotation = Quaternion(0.304852, -0.00488036, 0.00156224, 0.952386)
 bones/20/scale = Vector3(1, 1, 1)

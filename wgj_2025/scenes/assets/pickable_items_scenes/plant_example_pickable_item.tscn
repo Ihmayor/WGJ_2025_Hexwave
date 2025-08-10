@@ -1,30 +1,29 @@
 [gd_scene load_steps=6 format=3 uid="uid://ducrhu1aoqhph"]
 
 [ext_resource type="Script" uid="uid://dl64k4dxk5ayi" path="res://scenes/player/interactable_item.gd" id="1_kg2v2"]
-[ext_resource type="Resource" uid="uid://b1j71n1vtvupw" path="res://scripts/all_items/ripped_jeans.tres" id="2_kg2v2"]
-
-[ext_resource type="PackedScene" uid="uid://vcovyqja6i1u" path="res://assets/models/eb_house_plant_01/eb_house_plant_01.fbx" id="3_ks55m"]
+[ext_resource type="Resource" uid="uid://cq34rpr0xihfj" path="res://scripts/all_items/cowboy_hat.tres" id="2_kg2v2"]
+[ext_resource type="PackedScene" uid="uid://vra5goq1y8u1" path="res://assets/3d_character/clothes/cowboy_hat.fbx" id="3_kg2v2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rvbi6"]
-size = Vector3(1.10449, 0.880859, 0.4375)
+size = Vector3(0.532225, 0.880859, 0.4375)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kjqca"]
-size = Vector3(2.8584, 1.42676, 3.73969)
+size = Vector3(1.8457, 0.56189, 1.12103)
 
 [node name="Plant_Example_Pickable_Item" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.956555, 0)
 script = ExtResource("1_kg2v2")
 Stats = ExtResource("2_kg2v2")
 
-[node name="eb_house_plant_01" parent="." instance=ExtResource("3_ks55m")]
-transform = Transform3D(3.05426, 0, 0, 0, 4.19864, 0, 0, 0, 3.39999, 0, 0.05861, 0)
+[node name="cowboy_hat" parent="." instance=ExtResource("3_kg2v2")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.578439, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.286132, 0.578439, 0)
 shape = SubResource("BoxShape3D_rvbi6")
 
 [node name="Area3D" type="Area3D" parent="."]
 unique_name_in_owner = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.694824, 0.615023, -0.255707)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.188476, 0.850191, 0.0659962)
 shape = SubResource("BoxShape3D_kjqca")

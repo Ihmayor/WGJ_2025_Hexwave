@@ -13,6 +13,9 @@ var _camera_input_direction  = Vector2.ZERO
 
 var can_move:bool = true
 
+func _ready():
+	self_stats.put_on_item.connect(put_on_item)
+
 func reset_to_last_point():
 	position = reset_point.global_position
 	can_move = true
@@ -54,6 +57,15 @@ func _physics_process(delta: float) -> void:
 	if raw_input == Vector2.ZERO:
 		velocity = Vector3.ZERO
 	move_and_slide()
+
+func put_on_item(category:String):
+	match category:
+		"top":
+			%cowboy_hat.visible = true
+		"upper":
+			%cowboy_hat2.visible = true
+		"bottom": 
+			%cowboy_hat3.visible = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if (!can_move):
