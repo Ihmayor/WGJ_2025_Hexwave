@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody3D
 
+@export var self_stats:PlayerStats
+
 @export_group("Camera")
 @export var movement_speed:float = 1000
 @export_range (0.0, 1.0) var mouse_sensitivity:float = 0.25
@@ -7,8 +9,7 @@ class_name Player extends CharacterBody3D
 @export var acceleration: float = 10
 
 var _camera_input_direction  = Vector2.ZERO
-@onready var _camera_pivot : Node3D = %CameraPivot
-@onready var _camera: Camera3D = %Camera3D
+@export var _camera: Camera3D
 
 func _input(event: InputEvent) -> void:
 	pass
@@ -18,21 +19,10 @@ func _input(event: InputEvent) -> void:
 		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _unhandled_input(event: InputEvent) -> void:
-	var is_camera_motion = event is InputEventMouseMotion
-	if is_camera_motion:
-		_camera_input_direction = event.screen_relative * mouse_sensitivity
-	
-
+	pass
 
 
 func _physics_process(delta: float) -> void:
-	#Handle Camera
-	_camera_pivot.rotation.x += _camera_input_direction.y * delta
-	_camera_pivot.rotation.x = clamp(_camera_pivot.rotation.x, - PI/4.0, PI/3.0) # -30*  and -60* prevents overmovement of camera
-	_camera_pivot.rotation.y -= _camera_input_direction.x * delta
-	
-	_camera_input_direction = Vector2.ZERO
-	
 	#Handle Player Movement
 	var raw_input := Input.get_vector("move_left", "move_right","move_up","move_down",)
 	var forward := _camera.global_basis.z 
@@ -46,6 +36,14 @@ func _physics_process(delta: float) -> void:
 	velocity = velocity.move_toward(move_direction * movement_speed, clamp(delta * acceleration, 0, 2));
 	if raw_input == Vector2.ZERO:
 		velocity = Vector3.ZERO
-		
 	move_and_slide()
+	
+
+func add_stats(stats_to_add:ItemStats):
+	self_stats.current_inventory.append(stats_to_add)
+	print("add stats")
+	self_stats.glamour_stat += stats_to_add.glamour_stat
+	self_stats.edgy_stat += stats_to_add.edgy_stat
+	self_stats.business_stat += stats_to_add.business_stat
+	print(self_stats.glamour_stat)
 	
