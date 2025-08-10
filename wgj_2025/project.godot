@@ -39,7 +39,6 @@ FmodManager="*res://addons/fmod/FmodManager.gd"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/beehave/plugin.cfg", "res://addons/fmod/plugin.cfg")
 
 [input]
 
