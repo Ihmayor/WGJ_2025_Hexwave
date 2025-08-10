@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://4o6eujmp5yj5"
-path="res://.godot/imported/sm_Table_Round_Small.fbx-a881ef6e5f123742e48b236bf973b412.scn"
+uid="uid://b2rjtj04434hd"
+path="res://.godot/imported/sm_ManStand.fbx-34d71ef05d9bbf910d84eb6387599f38.scn"
 
 [deps]
 
-source_file="res://assets/environment/Furniture/sm_Table_Round_Small.fbx"
-dest_files=["res://.godot/imported/sm_Table_Round_Small.fbx-a881ef6e5f123742e48b236bf973b412.scn"]
+source_file="res://assets/environment/Props/sm_ManStand.fbx"
+dest_files=["res://.godot/imported/sm_ManStand.fbx-34d71ef05d9bbf910d84eb6387599f38.scn"]
 
 [params]
 
