@@ -1,4 +1,4 @@
-class_name GlamourStatMeter extends StatMeter
+class_name GlamourStat extends StatMeter
 
 func _ready():
 	$MeterBar.max_value = PlayerData.MAX_GlAMOUR_STAT

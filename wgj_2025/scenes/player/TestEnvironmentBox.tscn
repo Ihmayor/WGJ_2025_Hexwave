@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://re1s72hsi0bq" path="res://scripts/all_items/mini_top_hat.tres" id="2_j4vmv"]
 [ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="3_h5g4e"]
 [ext_resource type="Resource" uid="uid://cvbxob12nmpf0" path="res://scripts/all_items/tutu.tres" id="3_qwc0q"]
-[ext_resource type="Resource" uid="uid://ytmfsv1d78ck" path="res://scripts/all_items/spaghetti_and_meatballs.tres" id="4_n1eib"]
+[ext_resource type="Resource" uid="uid://ytmfsv1d78ck" path="res://scripts/all_items/warp_bra.tres" id="4_n1eib"]
 [ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="4_thrr0"]
 [ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="6_4ht7p"]
 [ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="7_iapa4"]
@@ -19,13 +19,13 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_esuob"]
 
-[sub_resource type="Sky" id="Sky_rvbi6"]
+[sub_resource type="Sky" id="Sky_n1eib"]
 sky_material = SubResource("ShaderMaterial_esuob")
 
 [sub_resource type="Environment" id="Environment_esuob"]
 background_mode = 1
 background_color = Color(0.82606, 0.82606, 0.82606, 1)
-sky = SubResource("Sky_rvbi6")
+sky = SubResource("Sky_n1eib")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kjqca"]
 albedo_color = Color(0.341176, 1, 1, 1)
@@ -118,12 +118,11 @@ Stats = ExtResource("3_qwc0q")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2607, 0, -1.63258)
 Stats = ExtResource("4_n1eib")
 
-[node name="Player" parent="." node_paths=PackedStringArray("reset_point", "_camera") instance=ExtResource("1_esuob")]
+[node name="Player" parent="." node_paths=PackedStringArray("reset_point") instance=ExtResource("1_esuob")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08553, 0.765648, -5.25937)
 self_stats = ExtResource("2_h5g4e")
 reset_point = NodePath("../Home")
-_camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
 transform = Transform3D(0.0574157, -0.66631, 0.743461, 0.0736257, 0.745488, 0.66244, -0.995632, 0.0167033, 0.0918602, 20.955, 18.9923, 2.44137)

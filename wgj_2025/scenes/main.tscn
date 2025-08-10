@@ -1,3 +1,422 @@
-[gd_scene format=3 uid="uid://drt3803wrif7i"]
+[gd_scene load_steps=30 format=3 uid="uid://drt3803wrif7i"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://b02vpch2fpg5e" path="res://scenes/assets/Test_Environment/StreetSection.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://eiqusmpskh30" path="res://scenes/player/Character.tscn" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="3_dp3eg"]
+[ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="3_jyhfs"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_tbgi4"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_tefeu"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_tefeu"]
+[ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="8_muem4"]
+[ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="9_dp3eg"]
+[ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="10_0ld40"]
+[ext_resource type="Script" uid="uid://cvc4u71vpep3y" path="res://scenes/player/npc_reseter_screen.gd" id="11_gqmmt"]
+[ext_resource type="Script" uid="uid://b08w8gwwipdtw" path="res://scenes/player/panic.gd" id="12_yc10j"]
+[ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="13_jscy8"]
+[ext_resource type="Texture2D" uid="uid://slsdesuddqbl" path="res://assets/ui/progress.png" id="14_pm3ni"]
+[ext_resource type="PackedScene" uid="uid://0aa6wg6yn4t3" path="res://scenes/DressUpUi.tscn" id="15_y6deb"]
+[ext_resource type="PackedScene" uid="uid://b6wfur0t638iy" path="res://scenes/assets/npc_blockers/npc_blocker_example.tscn" id="16_og1vs"]
+[ext_resource type="PackedScene" uid="uid://benk4mr23va0s" path="res://scenes/ui_meter/glamour.tscn" id="17_0ld40"]
+[ext_resource type="PackedScene" uid="uid://bysfwywrx8ywl" path="res://scenes/assets/npc_blockers/npc_reseter.tscn" id="17_2wyq8"]
+[ext_resource type="PackedScene" uid="uid://btsyosl3h5sn3" path="res://scenes/ui_meter/business.tscn" id="17_yc10j"]
+[ext_resource type="PackedScene" uid="uid://c8ri1gcboy4o0" path="res://scenes/ui_meter/edgy.tscn" id="18_gqmmt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o5qli"]
+
+[sub_resource type="Sky" id="Sky_rvbi6"]
+sky_material = SubResource("ShaderMaterial_o5qli")
+
+[sub_resource type="Environment" id="Environment_0wfyh"]
+background_mode = 1
+background_color = Color(0.82606, 0.82606, 0.82606, 1)
+sky = SubResource("Sky_rvbi6")
+
+[sub_resource type="Resource" id="Resource_o6xl0"]
+script = ExtResource("5_tefeu")
+duration = 0.6
+transition = 3
+ease = 2
+
+[sub_resource type="Resource" id="Resource_tipki"]
+script = ExtResource("6_tefeu")
+keep_aspect = 1
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 1.205
+projection = 0
+fov = 97.5
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.001
+far = 4000.0
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
+
+[sub_resource type="Animation" id="Animation_o601j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanicControl/Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [120]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanicControl/Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.127409]
+}
+
+[sub_resource type="Animation" id="Animation_1cjgq"]
+resource_name = "panic"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanicControl/Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [120, 80]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanicControl/Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.457276, 0.371755, 0.563741]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qwc0q"]
+_data = {
+&"RESET": SubResource("Animation_o601j"),
+&"panic": SubResource("Animation_1cjgq")
+}
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MainCamera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+physics_interpolation_mode = 1
+transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 3.25127, -2.68518)
+v_offset = 1.205
+fov = 97.5
+near = 0.001
+
+[node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("1_o6xl0")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0wfyh")
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="StreetSection" parent="Environment" instance=ExtResource("1_o5qli")]
+
+[node name="Plant_Example_Pickable_Item" parent="Environment" instance=ExtResource("3_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.98261)
+
+[node name="Node" type="Node" parent="."]
+
+[node name="PhantomCamera3D" type="Node3D" parent="Node" node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 3.25127, -2.68518)
+top_level = true
+script = ExtResource("4_tbgi4")
+follow_mode = 5
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_o6xl0")
+camera_3d_resource = SubResource("Resource_tipki")
+follow_offset = Vector3(0, 0.945, 0)
+follow_damping = true
+follow_distance = 3.0
+dead_zone_width = 0.174
+dead_zone_height = 0.125
+show_viewfinder_in_play = true
+spring_length = 3.0
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Player" parent="Node" instance=ExtResource("2_sugp2")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10286, 0.765648, -5.25937)
+self_stats = ExtResource("3_jyhfs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PickUpUI" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 112.0
+offset_right = 54.0
+offset_bottom = 152.0
+script = ExtResource("8_muem4")
+PlayerData = ExtResource("3_jyhfs")
+
+[node name="Label" type="Label" parent="CanvasLayer/PickUpUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 437.0
+offset_top = 218.0
+offset_right = 783.0
+offset_bottom = 273.0
+theme_override_font_sizes/font_size = 40
+text = "Press 'E' to pickup"
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PickUpUI"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 481.0
+offset_top = 288.0
+offset_right = 631.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+rounded = true
+
+[node name="Debugger" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("9_dp3eg")
+player_data = ExtResource("3_jyhfs")
+
+[node name="Label" type="Label" parent="CanvasLayer/Debugger"]
+layout_mode = 0
+offset_right = 903.0
+offset_bottom = 461.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Glamour (DEBUG): "
+
+[node name="NPCBlocker" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("10_0ld40")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/NPCBlocker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 476.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/NPCBlocker/Panel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 43.0
+offset_right = 1068.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 50
+text = "Hey! You can't enter here looking like that!"
+
+[node name="NPCReseter" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_gqmmt")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/NPCReseter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 476.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/NPCReseter/Panel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = 1068.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 50
+text = "Wait! You're an alien!"
+autowrap_mode = 2
+
+[node name="Panic" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_yc10j")
+small_talk_lines = Array[String](["The temperature that affects us is good when it is tepid. Good weather"])
+
+[node name="Button" type="Button" parent="CanvasLayer/Panic"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -45.5
+offset_right = 309.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(300, 28.5)
+theme_override_font_sizes/font_size = 60
+text = "ENGAGE SMALL TALK"
+
+[node name="PanicControl" type="Control" parent="CanvasLayer/Panic"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanicDecreaseTimer" type="Timer" parent="CanvasLayer/Panic/PanicControl"]
+wait_time = 0.2
+autostart = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Panic/PanicControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 96.0
+offset_right = 1060.0
+offset_bottom = 541.0
+value = 60.0
+fill_mode = 3
+texture_under = ExtResource("13_jscy8")
+texture_progress = ExtResource("14_pm3ni")
+
+[node name="Label" type="Label" parent="CanvasLayer/Panic/PanicControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -82.5
+offset_right = 246.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.127409
+pivot_offset = Vector2(233.698, 100.941)
+theme_override_colors/font_color = Color(0.372549, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "PANIC!!!!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Panic/PanicControl"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_qwc0q")
+}
+autoplay = "panic"
+
+[node name="HUD_Stats" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD_Stats"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Business" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_yc10j")]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+PlayerData = ExtResource("3_jyhfs")
+
+[node name="Edgy" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("18_gqmmt")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+PlayerData = ExtResource("3_jyhfs")
+
+[node name="GlamourStat" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_0ld40")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+PlayerData = ExtResource("3_jyhfs")
+
+[node name="DressupUI" parent="CanvasLayer" instance=ExtResource("15_y6deb")]
+unique_name_in_owner = true
+visible = false
+
+[node name="NPC_Blocker" parent="." instance=ExtResource("16_og1vs")]
+transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, 1.3445, 1.49545, -1.04748)
+
+[node name="NPC_Reseter" parent="." instance=ExtResource("17_2wyq8")]
+transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, 5.84566, 1.49385, 9.21782)
+use_collision = true
+player_stats = ExtResource("3_jyhfs")
+
+[node name="NPC_Reseter2" parent="." instance=ExtResource("17_2wyq8")]
+transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -4.01156, 1.49385, 9.21782)
+use_collision = true
+player_stats = ExtResource("3_jyhfs")
+glam_check_amount = 2
+business_check_amount = 2
+edgy_check_amount = 2
+
+[node name="NPC_Reseter3" parent="." instance=ExtResource("17_2wyq8")]
+transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -14.9204, 1.49385, 9.21782)
+use_collision = true
+player_stats = ExtResource("3_jyhfs")
+business_check_amount = 4
+
+[node name="Home" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2433, 0, -7.66839)
+
+[connection signal="pressed" from="CanvasLayer/Panic/Button" to="CanvasLayer/Panic" method="_on_button_pressed"]
+[connection signal="timeout" from="CanvasLayer/Panic/PanicControl/PanicDecreaseTimer" to="CanvasLayer/Panic" method="_on_panic_decrease_timer_timeout"]
