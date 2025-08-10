@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6wfur0t638iy"]
+
+[ext_resource type="Script" uid="uid://b41i5etwj24hy" path="res://scenes/player/npc_blocker.gd" id="1_rdy4a"]
+[ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_33l4w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iapa4"]
+size = Vector3(0.464722, 1.28027, 1.06155)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h5g4e"]
+
+[node name="NPC_Blocker" type="CSGCylinder3D"]
+transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, 0, 0, 0)
+use_collision = true
+script = ExtResource("1_rdy4a")
+player_stats = ExtResource("2_33l4w")
+glam_check_amount = 1
+business_check_amount = 1
+edgy_check_amount = 1
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.45162, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, -3.34838, -4.03454, 0.0171258)
+shape = SubResource("BoxShape3D_iapa4")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(3.145, 0, 0, 0, 3.145, 0, 0, 0, 3.145, 0, 0, 0)
+shape = SubResource("BoxShape3D_h5g4e")
+debug_color = Color(0.812453, 0.154106, 0.174079, 0.42)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

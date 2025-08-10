@@ -6,5 +6,4 @@ class_name PlayerStats extends Resource
  
 @export var basic_player_stats:int = 0
 
-
 @export var current_inventory:Array[ItemStats] 

@@ -1,13 +1,18 @@
-[gd_scene load_steps=16 format=3 uid="uid://cdv4ul414qhpm"]
+[gd_scene load_steps=22 format=3 uid="uid://cdv4ul414qhpm"]
 
 [ext_resource type="PackedScene" uid="uid://dyijl5yqkko16" path="res://scenes/player/Character.tscn" id="1_esuob"]
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_h5g4e"]
+[ext_resource type="Resource" uid="uid://re1s72hsi0bq" path="res://scripts/all_items/mini_top_hat.tres" id="2_j4vmv"]
 [ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="3_h5g4e"]
 [ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="4_thrr0"]
 [ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="6_4ht7p"]
-[ext_resource type="Script" uid="uid://b41i5etwj24hy" path="res://scenes/player/npc_blocker.gd" id="6_iapa4"]
-[ext_resource type="Script" uid="uid://dl2rkfqhoet8q" path="res://scenes/player/npc_chaser.gd" id="7_4ht7p"]
 [ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="7_iapa4"]
+[ext_resource type="PackedScene" uid="uid://b6wfur0t638iy" path="res://scenes/assets/npc_blockers/npc_blocker_example.tscn" id="7_iw8ku"]
+[ext_resource type="Script" uid="uid://cvc4u71vpep3y" path="res://scenes/player/npc_reseter_screen.gd" id="7_j4vmv"]
+[ext_resource type="Script" uid="uid://b08w8gwwipdtw" path="res://scenes/player/panic.gd" id="9_igkkm"]
+[ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="10_7r45t"]
+[ext_resource type="Texture2D" uid="uid://slsdesuddqbl" path="res://assets/ui/progress.png" id="11_1cjgq"]
+[ext_resource type="PackedScene" uid="uid://bysfwywrx8ywl" path="res://scenes/assets/npc_blockers/npc_reseter.tscn" id="11_7r45t"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_esuob"]
 
@@ -25,10 +30,67 @@ albedo_color = Color(0.341176, 1, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_esuob"]
 size = Vector3(34.0794, 1, 43.5743)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_iapa4"]
-size = Vector3(0.464722, 1.28027, 1.06155)
+[sub_resource type="Animation" id="Animation_1cjgq"]
+resource_name = "panic"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanicControl/Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [120, 80]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanicControl/Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.457276, 0.371755, 0.563741]
+}
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_h5g4e"]
+[sub_resource type="Animation" id="Animation_o601j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanicControl/Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [120]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanicControl/Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.127409]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qwc0q"]
+_data = {
+&"RESET": SubResource("Animation_o601j"),
+&"panic": SubResource("Animation_1cjgq")
+}
 
 [node name="TestEnvironmentBox" type="Node3D"]
 
@@ -41,10 +103,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.9301, 0)
 [node name="Plant_Example_Pickable_Item" parent="." instance=ExtResource("3_h5g4e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44704, 0, -5.98261)
 
-[node name="Player" parent="." node_paths=PackedStringArray("_camera") instance=ExtResource("1_esuob")]
+[node name="Plant_Example_Pickable_Item2" parent="." instance=ExtResource("3_h5g4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95104, 0, 3.07155)
+Stats = ExtResource("2_j4vmv")
+
+[node name="Player" parent="." node_paths=PackedStringArray("reset_point", "_camera") instance=ExtResource("1_esuob")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08553, 0.765648, -5.25937)
 self_stats = ExtResource("2_h5g4e")
+reset_point = NodePath("../Home")
 _camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
@@ -122,6 +189,7 @@ text = "Press 'E' to pickup"
 
 [node name="ProgressBar" type="ProgressBar" parent="InGameUI/PickUpUI"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -154,6 +222,7 @@ theme_override_font_sizes/font_size = 50
 text = "Glamour (DEBUG): "
 
 [node name="NPCBlocker" type="Control" parent="InGameUI"]
+unique_name_in_owner = true
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -181,40 +250,151 @@ offset_bottom = 112.0
 theme_override_font_sizes/font_size = 50
 text = "Hey! You can't enter here looking like that!"
 
-[node name="NPC_Blocker" type="CSGCylinder3D" parent="."]
+[node name="NPCReseter" type="Control" parent="InGameUI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_j4vmv")
+
+[node name="Panel" type="Panel" parent="InGameUI/NPCReseter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 476.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="InGameUI/NPCReseter/Panel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = 1068.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 50
+text = "Wait! You're an alien!"
+autowrap_mode = 2
+
+[node name="Panic" type="Control" parent="InGameUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_igkkm")
+small_talk_lines = Array[String](["The temperature that affects us is good when it is tepid. Good weather"])
+
+[node name="Button" type="Button" parent="InGameUI/Panic"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -45.5
+offset_right = 309.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(300, 28.5)
+theme_override_font_sizes/font_size = 60
+text = "ENGAGE SMALL TALK"
+
+[node name="PanicControl" type="Control" parent="InGameUI/Panic"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanicDecreaseTimer" type="Timer" parent="InGameUI/Panic/PanicControl"]
+wait_time = 0.2
+autostart = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="InGameUI/Panic/PanicControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 96.0
+offset_right = 1060.0
+offset_bottom = 541.0
+value = 60.0
+fill_mode = 3
+texture_under = ExtResource("10_7r45t")
+texture_progress = ExtResource("11_1cjgq")
+
+[node name="Label" type="Label" parent="InGameUI/Panic/PanicControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -82.5
+offset_right = 246.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.127409
+pivot_offset = Vector2(233.698, 100.941)
+theme_override_colors/font_color = Color(0.372549, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "PANIC!!!!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="InGameUI/Panic/PanicControl"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_qwc0q")
+}
+autoplay = "panic"
+
+[node name="NPC_Blocker" parent="." instance=ExtResource("7_iw8ku")]
 transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, 1.3445, 1.49545, -1.04748)
-use_collision = true
-script = ExtResource("6_iapa4")
-player_stats = ExtResource("2_h5g4e")
-glam_check_amount = 1
-business_check_amount = 1
-edgy_check_amount = 1
 
-[node name="RigidBody3D" type="RigidBody3D" parent="NPC_Blocker"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.45162, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC_Blocker/RigidBody3D"]
-transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, -3.34838, -4.03454, 0.0171258)
-shape = SubResource("BoxShape3D_iapa4")
-
-[node name="Area3D" type="Area3D" parent="NPC_Blocker"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC_Blocker/Area3D"]
-transform = Transform3D(3.145, 0, 0, 0, 3.145, 0, 0, 0, 3.145, 0, 0, 0)
-shape = SubResource("BoxShape3D_h5g4e")
-debug_color = Color(0.812453, 0.154106, 0.174079, 0.42)
-
-[node name="NPC_Chaser" type="CSGCylinder3D" parent="."]
+[node name="NPC_Reseter" parent="." instance=ExtResource("11_7r45t")]
 transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, 5.84566, 1.49385, 9.21782)
-script = ExtResource("7_4ht7p")
+use_collision = true
+player_stats = ExtResource("2_h5g4e")
 
-[node name="Area3D" type="Area3D" parent="NPC_Chaser"]
+[node name="NPC_Reseter2" parent="." instance=ExtResource("11_7r45t")]
+transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -4.01156, 1.49385, 9.21782)
+use_collision = true
+player_stats = ExtResource("2_h5g4e")
+glam_check_amount = 2
+business_check_amount = 2
+edgy_check_amount = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC_Chaser/Area3D"]
-transform = Transform3D(3.145, 0, 0, 0, 3.145, 0, 0, 0, 3.145, 0, 0, 0)
-shape = SubResource("BoxShape3D_h5g4e")
-debug_color = Color(0.812453, 0.154106, 0.174079, 0.42)
+[node name="NPC_Reseter3" parent="." instance=ExtResource("11_7r45t")]
+transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -14.9204, 1.49385, 9.21782)
+use_collision = true
+player_stats = ExtResource("2_h5g4e")
+business_check_amount = 4
 
+[node name="Home" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2433, 0, -7.66839)
+
+[connection signal="pressed" from="InGameUI/Panic/Button" to="InGameUI/Panic" method="_on_button_pressed"]
+[connection signal="timeout" from="InGameUI/Panic/PanicControl/PanicDecreaseTimer" to="InGameUI/Panic" method="_on_panic_decrease_timer_timeout"]
 [connection signal="toggle_npc_menu" from="NPC_Blocker" to="InGameUI/NPCBlocker" method="_on_npc_blocker_toggle_npc_menu"]
-[connection signal="body_entered" from="NPC_Blocker/Area3D" to="NPC_Blocker" method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="NPC_Blocker/Area3D" to="NPC_Blocker" method="_on_area_3d_body_exited"]
+[connection signal="close_npc_menu" from="NPC_Reseter" to="InGameUI/NPCReseter" method="hide_dialogue"]
+[connection signal="open_npc_menu" from="NPC_Reseter" to="InGameUI/NPCReseter" method="show_dialogue"]
+[connection signal="panic" from="NPC_Reseter" to="InGameUI/Panic" method="_on_npc_reseter_panic"]
+[connection signal="close_npc_menu" from="NPC_Reseter2" to="InGameUI/NPCReseter" method="hide_dialogue"]
+[connection signal="open_npc_menu" from="NPC_Reseter2" to="InGameUI/NPCReseter" method="show_dialogue"]
+[connection signal="panic" from="NPC_Reseter2" to="InGameUI/Panic" method="_on_npc_reseter_panic"]
+[connection signal="close_npc_menu" from="NPC_Reseter3" to="InGameUI/NPCReseter" method="hide_dialogue"]
+[connection signal="open_npc_menu" from="NPC_Reseter3" to="InGameUI/NPCReseter" method="show_dialogue"]
+[connection signal="panic" from="NPC_Reseter3" to="InGameUI/Panic" method="_on_npc_reseter_panic"]

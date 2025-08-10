@@ -1,7 +1,7 @@
 extends Control
 
-var player_blocked_message:String = "Hey! You can't enter here looking like that!"
-var player_unblocked_message:String = "Oh nice! Lookin' good!"
+@export var player_blocked_message:String = "Hey! You can't enter here looking like that!"
+@export var player_unblocked_message:String = "Oh nice! Lookin' good!"
 
 func _on_npc_blocker_toggle_npc_menu(is_player_blocked:bool):
 	visible = !visible

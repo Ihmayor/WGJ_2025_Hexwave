@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody3D
 
 @export var self_stats:PlayerStats
-
+@export var reset_point: Node3D
 @export_group("Camera")
 @export var movement_speed:float = 1000
 @export_range (0.0, 1.0) var mouse_sensitivity:float = 0.25
@@ -11,18 +11,19 @@ class_name Player extends CharacterBody3D
 var _camera_input_direction  = Vector2.ZERO
 @export var _camera: Camera3D
 
-func _input(event: InputEvent) -> void:
-	pass
-	#if event.is_action_pressed("left_click"):
-		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	#if event.is_action_pressed("ui_cancel"):
-		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+var can_move:bool = true
 
-func _unhandled_input(event: InputEvent) -> void:
-	pass
-
+func reset_to_last_point():
+	position = reset_point.global_position
+	can_move = true
+	
+func stop_moving():
+	can_move = false
 
 func _physics_process(delta: float) -> void:
+	if (!can_move):
+		return
+		
 	#Handle Player Movement
 	var raw_input := Input.get_vector("move_left", "move_right","move_up","move_down",)
 	var forward := _camera.global_basis.z 
