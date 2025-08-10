@@ -29,7 +29,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="wgj_2025"
-run/main_scene="uid://drt3803wrif7i"
+run/main_scene="uid://d1nms1x23g6sc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

@@ -132,8 +132,6 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("1_o6xl0")
 
-[node name="Node3D" type="Node3D" parent="MainCamera3D"]
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0wfyh")
 
@@ -407,7 +405,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="NPC_Blocker" parent="." instance=ExtResource("16_og1vs")]
-transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, 1.3445, 1.49545, -1.04748)
+transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, -1.63779, 1.49545, 0.923515)
 
 [node name="NPC_Reseter" parent="." instance=ExtResource("17_2wyq8")]
 transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, 5.84566, 1.49385, 9.21782)
