@@ -15,6 +15,8 @@ class_name DressUpUI extends Control
 @onready var upper_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid
 @onready var bottom_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid
 
+signal disable_selection_press
+
 #Dictionary with clothing items pngs
 var clothing_items = {
 	"shirt": preload("res://scenes/assets/placeholderButtonDressUp.PNG"),
@@ -56,7 +58,6 @@ func _ready():
 	add_to_inventory_ui("top")
 
 func _physics_process(delta: float) -> void:
-	
 	#Check if Player Data has new items
 	if current_inventory_amount < PlayerData.current_inventory.size():
 		current_inventory_amount +=1
@@ -96,8 +97,9 @@ func add_to_inventory_ui(category: String):
 		if buttons[i] is TextureButton and buttons[i].disabled:
 			buttons[i].texture_normal = clothing_items.get(items[i], clothing_items["empty"])
 			#Tell the buttons what stat they're connected with
-			if buttons is EquipButton:
+			if buttons[i] is EquipButton:
 				(buttons[i] as EquipButton).set_related_item(null, i)
+				disable_selection_press.connect((buttons[i] as EquipButton).deselect)
 			buttons[i].disabled = false
 			
 
@@ -118,25 +120,34 @@ func _on_upper_button_pressed() -> void:
 	selected_category = "upper"
 	selected_item_index = -1
 
+	#Hook up top buttons with the buttons in their column 
+	%UpperTextureButton._on_main_button_pressed(self, selected_category)
+	%UpperTextureButton2._on_main_button_pressed(self, selected_category)
+	%UpperTextureButton3._on_main_button_pressed(self, selected_category)
+	%UpperTextureButton4._on_main_button_pressed(self, selected_category)
+	%UpperTextureButton5._on_main_button_pressed(self, selected_category)
+	%UpperTextureButton6._on_main_button_pressed(self, selected_category)
+	%UpperTextureButton7._on_main_button_pressed(self, selected_category)
+	%UpperTextureButton8._on_main_button_pressed(self, selected_category)
+
 func _on_bottom_button_pressed() -> void:
 	selected_category = "bottom"
 	selected_item_index = -1
 
 func set_new_selected_item(new_item, category:String, index: int):
 	# Deselect and remove the stats of the deselected item
-	#match
-	#	"top":
+	match category:
+		"top":
+			var clothing_item = top_clothing[index]
+			%TopButton.texture_normal = clothing_items.get(clothing_item, clothing_items["empty"])
+		"upper":
+			var clothing_item = upper_clothing[index]
+			%UpperButton.texture_normal = clothing_items.get(clothing_item, clothing_items["empty"])
+		"bottom":
+			var clothing_item = bottom_clothing[index]
+			%BottomButton.texture_normal = clothing_items.get(clothing_item, clothing_items["empty"])
 			
-	#	"upper":
-	#	"bottom":
-	
-	
-	selected_item_index = index
-	
-	
-	pass
-	 
-
+	selected_item_index = index	 
 
 func _on_button_pressed() -> void:
 	visible = false

@@ -16,6 +16,9 @@ func _on_main_button_pressed(caller: DressUpUI, category: String):
 	is_main_button_pressed = true
 	dress_up_root_ui = caller
 
+func deselect() -> void: 
+	is_main_button_pressed = false
+
 func _pressed() -> void:
 	if !is_main_button_pressed:
 		return
