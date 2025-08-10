@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemStats" load_steps=2 format=3 uid="uid://cm5swijffejqf"]
+
+[ext_resource type="Script" uid="uid://iqwcs3e4ne8o" path="res://scripts/ItemStats.gd" id="1_vclwn"]
+
+[resource]
+script = ExtResource("1_vclwn")
+business_stat = 0
+glamour_stat = 0
+edgy_stat = 0
+item_location = 0
+metadata/_custom_type_script = "uid://iqwcs3e4ne8o"
