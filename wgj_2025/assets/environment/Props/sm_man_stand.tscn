@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cktbdfced4pjg"]
+
+[ext_resource type="PackedScene" uid="uid://b2rjtj04434hd" path="res://assets/environment/Props/sm_ManStand.fbx" id="1_j5ugl"]
+
+[node name="sm_ManStand" instance=ExtResource("1_j5ugl")]

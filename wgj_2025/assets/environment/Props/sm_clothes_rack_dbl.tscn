@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bneldu66pjql"]
+
+[ext_resource type="PackedScene" uid="uid://cxkgkr88sdjpp" path="res://assets/environment/Props/sm_ClothesRack_Dbl.fbx" id="1_m6f8x"]
+
+[node name="sm_ClothesRack_Dbl" instance=ExtResource("1_m6f8x")]

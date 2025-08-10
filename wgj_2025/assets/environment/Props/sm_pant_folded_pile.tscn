@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlqglq1mwuy4k"]
+
+[ext_resource type="PackedScene" uid="uid://ds7hcj20h6s0a" path="res://assets/environment/Props/sm_Pant_Folded_Pile.fbx" id="1_4362b"]
+
+[node name="sm_Pant_Folded_Pile" instance=ExtResource("1_4362b")]
