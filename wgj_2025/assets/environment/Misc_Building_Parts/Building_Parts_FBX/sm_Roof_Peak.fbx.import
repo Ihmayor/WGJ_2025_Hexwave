@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://do457uu078jal"
-path="res://.godot/imported/sm_Wall_DoorWindow.fbx-e75161c3eedf92ffb4847c66ad6ca29e.scn"
+uid="uid://btjhn3skp8c2d"
+path="res://.godot/imported/sm_Roof_Peak.fbx-40e591e53105377db7c700ffe8558440.scn"
 
 [deps]
 
-source_file="res://assets/environment/Misc_Building_Parts/sm_Wall_DoorWindow.fbx"
-dest_files=["res://.godot/imported/sm_Wall_DoorWindow.fbx-e75161c3eedf92ffb4847c66ad6ca29e.scn"]
+source_file="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Roof_Peak.fbx"
+dest_files=["res://.godot/imported/sm_Roof_Peak.fbx-40e591e53105377db7c700ffe8558440.scn"]
 
 [params]
 

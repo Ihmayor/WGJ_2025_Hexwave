@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b3dxdoktuthg5"
-path="res://.godot/imported/sm_Wall_Half.fbx-6161d7963f6dae0ce094e25f32cb86c5.scn"
+uid="uid://3afh53em2fbx"
+path="res://.godot/imported/sm_Roof_Top_Half.fbx-986853402af165c111d7ecf42c0098a4.scn"
 
 [deps]
 
-source_file="res://assets/environment/Misc_Building_Parts/sm_Wall_Half.fbx"
-dest_files=["res://.godot/imported/sm_Wall_Half.fbx-6161d7963f6dae0ce094e25f32cb86c5.scn"]
+source_file="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Roof_Top_Half.fbx"
+dest_files=["res://.godot/imported/sm_Roof_Top_Half.fbx-986853402af165c111d7ecf42c0098a4.scn"]
 
 [params]
 

@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://u3p305uhh23m"]
+
+[ext_resource type="PackedScene" uid="uid://biu3vis3ddcyh" path="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Roof_Edge_Corner.fbx" id="1_ibgsd"]
+
+[node name="sm_Roof_Edge_Corner" instance=ExtResource("1_ibgsd")]

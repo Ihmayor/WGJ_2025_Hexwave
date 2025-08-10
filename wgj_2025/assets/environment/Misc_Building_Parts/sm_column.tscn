@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://1j4r30y50pmg"]
+
+[ext_resource type="PackedScene" uid="uid://cy3j53y0x4x8k" path="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Column.fbx" id="1_355e3"]
+
+[node name="sm_Column" instance=ExtResource("1_355e3")]

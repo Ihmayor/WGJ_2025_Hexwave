@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dol0utsyh188m"]
+
+[ext_resource type="PackedScene" uid="uid://bx2rbbr0eht7s" path="res://assets/environment/Envio_FBX/sm_CurbCorner.fbx" id="1_5wycb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dtfat"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.368627, 0.368627, 0.368627, 1)
+
+[node name="sm_CurbCorner" instance=ExtResource("1_5wycb")]
+
+[node name="CurbCorner" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dtfat")

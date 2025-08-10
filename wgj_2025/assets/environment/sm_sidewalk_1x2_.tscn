@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0b6nsqixyfif"]
+
+[ext_resource type="PackedScene" uid="uid://dko4exyedmfdv" path="res://assets/environment/Envio_FBX/sm_Sidewalk1x2.fbx" id="1_0l6yg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0l6yg"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.368627, 0.368627, 0.368627, 1)
+
+[node name="sm_Sidewalk1x2" instance=ExtResource("1_0l6yg")]
+
+[node name="Sidewalk1x2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0l6yg")

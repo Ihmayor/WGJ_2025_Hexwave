@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dko4exyedmfdv"
-path="res://.godot/imported/sm_Sidewalk1x2.fbx-c78bf5374fffa191eeec1ffb3a73b9aa.scn"
+uid="uid://cy3j53y0x4x8k"
+path="res://.godot/imported/sm_Column.fbx-f34af437d3395400a0c7e2064d743c97.scn"
 
 [deps]
 
-source_file="res://assets/environment/sm_Sidewalk1x2.fbx"
-dest_files=["res://.godot/imported/sm_Sidewalk1x2.fbx-c78bf5374fffa191eeec1ffb3a73b9aa.scn"]
+source_file="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Column.fbx"
+dest_files=["res://.godot/imported/sm_Column.fbx-f34af437d3395400a0c7e2064d743c97.scn"]
 
 [params]
 
