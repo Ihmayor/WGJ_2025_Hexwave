@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://drt3803wrif7i"]
+[gd_scene load_steps=31 format=3 uid="uid://drt3803wrif7i"]
 
 [ext_resource type="PackedScene" uid="uid://b02vpch2fpg5e" path="res://scenes/assets/Test_Environment/StreetSection.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_o6xl0"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="13_jscy8"]
 [ext_resource type="Texture2D" uid="uid://slsdesuddqbl" path="res://assets/ui/progress.png" id="14_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://0aa6wg6yn4t3" path="res://scenes/DressUpUi.tscn" id="15_y6deb"]
+[ext_resource type="Theme" uid="uid://btmloybn8qk8w" path="res://assets/ui/wgj_main_theme.tres" id="16_jscy8"]
 [ext_resource type="PackedScene" uid="uid://b6wfur0t638iy" path="res://scenes/assets/npc_blockers/npc_blocker_example.tscn" id="16_og1vs"]
 [ext_resource type="PackedScene" uid="uid://benk4mr23va0s" path="res://scenes/ui_meter/glamour.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://bysfwywrx8ywl" path="res://scenes/assets/npc_blockers/npc_reseter.tscn" id="17_2wyq8"]
@@ -119,7 +120,7 @@ _data = {
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 3.25127, -2.68518)
+transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 2.59536, -2.68518)
 v_offset = 1.205
 fov = 97.5
 near = 0.001
@@ -142,7 +143,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.98261)
 [node name="Node" type="Node" parent="."]
 
 [node name="PhantomCamera3D" type="Node3D" parent="Node" node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 3.25127, -2.68518)
+transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 2.59536, -2.68518)
 top_level = true
 script = ExtResource("4_tbgi4")
 follow_mode = 5
@@ -160,7 +161,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="Player" parent="Node" instance=ExtResource("2_sugp2")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10286, 0.765648, -5.25937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10286, 0.109736, -5.25937)
 self_stats = ExtResource("3_jyhfs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -370,22 +371,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD_Stats"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 347.0
+offset_bottom = 115.0
+theme = ExtResource("16_jscy8")
 
 [node name="Business" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_yc10j")]
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 PlayerData = ExtResource("3_jyhfs")
 
 [node name="Edgy" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("18_gqmmt")]
-custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 PlayerData = ExtResource("3_jyhfs")
 
 [node name="GlamourStat" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_0ld40")]
-custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 PlayerData = ExtResource("3_jyhfs")
 
