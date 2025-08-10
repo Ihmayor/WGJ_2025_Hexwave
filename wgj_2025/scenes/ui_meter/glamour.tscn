@@ -21,4 +21,4 @@ value = 53.0
 fill_mode = 3
 texture_under = ExtResource("2_gtyec")
 texture_progress = ExtResource("2_gtyec")
-tint_progress = Color(0.415686, 0.690196, 0.607843, 1)
+tint_progress = Color(0.00784314, 0.839216, 0.533333, 1)
