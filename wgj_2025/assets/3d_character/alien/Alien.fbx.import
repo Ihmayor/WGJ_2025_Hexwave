@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dwvr45xg1mrwb"
-path="res://.godot/imported/GreenAlien_Walking_Inplace.fbx-04cb15d7f6d6895460873185d77e73b8.scn"
+uid="uid://c47dwkvxt6tw6"
+path="res://.godot/imported/Alien.fbx-4c053d5382bb3b645e0c945a185deac5.scn"
 
 [deps]
 
-source_file="res://assets/3d_character/alien/GreenAlien_Walking_Inplace.fbx"
-dest_files=["res://.godot/imported/GreenAlien_Walking_Inplace.fbx-04cb15d7f6d6895460873185d77e73b8.scn"]
+source_file="res://assets/3d_character/alien/Alien.fbx"
+dest_files=["res://.godot/imported/Alien.fbx-4c053d5382bb3b645e0c945a185deac5.scn"]
 
 [params]
 

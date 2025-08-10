@@ -37,7 +37,6 @@ config/icon="res://icon.svg"
 
 FmodManager="*res://addons/fmod/FmodManager.gd"
 
-[editor_plugins]
 enabled=PackedStringArray()
 
 [input]
