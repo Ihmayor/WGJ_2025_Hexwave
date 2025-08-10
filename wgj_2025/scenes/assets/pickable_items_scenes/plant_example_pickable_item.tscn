@@ -1,7 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://ducrhu1aoqhph"]
 
 [ext_resource type="Script" uid="uid://dl64k4dxk5ayi" path="res://scenes/player/interactable_item.gd" id="1_kg2v2"]
-[ext_resource type="Resource" uid="uid://b1j71n1vtvupw" path="res://scripts/all_items/very_ripped_jeans.tres" id="2_kg2v2"]
+[ext_resource type="Resource" uid="uid://b1j71n1vtvupw" path="res://scripts/all_items/ripped_jeans.tres" id="2_kg2v2"]
+
 [ext_resource type="PackedScene" uid="uid://vcovyqja6i1u" path="res://assets/models/eb_house_plant_01/eb_house_plant_01.fbx" id="3_ks55m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rvbi6"]
