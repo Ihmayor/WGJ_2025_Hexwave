@@ -50,16 +50,15 @@ func set_bus_volume_percent(bus_name: String, percent: float):
 	var bus_index = AudioServer.get_bus_index(bus_name)
 	var volume_db = linear_to_db(percent)
 	AudioServer.set_bus_volume_db(bus_index, volume_db)
-	GameSettings.write_back_volume_setting(bus_name, percent)
-
+	#GameSettings.write_back_volume_setting(bus_name, percent)
 
 func on_window_button_pressed():
 	var mode = DisplayServer.window_get_mode()
 	if mode == DisplayServer.WINDOW_MODE_FULLSCREEN:
-		GameSettings.set_window_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
-		GameSettings.set_window_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	GameSettings.write_back_display_settings(DisplayServer.window_get_mode())
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	#GameSettings.write_back_display_settings(DisplayServer.window_get_mode())
 	update_display()
 
 

@@ -7,3 +7,7 @@ class_name PlayerStats extends Resource
 @export var basic_player_stats:int = 0
 
 @export var current_inventory:Array[ItemStats] 
+
+@export var MAX_BUSINESS_STAT: int = 30
+@export var MAX_GlAMOUR_STAT: int = 30
+@export var MAX_EDGY_STAT: int = 30

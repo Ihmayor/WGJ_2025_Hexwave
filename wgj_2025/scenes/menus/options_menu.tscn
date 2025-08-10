@@ -1,17 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bvuixmv4n68a6"]
+[gd_scene load_steps=6 format=3 uid="uid://b7ac4e1w1y556"]
 
-[ext_resource type="Script" path="res://scenes/menus/options_menu.gd" id="1_8l6bt"]
-[ext_resource type="Theme" uid="uid://btmloybn8qk8w" path="res://assets/ui/wgj_main_theme.tres" id="1_t67h2"]
-[ext_resource type="Script" uid="uid://bbffeeruv7sea" path="res://scenes/menus/main_menu_audio.gd" id="3_v7ya6"]
-
-[sub_resource type="Resource" id="Resource_ohqpn"]
-metadata/__load_path__ = "res://common/audio/sfx/ui/UI_QUEST_ACCEPT.wav"
-
-[sub_resource type="Resource" id="Resource_3aff8"]
-metadata/__load_path__ = "res://common/audio/sfx/interact/INTERACT_HARVEST.wav"
-
-[sub_resource type="Resource" id="Resource_7rumi"]
-metadata/__load_path__ = "res://common/audio/sfx/ui/UI_QUEST_COMPLETE.wav"
+[ext_resource type="Script" uid="uid://dtr60cafu1bky" path="res://scenes/menus/options_menu.gd" id="1_8l6bt"]
+[ext_resource type="Theme" path="res://assets/ui/wgj_main_theme.tres" id="1_t67h2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jqfgi"]
 line_spacing = 0.0
@@ -47,10 +37,6 @@ script = ExtResource("1_8l6bt")
 
 [node name="Audio Control" type="Control" parent="."]
 layout_mode = 2
-script = ExtResource("3_v7ya6")
-navigate_sound = SubResource("Resource_ohqpn")
-open_sound = SubResource("Resource_3aff8")
-close_sound = SubResource("Resource_7rumi")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false

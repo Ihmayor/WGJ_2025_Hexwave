@@ -312,7 +312,6 @@ text = "ENGAGE SMALL TALK"
 
 [node name="PanicControl" type="Control" parent="CanvasLayer/Panic"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -34,12 +34,11 @@ func _physics_process(delta: float) -> void:
 	velocity.y = 0.0
 	velocity.y = y_velocity + _gravity * delta
 	var raw_velocity = velocity.move_toward(move_direction * movement_speed, delta * acceleration);
-	velocity = Vector3(clamp(raw_velocity.x, 0, 4), raw_velocity.y, clamp(raw_velocity.z, 0, 4))
+	velocity = Vector3(raw_velocity.x, raw_velocity.y, raw_velocity.z)
 	if raw_input == Vector2.ZERO:
 		velocity = Vector3.ZERO
 	move_and_slide()
 	
-
 func add_stats(stats_to_add:ItemStats):
 	self_stats.current_inventory.append(stats_to_add)
 	self_stats.glamour_stat += stats_to_add.glamour_stat
