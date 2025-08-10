@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dc3skrumolakd"
-path="res://.godot/imported/sm_Roof_Top.fbx-9071219187b23ba4a6ccad0e1c84b896.scn"
+uid="uid://cy3j53y0x4x8k"
+path="res://.godot/imported/sm_Column.fbx-3454d32d6a9e8213bdedefb639fb2b7d.scn"
 
 [deps]
 
-source_file="res://assets/environment/sm_Roof_Top.fbx"
-dest_files=["res://.godot/imported/sm_Roof_Top.fbx-9071219187b23ba4a6ccad0e1c84b896.scn"]
+source_file="res://assets/environment/Misc_Building_Parts/sm_Column.fbx"
+dest_files=["res://.godot/imported/sm_Column.fbx-3454d32d6a9e8213bdedefb639fb2b7d.scn"]
 
 [params]
 

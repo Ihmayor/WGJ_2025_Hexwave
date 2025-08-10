@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://3afh53em2fbx"
-path="res://.godot/imported/sm_Roof_Top_Half.fbx-653a6279e3611c606ba77a1701a78e59.scn"
+uid="uid://cujj20jo3ytb4"
+path="res://.godot/imported/sm_Table_Long.fbx-83accab868f8e37771c8bc2130c26ae8.scn"
 
 [deps]
 
-source_file="res://assets/environment/sm_Roof_Top_Half.fbx"
-dest_files=["res://.godot/imported/sm_Roof_Top_Half.fbx-653a6279e3611c606ba77a1701a78e59.scn"]
+source_file="res://assets/environment/Furniture/sm_Table_Long.fbx"
+dest_files=["res://.godot/imported/sm_Table_Long.fbx-83accab868f8e37771c8bc2130c26ae8.scn"]
 
 [params]
 

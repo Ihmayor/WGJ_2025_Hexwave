@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cy3j53y0x4x8k"
-path="res://.godot/imported/sm_Column.fbx-fd670acf6907a9efcc42175c682e130c.scn"
+uid="uid://by6f0vc06awcs"
+path="res://.godot/imported/sm_Cafe_building.fbx-27e264e720dd01a6af97b61be727e363.scn"
 
 [deps]
 
-source_file="res://assets/environment/sm_Column.fbx"
-dest_files=["res://.godot/imported/sm_Column.fbx-fd670acf6907a9efcc42175c682e130c.scn"]
+source_file="res://assets/environment/Cafe_Building/sm_Cafe_building.fbx"
+dest_files=["res://.godot/imported/sm_Cafe_building.fbx-27e264e720dd01a6af97b61be727e363.scn"]
 
 [params]
 
