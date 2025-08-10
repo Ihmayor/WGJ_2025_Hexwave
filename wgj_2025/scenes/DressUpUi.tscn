@@ -78,7 +78,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_q0ob3")
+texture_normal = ExtResource("5_r3nmi")
 
 [node name="PanelContainer5" type="PanelContainer" parent="PanelContainer4/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(350, 150)
@@ -164,7 +164,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_q0ob3")
+texture_normal = ExtResource("5_r3nmi")
 
 [node name="PanelContainer6" type="PanelContainer" parent="PanelContainer4/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(350, 150)
@@ -250,7 +250,7 @@ custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_q0ob3")
+texture_normal = ExtResource("5_r3nmi")
 
 [node name="PanelContainer7" type="PanelContainer" parent="PanelContainer4/MarginContainer/GridContainer"]
 custom_minimum_size = Vector2(350, 150)
@@ -306,7 +306,7 @@ texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
 script = ExtResource("6_q0ob3")
 
-[node name="BottomTextureButotn6" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+[node name="BottomTextureButton6" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
