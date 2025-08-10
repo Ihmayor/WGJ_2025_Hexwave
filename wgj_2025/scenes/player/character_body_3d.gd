@@ -6,11 +6,15 @@ class_name Player extends CharacterBody3D
 @export var movement_speed:float = 2
 @export var _gravity: float = -30.0
 @export var acceleration: float = 4
+@export var toggle_gravity: bool = true
 
 var _camera_input_direction  = Vector2.ZERO
 @onready var _camera: Camera3D = %MainCamera3D
 
 var can_move:bool = true
+
+func _ready():
+	self_stats.put_on_item.connect(put_on_item)
 
 func reset_to_last_point():
 	position = reset_point.global_position
@@ -30,7 +34,8 @@ func _physics_process(delta: float) -> void:
 	#Store old velocity
 	var y_velocity:= velocity.y
 	velocity.y = 0.0
-	velocity.y += _gravity
+	if (toggle_gravity):
+		velocity.y += _gravity
 	
 	if move_direction:
 		var move_dir: Vector3 = Vector3.ZERO
@@ -52,6 +57,15 @@ func _physics_process(delta: float) -> void:
 	if raw_input == Vector2.ZERO:
 		velocity = Vector3.ZERO
 	move_and_slide()
+
+func put_on_item(category:String):
+	match category:
+		"top":
+			%cowboy_hat.visible = true
+		"upper":
+			%cowboy_hat2.visible = true
+		"bottom": 
+			%cowboy_hat3.visible = true
 
 func _unhandled_input(event: InputEvent) -> void:
 	if (!can_move):

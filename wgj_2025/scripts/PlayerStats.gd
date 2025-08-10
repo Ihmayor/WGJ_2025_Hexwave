@@ -12,6 +12,8 @@ class_name PlayerStats extends Resource
 @export var MAX_GlAMOUR_STAT: int = 30
 @export var MAX_EDGY_STAT: int = 30
 
+signal put_on_item(category:String)
+
 func add_to_inventory(stats_to_add:ItemStats):
 	current_inventory.append(stats_to_add)
 

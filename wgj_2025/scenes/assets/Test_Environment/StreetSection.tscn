@@ -118,16 +118,16 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.2, 
 [node name="sm_Roof_peak_Side4" parent="." instance=ExtResource("9_aasgt")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.1, 3.75, -2.1)
 
-[node name="sm_Roof_Peak" parent="." instance=ExtResource("10_7g8tw")]
+[node name="sm_Roof_Peak" parent="." groups=["roof"] instance=ExtResource("10_7g8tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.25, 4.9, -2.1)
 
-[node name="sm_Roof_Peak2" parent="." instance=ExtResource("10_7g8tw")]
+[node name="sm_Roof_Peak2" parent="." groups=["roof"] instance=ExtResource("10_7g8tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.05, 4.9, -2.1)
 
-[node name="sm_Roof_Peak3" parent="." instance=ExtResource("10_7g8tw")]
+[node name="sm_Roof_Peak3" parent="." groups=["roof"] instance=ExtResource("10_7g8tw")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.05, 4.9, -2.1)
 
-[node name="sm_Roof_Peak4" parent="." instance=ExtResource("10_7g8tw")]
+[node name="sm_Roof_Peak4" parent="." groups=["roof"] instance=ExtResource("10_7g8tw")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.15, 4.9, -2.1)
 
 [node name="sm_Cafe" parent="." instance=ExtResource("11_182kh")]

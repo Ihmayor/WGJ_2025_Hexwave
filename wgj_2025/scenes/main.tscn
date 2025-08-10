@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://drt3803wrif7i"]
+[gd_scene load_steps=33 format=3 uid="uid://drt3803wrif7i"]
 
 [ext_resource type="PackedScene" uid="uid://b02vpch2fpg5e" path="res://scenes/assets/Test_Environment/StreetSection.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_o6xl0"]
@@ -6,7 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="3_dp3eg"]
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="3_jyhfs"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_tbgi4"]
+[ext_resource type="Resource" uid="uid://bm7c1p36aqf1k" path="res://scripts/all_items/tshirt.tres" id="4_y6deb"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_tefeu"]
+[ext_resource type="Resource" uid="uid://cvbxob12nmpf0" path="res://scripts/all_items/tutu.tres" id="5_y6deb"]
 [ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="8_muem4"]
 [ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="9_dp3eg"]
@@ -16,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="13_jscy8"]
 [ext_resource type="Texture2D" uid="uid://slsdesuddqbl" path="res://assets/ui/progress.png" id="14_pm3ni"]
 [ext_resource type="PackedScene" uid="uid://0aa6wg6yn4t3" path="res://scenes/DressUpUi.tscn" id="15_y6deb"]
+[ext_resource type="Theme" uid="uid://btmloybn8qk8w" path="res://assets/ui/wgj_main_theme.tres" id="16_jscy8"]
 [ext_resource type="PackedScene" uid="uid://b6wfur0t638iy" path="res://scenes/assets/npc_blockers/npc_blocker_example.tscn" id="16_og1vs"]
 [ext_resource type="PackedScene" uid="uid://benk4mr23va0s" path="res://scenes/ui_meter/glamour.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://bysfwywrx8ywl" path="res://scenes/assets/npc_blockers/npc_reseter.tscn" id="17_2wyq8"]
@@ -24,13 +27,13 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o5qli"]
 
-[sub_resource type="Sky" id="Sky_rvbi6"]
+[sub_resource type="Sky" id="Sky_yc10j"]
 sky_material = SubResource("ShaderMaterial_o5qli")
 
 [sub_resource type="Environment" id="Environment_0wfyh"]
 background_mode = 1
 background_color = Color(0.82606, 0.82606, 0.82606, 1)
-sky = SubResource("Sky_rvbi6")
+sky = SubResource("Sky_yc10j")
 
 [sub_resource type="Resource" id="Resource_o6xl0"]
 script = ExtResource("5_tefeu")
@@ -119,7 +122,7 @@ _data = {
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 3.25127, -2.68518)
+transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 2.59536, -2.68518)
 v_offset = 1.205
 fov = 97.5
 near = 0.001
@@ -139,10 +142,18 @@ environment = SubResource("Environment_0wfyh")
 [node name="Plant_Example_Pickable_Item" parent="Environment" instance=ExtResource("3_dp3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.98261)
 
+[node name="Plant_Example_Pickable_Item3" parent="Environment" instance=ExtResource("3_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -3.41065)
+Stats = ExtResource("4_y6deb")
+
+[node name="Plant_Example_Pickable_Item2" parent="Environment" instance=ExtResource("3_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4775, 0, -5.98261)
+Stats = ExtResource("5_y6deb")
+
 [node name="Node" type="Node" parent="."]
 
 [node name="PhantomCamera3D" type="Node3D" parent="Node" node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 3.25127, -2.68518)
+transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 2.59536, -2.68518)
 top_level = true
 script = ExtResource("4_tbgi4")
 follow_mode = 5
@@ -154,13 +165,12 @@ follow_damping = true
 follow_distance = 3.0
 dead_zone_width = 0.174
 dead_zone_height = 0.125
-show_viewfinder_in_play = true
 spring_length = 3.0
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="Player" parent="Node" instance=ExtResource("2_sugp2")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10286, 0.765648, -5.25937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10286, 0.109736, -5.25937)
 self_stats = ExtResource("3_jyhfs")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -370,22 +380,23 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD_Stats"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 347.0
+offset_bottom = 115.0
+theme = ExtResource("16_jscy8")
 
 [node name="Business" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_yc10j")]
-custom_minimum_size = Vector2(120, 0)
+custom_minimum_size = Vector2(5, 0)
 layout_mode = 2
 PlayerData = ExtResource("3_jyhfs")
 
 [node name="Edgy" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("18_gqmmt")]
-custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 PlayerData = ExtResource("3_jyhfs")
 
 [node name="GlamourStat" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_0ld40")]
-custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 PlayerData = ExtResource("3_jyhfs")
 
@@ -394,7 +405,7 @@ unique_name_in_owner = true
 visible = false
 
 [node name="NPC_Blocker" parent="." instance=ExtResource("16_og1vs")]
-transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, 1.3445, 1.49545, -1.04748)
+transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, -1.63779, 1.49545, 0.923515)
 
 [node name="NPC_Reseter" parent="." instance=ExtResource("17_2wyq8")]
 transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, 5.84566, 1.49385, 9.21782)
@@ -417,6 +428,8 @@ business_check_amount = 4
 
 [node name="Home" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2433, 0, -7.66839)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 
 [connection signal="pressed" from="CanvasLayer/Panic/Button" to="CanvasLayer/Panic" method="_on_button_pressed"]
 [connection signal="timeout" from="CanvasLayer/Panic/PanicControl/PanicDecreaseTimer" to="CanvasLayer/Panic" method="_on_panic_decrease_timer_timeout"]

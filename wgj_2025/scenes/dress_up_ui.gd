@@ -81,6 +81,8 @@ func _on_top_button_pressed() -> void:
 	selected_category = "top"
 	selected_item_index = -1  
 	top_grid.visible = true
+	upper_grid.visible = false
+	bottom_grid.visible = false
 
 	hide_labels()
 	
@@ -101,6 +103,8 @@ func _on_upper_button_pressed() -> void:
 	selected_category = "upper"
 	selected_item_index = -1
 	upper_grid.visible = true
+	top_grid.visible = false
+	bottom_grid.visible = false
 	hide_labels()
 	#Hook up top buttons with the buttons in their column 
 	%UpperTextureButton._on_main_button_pressed(self, selected_category)
@@ -118,7 +122,11 @@ func _on_bottom_button_pressed() -> void:
 		return
 	selected_category = "bottom"
 	selected_item_index = -1
+
+	upper_grid.visible = false
+	top_grid.visible = false
 	bottom_grid.visible = true
+
 	hide_labels()
 	#Hook up top buttons with the buttons in their column 
 	%BottomTextureButton._on_main_button_pressed(self, selected_category)
@@ -137,16 +145,22 @@ func set_new_selected_item(new_item:ItemStats, category:String, index: int):
 		"top":
 			if (top_button_currently_equipped != null):
 				PlayerData.remove_stats(top_button_currently_equipped)
+			else:
+				PlayerData.put_on_item.emit("top")
 			top_button_currently_equipped = new_item
 			main_button = %TopButton
 		"upper":
 			if (upper_button_currently_equipped != null):
 				PlayerData.remove_stats(upper_button_currently_equipped)
+			else:
+				PlayerData.put_on_item.emit("upper")
 			upper_button_currently_equipped = new_item
 			main_button = %UpperButton
 		"bottom":
 			if (bottom_button_currently_equipped != null):
 				PlayerData.remove_stats(bottom_button_currently_equipped)
+			else:
+				PlayerData.put_on_item.emit("bottom")
 			bottom_button_currently_equipped = new_item
 			main_button = %BottomButton
 	PlayerData.add_stats(new_item)

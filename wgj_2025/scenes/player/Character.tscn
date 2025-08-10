@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://eiqusmpskh30"]
+[gd_scene load_steps=5 format=3 uid="uid://eiqusmpskh30"]
 
 [ext_resource type="Script" uid="uid://fcqfrldn7ehh" path="res://scenes/player/character_body_3d.gd" id="1_upm8o"]
-[ext_resource type="PackedScene" uid="uid://bw5iuibsotcv7" path="res://assets/models/AlienSizeRef.fbx" id="2_tebh2"]
+[ext_resource type="PackedScene" uid="uid://vra5goq1y8u1" path="res://assets/3d_character/clothes/cowboy_hat.fbx" id="2_lggus"]
+[ext_resource type="PackedScene" uid="uid://be6owi1oov24k" path="res://assets/3d_character/alien/alien.tscn" id="2_ts1ca"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_upm8o"]
 radius = 0.40572
@@ -10,7 +11,35 @@ height = 0.927087
 [node name="CharacterBody3D" type="CharacterBody3D"]
 script = ExtResource("1_upm8o")
 
-[node name="AlienSizeRef" parent="." instance=ExtResource("2_tebh2")]
+[node name="Top" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.276548, 0.0739847, -0.0389725)
+
+[node name="cowboy_hat" parent="Top" instance=ExtResource("2_lggus")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Torso" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.265455, -0.359627, 0)
+
+[node name="cowboy_hat2" parent="Torso" instance=ExtResource("2_lggus")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Torso2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.314404, -0.776337, 0)
+
+[node name="cowboy_hat3" parent="Torso2" instance=ExtResource("2_lggus")]
+unique_name_in_owner = true
+visible = false
+
+[node name="Alien" parent="." instance=ExtResource("2_ts1ca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00155449, 0, -0.00403953)
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.554981, 0)

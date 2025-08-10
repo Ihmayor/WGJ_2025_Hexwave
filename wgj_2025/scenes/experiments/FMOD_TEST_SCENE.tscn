@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://i6fwjbekmvti"]
+
+[ext_resource type="PackedScene" uid="uid://be6owi1oov24k" path="res://assets/3d_character/alien/alien.tscn" id="1_veve3"]
+[ext_resource type="Script" uid="uid://fcqfrldn7ehh" path="res://scenes/player/character_body_3d.gd" id="2_xmehn"]
+[ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="3_kv37b"]
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_xmehn"]
+[ext_resource type="PackedScene" uid="uid://b02vpch2fpg5e" path="res://scenes/assets/Test_Environment/StreetSection.tscn" id="5_v6xhh"]
+[ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="6_b3af4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kv37b"]
+
+[sub_resource type="Sky" id="Sky_rvbi6"]
+sky_material = SubResource("ShaderMaterial_kv37b")
+
+[sub_resource type="Environment" id="Environment_br6k5"]
+background_mode = 1
+background_color = Color(0.82606, 0.82606, 0.82606, 1)
+sky = SubResource("Sky_rvbi6")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://assets/fmod_build/Desktop/MainStreet.bank", "res://assets/fmod_build/Desktop/PLY_Alien.bank"]
+
+[node name="Alien" parent="." instance=ExtResource("1_veve3")]
+script = ExtResource("2_xmehn")
+self_stats = ExtResource("3_kv37b")
+
+[node name="FmodListener3D" type="FmodListener3D" parent="."]
+
+[node name="MainCamera3D" type="Camera3D" parent="."]
+unique_name_in_owner = true
+physics_interpolation_mode = 1
+transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 3.25127, -2.68518)
+v_offset = 1.205
+fov = 97.5
+near = 0.001
+
+[node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("3_xmehn")
+
+[node name="Node3D" type="Node3D" parent="MainCamera3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_br6k5")
+
+[node name="Environment" type="Node" parent="."]
+
+[node name="StreetSection" parent="Environment" instance=ExtResource("5_v6xhh")]
+
+[node name="StreetSection" parent="Environment/StreetSection" instance=ExtResource("5_v6xhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.76348)
+
+[node name="StreetSection" parent="Environment/StreetSection/StreetSection" instance=ExtResource("5_v6xhh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.37788)
+
+[node name="Plant_Example_Pickable_Item" parent="Environment" instance=ExtResource("6_b3af4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.98261)
