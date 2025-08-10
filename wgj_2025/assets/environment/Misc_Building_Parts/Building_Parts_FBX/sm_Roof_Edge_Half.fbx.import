@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://1i54ooyo2d0v"
-path="res://.godot/imported/sm_Roof_Edge.fbx-333c71765d35e6b07978216a188a8f3b.scn"
+uid="uid://c0un21l4lfchq"
+path="res://.godot/imported/sm_Roof_Edge_Half.fbx-55a029630839143ee015a2af4b366b9e.scn"
 
 [deps]
 
-source_file="res://assets/environment/Misc_Building_Parts/sm_Roof_Edge.fbx"
-dest_files=["res://.godot/imported/sm_Roof_Edge.fbx-333c71765d35e6b07978216a188a8f3b.scn"]
+source_file="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Roof_Edge_Half.fbx"
+dest_files=["res://.godot/imported/sm_Roof_Edge_Half.fbx-55a029630839143ee015a2af4b366b9e.scn"]
 
 [params]
 

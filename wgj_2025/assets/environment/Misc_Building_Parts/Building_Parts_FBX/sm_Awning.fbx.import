@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ndmcs33oyutn"
-path="res://.godot/imported/sm_Wall.fbx-e0c020d967d2a2db5f51716592216ab4.scn"
+uid="uid://di3hmrnpybpbt"
+path="res://.godot/imported/sm_Awning.fbx-4f952ed2b96a1880aced4348fc19c0fb.scn"
 
 [deps]
 
-source_file="res://assets/environment/Misc_Building_Parts/sm_Wall.fbx"
-dest_files=["res://.godot/imported/sm_Wall.fbx-e0c020d967d2a2db5f51716592216ab4.scn"]
+source_file="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Awning.fbx"
+dest_files=["res://.godot/imported/sm_Awning.fbx-4f952ed2b96a1880aced4348fc19c0fb.scn"]
 
 [params]
 

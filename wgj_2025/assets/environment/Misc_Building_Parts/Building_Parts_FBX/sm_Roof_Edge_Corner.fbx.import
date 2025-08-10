@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ci80hdr38ha50"
-path="res://.godot/imported/sm_Curb1x1.fbx-edc1383f3b4f76e1707cfc12d226ab1f.scn"
+uid="uid://biu3vis3ddcyh"
+path="res://.godot/imported/sm_Roof_Edge_Corner.fbx-d97ca40ac468d9714ecf486cab201cea.scn"
 
 [deps]
 
-source_file="res://assets/environment/sm_Curb1x1.fbx"
-dest_files=["res://.godot/imported/sm_Curb1x1.fbx-edc1383f3b4f76e1707cfc12d226ab1f.scn"]
+source_file="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Roof_Edge_Corner.fbx"
+dest_files=["res://.godot/imported/sm_Roof_Edge_Corner.fbx-d97ca40ac468d9714ecf486cab201cea.scn"]
 
 [params]
 
