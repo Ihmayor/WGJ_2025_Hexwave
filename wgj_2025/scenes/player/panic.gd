@@ -28,7 +28,6 @@ func _physics_process(delta: float) -> void:
 		
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and event.echo == false:
-		print("really????")
 		%TextureProgressBar.value += 11
 	
 

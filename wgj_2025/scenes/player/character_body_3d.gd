@@ -41,11 +41,8 @@ func _physics_process(delta: float) -> void:
 	
 
 func add_stats(stats_to_add:ItemStats):
-	print(stats_to_add.resource_name)
 	self_stats.current_inventory.append(stats_to_add)
-	print("add stats")
 	self_stats.glamour_stat += stats_to_add.glamour_stat
 	self_stats.edgy_stat += stats_to_add.edgy_stat
 	self_stats.business_stat += stats_to_add.business_stat
-	print(self_stats.glamour_stat)
 	

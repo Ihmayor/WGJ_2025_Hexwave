@@ -20,9 +20,7 @@ func _ready() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:
 		var is_player_sus = check_player_stats()
-		print("here?")
 		if is_player_sus:
-			print(body.name)
 			open_npc_menu.emit(accuse_message)
 			panic.emit(body)
 			(body as Player).stop_moving()

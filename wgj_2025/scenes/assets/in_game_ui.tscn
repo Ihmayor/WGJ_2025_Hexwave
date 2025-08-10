@@ -1,0 +1,272 @@
+[gd_scene load_steps=12 format=3 uid="uid://c3qg8x1tcyb5h"]
+
+[ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="1_r3ng0"]
+[ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="2_m8w6p"]
+[ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="3_pk3rn"]
+[ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="4_ik53m"]
+[ext_resource type="Script" uid="uid://cvc4u71vpep3y" path="res://scenes/player/npc_reseter_screen.gd" id="5_lx78c"]
+[ext_resource type="Script" uid="uid://b08w8gwwipdtw" path="res://scenes/player/panic.gd" id="6_el6mx"]
+[ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="7_axpqb"]
+[ext_resource type="Texture2D" uid="uid://slsdesuddqbl" path="res://assets/ui/progress.png" id="8_glbo2"]
+
+[sub_resource type="Animation" id="Animation_o601j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanicControl/Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [120]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanicControl/Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.127409]
+}
+
+[sub_resource type="Animation" id="Animation_1cjgq"]
+resource_name = "panic"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanicControl/Label:theme_override_font_sizes/font_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [120, 80]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanicControl/Label:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.457276, 0.371755, 0.563741]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qwc0q"]
+_data = {
+&"RESET": SubResource("Animation_o601j"),
+&"panic": SubResource("Animation_1cjgq")
+}
+
+[node name="InGameUI" type="CanvasLayer"]
+
+[node name="PickUpUI" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_top = 112.0
+offset_right = 54.0
+offset_bottom = 152.0
+script = ExtResource("1_r3ng0")
+
+[node name="Label" type="Label" parent="PickUpUI"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 437.0
+offset_top = 218.0
+offset_right = 783.0
+offset_bottom = 273.0
+theme_override_font_sizes/font_size = 40
+text = "Press 'E' to pickup"
+
+[node name="ProgressBar" type="ProgressBar" parent="PickUpUI"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 481.0
+offset_top = 288.0
+offset_right = 631.0
+offset_bottom = 320.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 20
+rounded = true
+
+[node name="Debugger" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_m8w6p")
+player_data = ExtResource("3_pk3rn")
+
+[node name="Label" type="Label" parent="Debugger"]
+layout_mode = 0
+offset_right = 903.0
+offset_bottom = 461.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Glamour (DEBUG): "
+
+[node name="NPCBlocker" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_ik53m")
+
+[node name="Panel" type="Panel" parent="NPCBlocker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 476.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="NPCBlocker/Panel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 43.0
+offset_right = 1068.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 50
+text = "Hey! You can't enter here looking like that!"
+
+[node name="NPCReseter" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_lx78c")
+
+[node name="Panel" type="Panel" parent="NPCReseter"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 476.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="NPCReseter/Panel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 9.0
+offset_right = 1068.0
+offset_bottom = 156.0
+theme_override_font_sizes/font_size = 50
+text = "Wait! You're an alien!"
+autowrap_mode = 2
+
+[node name="Panic" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_el6mx")
+small_talk_lines = Array[String](["The temperature that affects us is good when it is tepid. Good weather"])
+
+[node name="Button" type="Button" parent="Panic"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -45.5
+offset_right = 309.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(300, 28.5)
+theme_override_font_sizes/font_size = 60
+text = "ENGAGE SMALL TALK"
+
+[node name="PanicControl" type="Control" parent="Panic"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanicDecreaseTimer" type="Timer" parent="Panic/PanicControl"]
+wait_time = 0.2
+autostart = true
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Panic/PanicControl"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 96.0
+offset_right = 1060.0
+offset_bottom = 541.0
+value = 60.0
+fill_mode = 3
+texture_under = ExtResource("7_axpqb")
+texture_progress = ExtResource("8_glbo2")
+
+[node name="Label" type="Label" parent="Panic/PanicControl"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -82.5
+offset_right = 246.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.127409
+pivot_offset = Vector2(233.698, 100.941)
+theme_override_colors/font_color = Color(0.372549, 0, 0, 1)
+theme_override_font_sizes/font_size = 120
+text = "PANIC!!!!"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panic/PanicControl"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_qwc0q")
+}
+autoplay = "panic"
+
+[connection signal="pressed" from="Panic/Button" to="Panic" method="_on_button_pressed"]
+[connection signal="timeout" from="Panic/PanicControl/PanicDecreaseTimer" to="Panic" method="_on_panic_decrease_timer_timeout"]
