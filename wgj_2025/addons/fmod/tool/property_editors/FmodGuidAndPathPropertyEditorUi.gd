@@ -7,5 +7,4 @@ func set_callables(window_callable: Callable, path_callable: Callable, guid_call
 	%GuidLineEdit.text_changed.connect(guid_callable)
 
 func set_icon(icon: Texture2D):
-	pass
-	
+	%EventExplorerButton.icon = icon

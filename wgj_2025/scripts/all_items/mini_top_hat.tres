@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_shi44")
+icon_for_item = "res://scenes/assets/placeholderButtonDressUp.PNG"
 business_stat = 4
 glamour_stat = 1
 edgy_stat = 0
-item_location = 0
+item_location = "upper"
 metadata/_custom_type_script = "uid://iqwcs3e4ne8o"

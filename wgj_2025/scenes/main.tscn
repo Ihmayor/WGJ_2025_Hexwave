@@ -334,6 +334,5 @@ func _get_global_debugger() -> Node:
 
 [node name="BasicNPCTree" type="Node"]
 script = SubResource("GDScript_sgp6g")
-metadata/_custom_type_script = "uid://bb0t2ovl7wifo"
 
 [node name="FmodListener2D" type="FmodListener2D" parent="."]

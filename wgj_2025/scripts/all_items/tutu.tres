@@ -4,7 +4,9 @@
 
 [resource]
 script = ExtResource("1_io3uv")
-edgy_stat = 0
-business_stat = 0
-glamour_stat = 0
+icon_for_item = "res://scenes/assets/placeholderGlasses.PNG"
+business_stat = 2
+glamour_stat = 2
+edgy_stat = 2
+item_location = "bottom"
 metadata/_custom_type_script = "uid://iqwcs3e4ne8o"
