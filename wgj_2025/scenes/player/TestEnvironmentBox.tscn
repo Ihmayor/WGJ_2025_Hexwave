@@ -97,9 +97,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.85815, 0.966553, 10.6942)
 use_collision = true
 size = Vector3(14.7163, 9.18164, 1)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="InGameUI" type="CanvasLayer" parent="."]
 
-[node name="PickUpUI" type="Control" parent="CanvasLayer"]
+[node name="PickUpUI" type="Control" parent="InGameUI"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -110,7 +110,7 @@ offset_right = 54.0
 offset_bottom = 152.0
 script = ExtResource("4_thrr0")
 
-[node name="Label" type="Label" parent="CanvasLayer/PickUpUI"]
+[node name="Label" type="Label" parent="InGameUI/PickUpUI"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 437.0
@@ -120,7 +120,7 @@ offset_bottom = 273.0
 theme_override_font_sizes/font_size = 40
 text = "Press 'E' to pickup"
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PickUpUI"]
+[node name="ProgressBar" type="ProgressBar" parent="InGameUI/PickUpUI"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 8
@@ -137,7 +137,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 rounded = true
 
-[node name="Debugger" type="Control" parent="CanvasLayer"]
+[node name="Debugger" type="Control" parent="InGameUI"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -145,7 +145,7 @@ offset_bottom = 40.0
 script = ExtResource("7_iapa4")
 player_data = ExtResource("2_h5g4e")
 
-[node name="Label" type="Label" parent="CanvasLayer/Debugger"]
+[node name="Label" type="Label" parent="InGameUI/Debugger"]
 layout_mode = 0
 offset_right = 903.0
 offset_bottom = 461.0
@@ -153,7 +153,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Glamour (DEBUG): "
 
-[node name="NPCBlocker" type="Control" parent="CanvasLayer"]
+[node name="NPCBlocker" type="Control" parent="InGameUI"]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -163,7 +163,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("6_4ht7p")
 
-[node name="Panel" type="Panel" parent="CanvasLayer/NPCBlocker"]
+[node name="Panel" type="Panel" parent="InGameUI/NPCBlocker"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -172,7 +172,7 @@ offset_top = 476.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="CanvasLayer/NPCBlocker/Panel"]
+[node name="Label" type="Label" parent="InGameUI/NPCBlocker/Panel"]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 43.0
@@ -215,6 +215,6 @@ transform = Transform3D(3.145, 0, 0, 0, 3.145, 0, 0, 0, 3.145, 0, 0, 0)
 shape = SubResource("BoxShape3D_h5g4e")
 debug_color = Color(0.812453, 0.154106, 0.174079, 0.42)
 
-[connection signal="toggle_npc_menu" from="NPC_Blocker" to="CanvasLayer/NPCBlocker" method="_on_npc_blocker_toggle_npc_menu"]
+[connection signal="toggle_npc_menu" from="NPC_Blocker" to="InGameUI/NPCBlocker" method="_on_npc_blocker_toggle_npc_menu"]
 [connection signal="body_entered" from="NPC_Blocker/Area3D" to="NPC_Blocker" method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="NPC_Blocker/Area3D" to="NPC_Blocker" method="_on_area_3d_body_exited"]
