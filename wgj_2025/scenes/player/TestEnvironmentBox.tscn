@@ -387,16 +387,16 @@ player_stats = ExtResource("2_h5g4e")
 [node name="NPC_Reseter2" parent="." instance=ExtResource("11_7r45t")]
 transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -4.01156, 1.49385, 9.21782)
 use_collision = true
+player_stats = ExtResource("2_h5g4e")
 glam_check_amount = 2
 business_check_amount = 2
 edgy_check_amount = 2
-player_stats = ExtResource("2_h5g4e")
 
 [node name="NPC_Reseter3" parent="." instance=ExtResource("11_7r45t")]
 transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -14.9204, 1.49385, 9.21782)
 use_collision = true
-business_check_amount = 4
 player_stats = ExtResource("2_h5g4e")
+business_check_amount = 4
 
 [node name="Home" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2433, 0, -7.66839)
