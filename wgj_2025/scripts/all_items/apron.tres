@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_q2rc0")
-business_stat = 0
+icon_for_item = "res://assets/ui/icons-clothes/torso-apron.png"
+business_stat = 3
 glamour_stat = 0
 edgy_stat = 0
-item_location = 0
+item_location = "upper"
 metadata/_custom_type_script = "uid://iqwcs3e4ne8o"

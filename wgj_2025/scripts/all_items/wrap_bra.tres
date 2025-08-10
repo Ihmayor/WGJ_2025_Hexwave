@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemStats" load_steps=2 format=3 uid="uid://ytmfsv1d78ck"]
+
+[ext_resource type="Script" uid="uid://iqwcs3e4ne8o" path="res://scripts/ItemStats.gd" id="1_o4g8j"]
+
+[resource]
+script = ExtResource("1_o4g8j")
+icon_for_item = "res://assets/ui/icons-clothes/torso_wrap_bra.png"
+business_stat = 1
+glamour_stat = 3
+edgy_stat = 3
+item_location = "upper"
+metadata/_custom_type_script = "uid://iqwcs3e4ne8o"

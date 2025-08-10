@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_7x4vg")
-business_stat = 0
-glamour_stat = 0
-edgy_stat = 0
-item_location = 0
+icon_for_item = "res://assets/ui/icons-clothes/bottom_daisy_dukes.png"
+business_stat = 1
+glamour_stat = 2
+edgy_stat = 3
+item_location = "bottom"
 metadata/_custom_type_script = "uid://iqwcs3e4ne8o"
