@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5pgahpcbe1ax"]
+
+[ext_resource type="PackedScene" uid="uid://ytx5oucxwqrg" path="res://assets/environment/Envio_FBX/sm_Curb1x2.fbx" id="1_g6qcm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u6wde"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.368627, 0.368627, 0.368627, 1)
+
+[node name="sm_Curb1x2" instance=ExtResource("1_g6qcm")]
+
+[node name="Curb1x2" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_u6wde")

@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7ac4e1w1y556"]
+[gd_scene load_steps=6 format=3 uid="uid://bvuixmv4n68a6"]
 
-[ext_resource type="Script" uid="uid://dtr60cafu1bky" path="res://scenes/menus/options_menu.gd" id="1_8l6bt"]
-[ext_resource type="Theme" path="res://assets/ui/wgj_main_theme.tres" id="1_t67h2"]
+[ext_resource type="Script" path="res://scenes/menus/options_menu.gd" id="1_8l6bt"]
+[ext_resource type="Theme" uid="uid://btmloybn8qk8w" path="res://assets/ui/wgj_main_theme.tres" id="1_t67h2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jqfgi"]
 line_spacing = 0.0

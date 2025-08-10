@@ -1,15 +1,15 @@
-[gd_scene load_steps=22 format=3 uid="uid://cdv4ul414qhpm"]
+[gd_scene load_steps=22 format=3 uid="uid://d1vnbkw6h0bti"]
 
-[ext_resource type="PackedScene" uid="uid://dyijl5yqkko16" path="res://scenes/player/Character.tscn" id="1_esuob"]
+[ext_resource type="PackedScene" path="res://scenes/player/Character.tscn" id="1_esuob"]
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_h5g4e"]
 [ext_resource type="Resource" uid="uid://re1s72hsi0bq" path="res://scripts/all_items/mini_top_hat.tres" id="2_j4vmv"]
 [ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="3_h5g4e"]
-[ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="4_thrr0"]
-[ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="6_4ht7p"]
-[ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="7_iapa4"]
+[ext_resource type="Script" path="res://scenes/player/PickUpUi.gd" id="4_thrr0"]
+[ext_resource type="Script" path="res://scenes/player/npc_blocker_screen.gd" id="6_4ht7p"]
+[ext_resource type="Script" path="res://scenes/player/debugger.gd" id="7_iapa4"]
 [ext_resource type="PackedScene" uid="uid://b6wfur0t638iy" path="res://scenes/assets/npc_blockers/npc_blocker_example.tscn" id="7_iw8ku"]
-[ext_resource type="Script" uid="uid://cvc4u71vpep3y" path="res://scenes/player/npc_reseter_screen.gd" id="7_j4vmv"]
-[ext_resource type="Script" uid="uid://b08w8gwwipdtw" path="res://scenes/player/panic.gd" id="9_igkkm"]
+[ext_resource type="Script" path="res://scenes/player/npc_reseter_screen.gd" id="7_j4vmv"]
+[ext_resource type="Script" path="res://scenes/player/panic.gd" id="9_igkkm"]
 [ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="10_7r45t"]
 [ext_resource type="Texture2D" uid="uid://slsdesuddqbl" path="res://assets/ui/progress.png" id="11_1cjgq"]
 [ext_resource type="PackedScene" uid="uid://bysfwywrx8ywl" path="res://scenes/assets/npc_blockers/npc_reseter.tscn" id="11_7r45t"]
@@ -372,16 +372,16 @@ player_stats = ExtResource("2_h5g4e")
 [node name="NPC_Reseter2" parent="." instance=ExtResource("11_7r45t")]
 transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -4.01156, 1.49385, 9.21782)
 use_collision = true
-player_stats = ExtResource("2_h5g4e")
 glam_check_amount = 2
 business_check_amount = 2
 edgy_check_amount = 2
+player_stats = ExtResource("2_h5g4e")
 
 [node name="NPC_Reseter3" parent="." instance=ExtResource("11_7r45t")]
 transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -14.9204, 1.49385, 9.21782)
 use_collision = true
-player_stats = ExtResource("2_h5g4e")
 business_check_amount = 4
+player_stats = ExtResource("2_h5g4e")
 
 [node name="Home" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2433, 0, -7.66839)

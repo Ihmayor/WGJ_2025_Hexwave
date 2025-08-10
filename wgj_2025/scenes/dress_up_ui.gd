@@ -1,0 +1,142 @@
+class_name DressUpUI extends Control
+
+@export var PlayerData: PlayerStats
+
+#TODO:
+# - TopButton, UpperButton, BottumButton -> the values that are "filled" in these buttons should be the sum of the stats
+# - "Equiped" variables
+# - CHECK Have clothing buttons disabled at first -> populate with the clothing icons that are found
+# - CHECK 3 ArrayLists with the clothing
+# - Make category buttons clickable
+# - Switch icons between buttons when changing clothing
+# - Make the clothing panels correspond to the correct buttons (e.g. top cannot go with bottom)
+
+@onready var top_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid
+@onready var upper_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid
+@onready var bottom_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid
+
+#Dictionary with clothing items pngs
+var clothing_items = {
+	"shirt": preload("res://scenes/assets/placeholderButtonDressUp.PNG"),
+	"shirt2": preload("res://scenes/assets/placeholderButtonDressUp.PNG"),
+	"glasses": preload("res://scenes/assets/placeholderGlasses.PNG"),
+	"tie": preload("res://scenes/assets/placeholderTie.PNG"),
+	"empty": preload("res://scenes/assets/placeholderButtonEmpty.PNG") #TODO: empty will prob not be here, but disabled instead
+}
+
+#ArrayLists for picked up clothing items, empty at start
+var top_clothing: Array[String] = ["glasses"]
+var upper_clothing: Array[String] = ["shirt", "tie", "shirt2", "shirt", "shirt", "shirt", "shirt", "shirt"]
+var bottom_clothing: Array[String] = []
+
+var selected_category: String = ""
+var selected_item_index: int = -1 
+var selected_button: TextureButton = null
+
+var current_inventory_amount: int
+
+
+func _ready():
+	current_inventory_amount = PlayerData.current_inventory.size()
+	
+	#Disable all clothing buttons at the start
+	for child in top_grid.get_children():
+		if child is TextureButton:
+			child.disabled = true
+	for child in upper_grid.get_children():
+		if child is TextureButton:
+			child.disabled = true
+	for child in bottom_grid.get_children():
+		if child is TextureButton:
+			child.disabled = true
+	
+	#TODO: remove these
+	player_found_item("tie", "bottom")
+	add_to_inventory_ui("upper")
+	add_to_inventory_ui("top")
+
+func _physics_process(delta: float) -> void:
+	
+	#Check if Player Data has new items
+	if current_inventory_amount < PlayerData.current_inventory.size():
+		current_inventory_amount +=1
+		var found_item:ItemStats = PlayerData.current_inventory.back()
+		player_found_item(found_item.resource_name, str(found_item.item_location))
+
+func player_found_item(item_id: String, category: String):
+	match category:
+		"top":
+			top_clothing.append(item_id)
+			add_to_inventory_ui("top")
+		"upper":
+			upper_clothing.append(item_id)
+			add_to_inventory_ui("upper")
+		"bottom":
+			bottom_clothing.append(item_id)
+			add_to_inventory_ui("bottom")
+
+func add_to_inventory_ui(category: String):
+	var items: Array[String]
+	var container: GridContainer
+
+	match category:
+		"top":
+			items = top_clothing
+			container = top_grid
+		"upper":
+			items = upper_clothing
+			container =  upper_grid
+		"bottom":
+			items = bottom_clothing
+			container = bottom_grid
+
+	# Update buttons for each category
+	var buttons = container.get_children()
+	for i in range(len(items)): #TODO: check that buttons are not out of range (should not happen though)
+		if buttons[i] is TextureButton and buttons[i].disabled:
+			buttons[i].texture_normal = clothing_items.get(items[i], clothing_items["empty"])
+			#Tell the buttons what stat they're connected with
+			#if buttons is EquipButton:
+			#	(buttons[i] as EquipButton).set_related_item(null, i)
+			buttons[i].disabled = false
+			
+
+func _on_top_button_pressed() -> void:
+	selected_category = "top"
+	selected_item_index = -1  
+	#Hook up top buttons with the buttons in their column 
+	%TextureButton._on_main_button_pressed(self, selected_category)
+	%TextureButton2._on_main_button_pressed(self, selected_category)
+	%TextureButton3._on_main_button_pressed(self, selected_category)
+	%TextureButton4._on_main_button_pressed(self, selected_category)
+	%TextureButton5._on_main_button_pressed(self, selected_category)
+	%TextureButton6._on_main_button_pressed(self, selected_category)
+	%TextureButton7._on_main_button_pressed(self, selected_category)
+	%TextureButton8._on_main_button_pressed(self, selected_category)
+
+func _on_upper_button_pressed() -> void:
+	selected_category = "upper"
+	selected_item_index = -1
+
+func _on_bottom_button_pressed() -> void:
+	selected_category = "bottom"
+	selected_item_index = -1
+
+func set_new_selected_item(new_item, category:String, index: int):
+	# Deselect and remove the stats of the deselected item
+	#match
+	#	"top":
+			
+	#	"upper":
+	#	"bottom":
+	
+	
+	selected_item_index = index
+	
+	
+	pass
+	 
+
+
+func _on_button_pressed() -> void:
+	visible = false

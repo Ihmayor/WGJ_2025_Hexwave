@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceb1b5uu14w5b"]
+
+[ext_resource type="PackedScene" uid="uid://cb7m21w86ie3u" path="res://assets/environment/Envio_FBX/sm_Floor.fbx" id="1_188us"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3byvg"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.155, 0.31, 0.206667, 1)
+roughness = 0.8
+
+[node name="sm_Floor" instance=ExtResource("1_188us")]
+
+[node name="Floor" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3byvg")

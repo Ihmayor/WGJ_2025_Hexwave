@@ -1,0 +1,315 @@
+[gd_scene load_steps=8 format=3 uid="uid://co47w5xrghr1y"]
+
+[ext_resource type="Script" uid="uid://bcldwtqtipqhe" path="res://scenes/dress_up_ui.gd" id="1_ok7kh"]
+[ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_ayd21"]
+[ext_resource type="Texture2D" path="res://scenes/assets/placeholderUIdressup.PNG" id="2_d4auv"]
+[ext_resource type="Texture2D" path="res://scenes/assets/placeholderPlayerDressUp.PNG" id="3_r3nmi"]
+[ext_resource type="Texture2D" path="res://scenes/assets/placeholderButtonDressUp.PNG" id="4_q0ob3"]
+[ext_resource type="Texture2D" path="res://scenes/assets/placeholderButtonEmpty.PNG" id="5_r3nmi"]
+[ext_resource type="Script" path="res://scenes/texture_button.gd" id="6_q0ob3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ok7kh")
+PlayerData = ExtResource("2_ayd21")
+
+[node name="PlaceholderUIdressup" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(397, 302)
+scale = Vector2(0.833856, 1.00675)
+texture = ExtResource("2_d4auv")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -300.0
+offset_right = 300.0
+offset_bottom = 300.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(200, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_r3nmi")
+
+[node name="PanelContainer4" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -300.0
+offset_bottom = 300.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer4"]
+layout_mode = 2
+theme_override_constants/margin_top = 90
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer4/MarginContainer"]
+layout_mode = 2
+columns = 2
+
+[node name="TopButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_q0ob3")
+
+[node name="PanelContainer5" type="PanelContainer" parent="PanelContainer4/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TopGrid" type="GridContainer" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
+
+[node name="TextureButton3" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
+
+[node name="TextureButton4" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
+
+[node name="TextureButton5" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
+
+[node name="TextureButton6" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
+
+[node name="TextureButton7" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
+
+[node name="TextureButton8" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
+
+[node name="UpperButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_q0ob3")
+
+[node name="PanelContainer6" type="PanelContainer" parent="PanelContainer4/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="UpperGrid" type="GridContainer" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton3" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton4" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton5" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton6" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton7" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton8" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="BottomButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_q0ob3")
+
+[node name="PanelContainer7" type="PanelContainer" parent="PanelContainer4/MarginContainer/GridContainer"]
+custom_minimum_size = Vector2(350, 150)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="BottomGrid" type="GridContainer" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer"]
+layout_mode = 2
+columns = 4
+
+[node name="TextureButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton2" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton3" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton4" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton5" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton6" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton7" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="TextureButton8" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid"]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture_normal = ExtResource("4_q0ob3")
+texture_disabled = ExtResource("5_r3nmi")
+
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -36.0
+offset_bottom = 31.0
+grow_horizontal = 0
+text = "ESC"
+
+[connection signal="pressed" from="PanelContainer4/MarginContainer/GridContainer/TopButton" to="." method="_on_top_button_pressed"]
+[connection signal="pressed" from="PanelContainer4/MarginContainer/GridContainer/UpperButton" to="." method="_on_upper_button_pressed"]
+[connection signal="pressed" from="PanelContainer4/MarginContainer/GridContainer/BottomButton" to="." method="_on_bottom_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

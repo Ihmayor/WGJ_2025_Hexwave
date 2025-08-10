@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://pk2x4qlmrac2"]
+
+[ext_resource type="PackedScene" uid="uid://dc3skrumolakd" path="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Roof_Top.fbx" id="1_lyxch"]
+
+[node name="sm_Roof_Top" instance=ExtResource("1_lyxch")]

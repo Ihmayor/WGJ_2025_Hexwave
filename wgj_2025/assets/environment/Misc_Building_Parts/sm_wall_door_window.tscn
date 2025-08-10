@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ck3gjet8aig8o"]
+
+[ext_resource type="PackedScene" uid="uid://do457uu078jal" path="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Wall_DoorWindow.fbx" id="1_5j573"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gybo"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 0.826667, 0.8, 1)
+roughness = 0.8
+
+[node name="sm_Wall_DoorWindow" instance=ExtResource("1_5j573")]
+
+[node name="Wall_DoorWindow" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1gybo")
