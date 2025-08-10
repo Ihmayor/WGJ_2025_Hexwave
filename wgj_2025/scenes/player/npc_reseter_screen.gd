@@ -1,4 +1,4 @@
-extends Control
+class_name NPCReseterScreen extends Control
 
 func show_dialogue(player_message:String):
 	visible = true

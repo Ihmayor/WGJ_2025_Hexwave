@@ -1,4 +1,4 @@
-extends Control
+class_name PanicScreen extends Control
 @export var small_talk_lines: Array[String]
 
 func _on_npc_reseter_panic(player: Node3D) -> void:

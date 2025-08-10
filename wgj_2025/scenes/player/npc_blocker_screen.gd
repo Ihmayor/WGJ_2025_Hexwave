@@ -1,4 +1,4 @@
-extends Control
+class_name NPCBlockerScreen extends Control
 
 @export var player_blocked_message:String = "Hey! You can't enter here looking like that!"
 @export var player_unblocked_message:String = "Oh nice! Lookin' good!"

@@ -1,6 +1,10 @@
 class_name NPCBlocker extends NPC
 
 signal toggle_npc_menu(pass_check:bool)
+@onready var npc_blocker_screen:NPCBlockerScreen = %NPCBlocker
+
+func _ready() -> void:
+	toggle_npc_menu.connect(npc_blocker_screen._on_npc_blocker_toggle_npc_menu)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is Player:

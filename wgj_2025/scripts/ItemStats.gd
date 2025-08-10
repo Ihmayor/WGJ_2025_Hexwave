@@ -1,7 +1,7 @@
 class_name ItemStats extends Resource
 enum ItemLocation{
-	Hat,
-	Shirt,
+	Head,
+	Torso,
 	Bottom
 }
 

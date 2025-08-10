@@ -3,8 +3,7 @@ class_name Player extends CharacterBody3D
 @export var self_stats:PlayerStats
 @export var reset_point: Node3D
 @export_group("Camera")
-@export var movement_speed:float = 1000
-@export_range (0.0, 1.0) var mouse_sensitivity:float = 0.25
+@export var movement_speed:float = 100
 @export var _gravity: float = -30.0
 @export var acceleration: float = 4
 
@@ -34,7 +33,8 @@ func _physics_process(delta: float) -> void:
 	var y_velocity:= velocity.y
 	velocity.y = 0.0
 	velocity.y = y_velocity + _gravity * delta
-	velocity = velocity.move_toward(move_direction * movement_speed, clamp(delta * acceleration, 0, 2));
+	var raw_velocity = velocity.move_toward(move_direction * movement_speed, delta * acceleration);
+	velocity = Vector3(clamp(raw_velocity.x, 0, 4), raw_velocity.y, clamp(raw_velocity.z, 0, 4))
 	if raw_input == Vector2.ZERO:
 		velocity = Vector3.ZERO
 	move_and_slide()
@@ -45,4 +45,8 @@ func add_stats(stats_to_add:ItemStats):
 	self_stats.glamour_stat += stats_to_add.glamour_stat
 	self_stats.edgy_stat += stats_to_add.edgy_stat
 	self_stats.business_stat += stats_to_add.business_stat
-	
+
+func remove_stats(stats_to_remove:ItemStats):
+	self_stats.glamour_stat -= stats_to_remove.glamour_stat
+	self_stats.edgy_stat -= stats_to_remove.edgy_stat
+	self_stats.business_stat -= stats_to_remove.business_stat
