@@ -5,7 +5,17 @@
 [node name="TestFmodBankExplorer" type="Node2D"]
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
 bank_paths = ["res://assets/Banks/Master.strings.bank", "res://assets/Banks/Master.bank", "res://assets/Banks/Music.bank", "res://assets/Banks/Vehicles.bank"]
+script = null
 
 [node name="FmodBankExplorer" parent="FmodBankLoader" instance=ExtResource("1_0ul6h")]
 initial_position = 0
