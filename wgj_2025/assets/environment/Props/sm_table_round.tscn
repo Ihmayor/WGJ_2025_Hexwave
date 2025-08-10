@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://drkbde4u76kv2"]
+
+[ext_resource type="PackedScene" uid="uid://c8l3cq0tom1j" path="res://assets/environment/Props/sm_Table_Round.fbx" id="1_7oi21"]
+
+[node name="sm_Table_Round" instance=ExtResource("1_7oi21")]

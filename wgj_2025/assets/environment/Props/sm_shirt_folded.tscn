@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyf4y8nobc2od"]
+
+[ext_resource type="PackedScene" uid="uid://u0617pksr6s3" path="res://assets/environment/Props/sm_Shirt_Folded.fbx" id="1_iufvc"]
+
+[node name="sm_Shirt_Folded" instance=ExtResource("1_iufvc")]

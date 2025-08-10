@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://re1s72hsi0bq" path="res://scripts/all_items/mini_top_hat.tres" id="2_j4vmv"]
 [ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="3_h5g4e"]
 [ext_resource type="Resource" uid="uid://cvbxob12nmpf0" path="res://scripts/all_items/tutu.tres" id="3_qwc0q"]
-[ext_resource type="Resource" uid="uid://ytmfsv1d78ck" path="res://scripts/all_items/warp_bra.tres" id="4_n1eib"]
+[ext_resource type="Resource" uid="uid://ytmfsv1d78ck" path="res://scripts/all_items/wrap_bra.tres" id="4_n1eib"]
 [ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="4_thrr0"]
 [ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="6_4ht7p"]
 [ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="7_iapa4"]

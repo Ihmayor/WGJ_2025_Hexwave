@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7dvh6t1v68yw"]
+
+[ext_resource type="PackedScene" uid="uid://haxh8jrchnb3" path="res://assets/environment/Props/sm_Bench.fbx" id="1_0ph3r"]
+
+[node name="sm_Bench" instance=ExtResource("1_0ph3r")]
