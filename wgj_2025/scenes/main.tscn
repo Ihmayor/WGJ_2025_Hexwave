@@ -360,10 +360,6 @@ libraries = {
 }
 autoplay = "panic"
 
-[node name="DressupUI" parent="CanvasLayer" instance=ExtResource("15_y6deb")]
-unique_name_in_owner = true
-visible = false
-
 [node name="HUD_Stats" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
@@ -391,6 +387,10 @@ PlayerData = ExtResource("3_jyhfs")
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 PlayerData = ExtResource("3_jyhfs")
+
+[node name="DressupUI" parent="CanvasLayer" instance=ExtResource("15_y6deb")]
+unique_name_in_owner = true
+visible = false
 
 [node name="NPC_Blocker" parent="." instance=ExtResource("16_og1vs")]
 transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, 1.3445, 1.49545, -1.04748)
