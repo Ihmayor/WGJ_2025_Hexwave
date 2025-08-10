@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c6lb1qi70xsvj"
-path="res://.godot/imported/sm_Stool.fbx-ddb4d725afae6c97d506a78496f75f2c.scn"
+uid="uid://tv882uq8bh5g"
+path="res://.godot/imported/sm_Shelf_Cubby.fbx-28bedd763b173d7295b286ccac79021d.scn"
 
 [deps]
 
-source_file="res://assets/environment/Furniture/sm_Stool.fbx"
-dest_files=["res://.godot/imported/sm_Stool.fbx-ddb4d725afae6c97d506a78496f75f2c.scn"]
+source_file="res://assets/environment/Props/sm_Shelf_Cubby.fbx"
+dest_files=["res://.godot/imported/sm_Shelf_Cubby.fbx-28bedd763b173d7295b286ccac79021d.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cr2bjuv3q5cpl"
-path="res://.godot/imported/sm_Chair.fbx-0a04b8a5deff5c2e1d87bc490c7a9ef0.scn"
+uid="uid://dv4w4rwxrvth0"
+path="res://.godot/imported/sm_Shirt_Folded_Pile.fbx-19f8a578f3b56ac922898c9adb5b3aae.scn"
 
 [deps]
 
-source_file="res://assets/environment/Furniture/sm_Chair.fbx"
-dest_files=["res://.godot/imported/sm_Chair.fbx-0a04b8a5deff5c2e1d87bc490c7a9ef0.scn"]
+source_file="res://assets/environment/Props/sm_Shirt_Folded_Pile.fbx"
+dest_files=["res://.godot/imported/sm_Shirt_Folded_Pile.fbx-19f8a578f3b56ac922898c9adb5b3aae.scn"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://haxh8jrchnb3"
-path="res://.godot/imported/sm_Bench.fbx-d921011f7eaac2fd3cb72be5710eed42.scn"
+uid="uid://s4u6cx58sil3"
+path="res://.godot/imported/sm_DeptStore_Roof.fbx-871d156eed6a06c2576d746452ca6cf6.scn"
 
 [deps]
 
-source_file="res://assets/environment/Furniture/sm_Bench.fbx"
-dest_files=["res://.godot/imported/sm_Bench.fbx-d921011f7eaac2fd3cb72be5710eed42.scn"]
+source_file="res://assets/environment/DeptStore/sm_DeptStore_Roof.fbx"
+dest_files=["res://.godot/imported/sm_DeptStore_Roof.fbx-871d156eed6a06c2576d746452ca6cf6.scn"]
 
 [params]
 

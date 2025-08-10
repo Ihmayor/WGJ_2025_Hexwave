@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c8l3cq0tom1j"
-path="res://.godot/imported/sm_Table_Round.fbx-f95ae6709e8c4c6a8d38d07b264490e5.scn"
+uid="uid://gnv3drbmon4j"
+path="res://.godot/imported/sm_DeptStore_Building.fbx-f5546cf77f2a88c2d82725d13fa7a6f5.scn"
 
 [deps]
 
-source_file="res://assets/environment/Furniture/sm_Table_Round.fbx"
-dest_files=["res://.godot/imported/sm_Table_Round.fbx-f95ae6709e8c4c6a8d38d07b264490e5.scn"]
+source_file="res://assets/environment/DeptStore/sm_DeptStore_Building.fbx"
+dest_files=["res://.godot/imported/sm_DeptStore_Building.fbx-f5546cf77f2a88c2d82725d13fa7a6f5.scn"]
 
 [params]
 
