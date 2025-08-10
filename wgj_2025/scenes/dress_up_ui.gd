@@ -1,5 +1,6 @@
-extends Control
+class_name DressUpUI extends Control
 
+@export var PlayerData: PlayerStats
 
 #TODO:
 # - TopButton, UpperButton, BottumButton -> the values that are "filled" in these buttons should be the sum of the stats
@@ -9,7 +10,6 @@ extends Control
 # - Make category buttons clickable
 # - Switch icons between buttons when changing clothing
 # - Make the clothing panels correspond to the correct buttons (e.g. top cannot go with bottom)
-# - Esc button
 
 @onready var top_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid
 @onready var upper_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid
@@ -33,9 +33,11 @@ var selected_category: String = ""
 var selected_item_index: int = -1 
 var selected_button: TextureButton = null
 
-signal _on_top_pressed
+var current_inventory_amount: int
+
 
 func _ready():
+	current_inventory_amount = PlayerData.current_inventory.size()
 	
 	#Disable all clothing buttons at the start
 	for child in top_grid.get_children():
@@ -53,6 +55,13 @@ func _ready():
 	add_to_inventory_ui("upper")
 	add_to_inventory_ui("top")
 
+func _physics_process(delta: float) -> void:
+	
+	#Check if Player Data has new items
+	if current_inventory_amount < PlayerData.current_inventory.size():
+		current_inventory_amount +=1
+		var found_item:ItemStats = PlayerData.current_inventory.back()
+		player_found_item(found_item.resource_name, str(found_item.item_location))
 
 func player_found_item(item_id: String, category: String):
 	match category:
@@ -86,13 +95,24 @@ func add_to_inventory_ui(category: String):
 	for i in range(len(items)): #TODO: check that buttons are not out of range (should not happen though)
 		if buttons[i] is TextureButton and buttons[i].disabled:
 			buttons[i].texture_normal = clothing_items.get(items[i], clothing_items["empty"])
+			#Tell the buttons what stat they're connected with
+			if buttons is EquipButton:
+				(buttons[i] as EquipButton).set_related_item(null, i)
 			buttons[i].disabled = false
 			
 
 func _on_top_button_pressed() -> void:
 	selected_category = "top"
 	selected_item_index = -1  
-	%TextureButton._on_main_button_pressed()
+	#Hook up top buttons with the buttons in their column 
+	%TextureButton._on_main_button_pressed(self, selected_category)
+	%TextureButton2._on_main_button_pressed(self, selected_category)
+	%TextureButton3._on_main_button_pressed(self, selected_category)
+	%TextureButton4._on_main_button_pressed(self, selected_category)
+	%TextureButton5._on_main_button_pressed(self, selected_category)
+	%TextureButton6._on_main_button_pressed(self, selected_category)
+	%TextureButton7._on_main_button_pressed(self, selected_category)
+	%TextureButton8._on_main_button_pressed(self, selected_category)
 
 func _on_upper_button_pressed() -> void:
 	selected_category = "upper"
@@ -101,3 +121,22 @@ func _on_upper_button_pressed() -> void:
 func _on_bottom_button_pressed() -> void:
 	selected_category = "bottom"
 	selected_item_index = -1
+
+func set_new_selected_item(new_item, category:String, index: int):
+	# Deselect and remove the stats of the deselected item
+	#match
+	#	"top":
+			
+	#	"upper":
+	#	"bottom":
+	
+	
+	selected_item_index = index
+	
+	
+	pass
+	 
+
+
+func _on_button_pressed() -> void:
+	visible = false

@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpem6u4876gb2"]
+[gd_scene load_steps=8 format=3 uid="uid://0aa6wg6yn4t3"]
 
 [ext_resource type="Script" uid="uid://bh51t4pye42va" path="res://scenes/dress_up_ui.gd" id="1_ok7kh"]
+[ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_ayd21"]
 [ext_resource type="Texture2D" uid="uid://bemdd4fp7l2py" path="res://scenes/assets/placeholderUIdressup.PNG" id="2_d4auv"]
 [ext_resource type="Texture2D" uid="uid://b7jitb7ycbrgq" path="res://scenes/assets/placeholderPlayerDressUp.PNG" id="3_r3nmi"]
 [ext_resource type="Texture2D" uid="uid://6rijnukl174w" path="res://scenes/assets/placeholderButtonDressUp.PNG" id="4_q0ob3"]
@@ -21,6 +22,7 @@ offset_bottom = 300.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ok7kh")
+PlayerData = ExtResource("2_ayd21")
 
 [node name="PlaceholderUIdressup" type="Sprite2D" parent="."]
 visible = false
@@ -71,6 +73,7 @@ layout_mode = 2
 columns = 2
 
 [node name="TopButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -105,6 +108,7 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
 [node name="TextureButton3" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
 unique_name_in_owner = true
@@ -112,6 +116,7 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
 [node name="TextureButton4" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
 unique_name_in_owner = true
@@ -119,6 +124,7 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
 [node name="TextureButton5" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
 unique_name_in_owner = true
@@ -126,6 +132,7 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
 [node name="TextureButton6" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
 unique_name_in_owner = true
@@ -133,6 +140,7 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
 [node name="TextureButton7" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
 unique_name_in_owner = true
@@ -140,6 +148,7 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
 [node name="TextureButton8" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid"]
 unique_name_in_owner = true
@@ -147,8 +156,10 @@ custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
 texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
+script = ExtResource("6_q0ob3")
 
 [node name="UpperButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -218,6 +229,7 @@ texture_normal = ExtResource("4_q0ob3")
 texture_disabled = ExtResource("5_r3nmi")
 
 [node name="BottomButton" type="TextureButton" parent="PanelContainer4/MarginContainer/GridContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -300,3 +312,4 @@ text = "ESC"
 [connection signal="pressed" from="PanelContainer4/MarginContainer/GridContainer/TopButton" to="." method="_on_top_button_pressed"]
 [connection signal="pressed" from="PanelContainer4/MarginContainer/GridContainer/UpperButton" to="." method="_on_upper_button_pressed"]
 [connection signal="pressed" from="PanelContainer4/MarginContainer/GridContainer/BottomButton" to="." method="_on_bottom_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
