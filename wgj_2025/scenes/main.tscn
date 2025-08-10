@@ -1,3 +1,20 @@
-[gd_scene format=3 uid="uid://drt3803wrif7i"]
+[gd_scene load_steps=5 format=3 uid="uid://drt3803wrif7i"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://b02vpch2fpg5e" path="res://scenes/assets/Test_Environment/StreetSection.tscn" id="1_o5qli"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o5qli"]
+
+[sub_resource type="Sky" id="Sky_rvbi6"]
+sky_material = SubResource("ShaderMaterial_o5qli")
+
+[sub_resource type="Environment" id="Environment_0wfyh"]
+background_mode = 1
+background_color = Color(0.82606, 0.82606, 0.82606, 1)
+sky = SubResource("Sky_rvbi6")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StreetSection" parent="." instance=ExtResource("1_o5qli")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0wfyh")

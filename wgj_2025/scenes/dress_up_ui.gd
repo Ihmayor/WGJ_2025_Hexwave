@@ -74,8 +74,16 @@ func add_to_inventory_ui(category: String):
 			
 
 func _on_top_button_pressed() -> void:
+	if (top_grid.visible):
+		show_labels()
+		return
+
 	selected_category = "top"
 	selected_item_index = -1  
+	top_grid.visible = true
+
+	hide_labels()
+	
 	#Hook up top buttons with the buttons in their column 
 	%TextureButton._on_main_button_pressed(self, selected_category)
 	%TextureButton2._on_main_button_pressed(self, selected_category)
@@ -87,8 +95,13 @@ func _on_top_button_pressed() -> void:
 	%TextureButton8._on_main_button_pressed(self, selected_category)
 
 func _on_upper_button_pressed() -> void:
+	if (upper_grid.visible):
+		show_labels()
+		return
 	selected_category = "upper"
 	selected_item_index = -1
+	upper_grid.visible = true
+	hide_labels()
 	#Hook up top buttons with the buttons in their column 
 	%UpperTextureButton._on_main_button_pressed(self, selected_category)
 	%UpperTextureButton2._on_main_button_pressed(self, selected_category)
@@ -100,8 +113,13 @@ func _on_upper_button_pressed() -> void:
 	%UpperTextureButton8._on_main_button_pressed(self, selected_category)
 
 func _on_bottom_button_pressed() -> void:
+	if (bottom_grid.visible):
+		show_labels()
+		return
 	selected_category = "bottom"
 	selected_item_index = -1
+	bottom_grid.visible = true
+	hide_labels()
 	#Hook up top buttons with the buttons in their column 
 	%BottomTextureButton._on_main_button_pressed(self, selected_category)
 	%BottomTextureButton2._on_main_button_pressed(self, selected_category)
@@ -134,7 +152,22 @@ func set_new_selected_item(new_item:ItemStats, category:String, index: int):
 	PlayerData.add_stats(new_item)
 	main_button.texture_normal = ResourceLoader.load(new_item.icon_for_item)
 	selected_item_index = index	 
+	
+	show_labels()
 
+func hide_labels():
+	%BottomGridLabel.visible = false
+	%UpperGridLabel.visible = false
+	%TopGridLabel.visible = false
+
+func show_labels():
+	top_grid.visible = false
+	upper_grid.visible = false
+	bottom_grid.visible = false
+	
+	%BottomGridLabel.visible = true
+	%UpperGridLabel.visible = true
+	%TopGridLabel.visible = true
 
 func _on_button_pressed() -> void:
 	visible = false
