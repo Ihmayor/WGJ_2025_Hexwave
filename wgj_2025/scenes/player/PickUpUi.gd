@@ -6,11 +6,11 @@ var item_in_view: interactable_item
 
 @onready var progressbar:ProgressBar = %ProgressBar
 
-
 func _physics_process(delta: float) -> void:
 	if (is_held_interact && visible):
 		if progressbar.value == progressbar.max_value:
 			if (item_in_view != null):
+				print(item_in_view.Stats.resource_path)
 				%Player.add_stats(item_in_view.Stats)
 				item_in_view.queue_free()
 				

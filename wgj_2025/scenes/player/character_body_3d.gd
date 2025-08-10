@@ -6,7 +6,7 @@ class_name Player extends CharacterBody3D
 @export var movement_speed:float = 1000
 @export_range (0.0, 1.0) var mouse_sensitivity:float = 0.25
 @export var _gravity: float = -30.0
-@export var acceleration: float = 10
+@export var acceleration: float = 4
 
 var _camera_input_direction  = Vector2.ZERO
 @export var _camera: Camera3D
@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 
 func add_stats(stats_to_add:ItemStats):
+	print(stats_to_add.resource_name)
 	self_stats.current_inventory.append(stats_to_add)
 	print("add stats")
 	self_stats.glamour_stat += stats_to_add.glamour_stat

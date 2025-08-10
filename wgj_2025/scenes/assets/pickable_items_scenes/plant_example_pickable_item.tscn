@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ducrhu1aoqhph"]
 
 [ext_resource type="Script" uid="uid://dl64k4dxk5ayi" path="res://scenes/player/interactable_item.gd" id="1_kg2v2"]
-[ext_resource type="Resource" uid="uid://b1j71n1vtvupw" path="res://scripts/all_items/very_ripped_jeans.tres" id="2_vh3ok"]
+[ext_resource type="Resource" uid="uid://b1j71n1vtvupw" path="res://scripts/all_items/fish_bowl.tres" id="2_kg2v2"]
 [ext_resource type="PackedScene" uid="uid://vcovyqja6i1u" path="res://assets/models/eb_house_plant_01/eb_house_plant_01.fbx" id="3_ks55m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rvbi6"]
@@ -12,7 +12,7 @@ size = Vector3(2.8584, 1.42676, 3.73969)
 
 [node name="Plant_Example_Pickable_Item" type="RigidBody3D"]
 script = ExtResource("1_kg2v2")
-Stats = ExtResource("2_vh3ok")
+Stats = ExtResource("2_kg2v2")
 
 [node name="eb_house_plant_01" parent="." instance=ExtResource("3_ks55m")]
 transform = Transform3D(3.05426, 0, 0, 0, 4.19864, 0, 0, 0, 3.39999, 0, 0.05861, 0)

@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdv4ul414qhpm"]
+[gd_scene load_steps=16 format=3 uid="uid://cdv4ul414qhpm"]
 
 [ext_resource type="PackedScene" uid="uid://dyijl5yqkko16" path="res://scenes/player/Character.tscn" id="1_esuob"]
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_h5g4e"]
 [ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="3_h5g4e"]
 [ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="4_thrr0"]
+[ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="6_4ht7p"]
+[ext_resource type="Script" uid="uid://b41i5etwj24hy" path="res://scenes/player/npc_blocker.gd" id="6_iapa4"]
+[ext_resource type="Script" uid="uid://dl2rkfqhoet8q" path="res://scenes/player/npc_chaser.gd" id="7_4ht7p"]
 [ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="7_iapa4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_esuob"]
@@ -22,6 +25,11 @@ albedo_color = Color(0.341176, 1, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_esuob"]
 size = Vector3(34.0794, 1, 43.5743)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_iapa4"]
+size = Vector3(0.464722, 1.28027, 1.06155)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h5g4e"]
+
 [node name="TestEnvironmentBox" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -30,21 +38,22 @@ environment = SubResource("Environment_esuob")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14.9301, 0)
 
+[node name="Plant_Example_Pickable_Item" parent="." instance=ExtResource("3_h5g4e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44704, 0, -5.98261)
+
 [node name="Player" parent="." node_paths=PackedStringArray("_camera") instance=ExtResource("1_esuob")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.80599, 0.213226, 4.82883)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08553, 0.765648, -5.25937)
 self_stats = ExtResource("2_h5g4e")
 _camera = NodePath("Camera3D")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(0.100357, -0.66641, 0.738801, 0.0736257, 0.745488, 0.66244, -0.992224, -0.012086, 0.12388, 26.5061, 23.5573, 2.49571)
+transform = Transform3D(0.0574157, -0.66631, 0.743461, 0.0736257, 0.745488, 0.66244, -0.995632, 0.0167033, 0.0918602, 20.955, 18.9923, 2.44137)
 fov = 21.5
 near = 0.149
 
-[node name="Plant_Example_Pickable_Item" parent="." instance=ExtResource("3_h5g4e")]
-
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.300367, 0, 0, 0, 0.588945, -5.79714, 0.0803159, 0.104777)
+transform = Transform3D(1, 0, 0, 0, 0.300367, 0, 0, 0, 0.588945, -5.79714, 0.0803159, -2.69795)
 use_collision = true
 size = Vector3(32.6185, 0.337769, 46.0688)
 material = SubResource("StandardMaterial3D_kjqca")
@@ -56,7 +65,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.924717, 0, -0.263489)
 shape = SubResource("BoxShape3D_esuob")
 
 [node name="CSGBox3D2" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.201543, 0, 0, 0, 0.468659, -6.18445, 1.16513, 13.5134)
+transform = Transform3D(1, 0, 0, 0, 0.201543, 0, 0, 0, 0.468659, -6.18445, 1.16513, 10.7107)
 use_collision = true
 size = Vector3(35.7413, 9.18164, 1)
 
@@ -71,7 +80,7 @@ use_collision = true
 size = Vector3(51.1628, 9.18164, 1)
 
 [node name="Room" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.237885, 0, 0, 0, 0.7454, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.237885, 0, 0, 0, 0.7454, 0, 0, -4.53601)
 
 [node name="CSGBox3D3" type="CSGBox3D" parent="Room"]
 transform = Transform3D(-0.0254442, 0, -0.999676, 0, 1, 0, 0.999676, 0, -0.0254442, -13.7163, 1.93311, 4.75103)
@@ -126,7 +135,6 @@ offset_bottom = 320.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
-value = 5.39
 rounded = true
 
 [node name="Debugger" type="Control" parent="CanvasLayer"]
@@ -144,3 +152,69 @@ offset_bottom = 461.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Glamour (DEBUG): "
+
+[node name="NPCBlocker" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("6_4ht7p")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/NPCBlocker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 476.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/NPCBlocker/Panel"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 43.0
+offset_right = 1068.0
+offset_bottom = 112.0
+theme_override_font_sizes/font_size = 50
+text = "Hey! You can't enter here looking like that!"
+
+[node name="NPC_Blocker" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, 1.3445, 1.49545, -1.04748)
+use_collision = true
+script = ExtResource("6_iapa4")
+player_stats = ExtResource("2_h5g4e")
+glam_check_amount = 1
+business_check_amount = 1
+edgy_check_amount = 1
+
+[node name="RigidBody3D" type="RigidBody3D" parent="NPC_Blocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.45162, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC_Blocker/RigidBody3D"]
+transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, -3.34838, -4.03454, 0.0171258)
+shape = SubResource("BoxShape3D_iapa4")
+
+[node name="Area3D" type="Area3D" parent="NPC_Blocker"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC_Blocker/Area3D"]
+transform = Transform3D(3.145, 0, 0, 0, 3.145, 0, 0, 0, 3.145, 0, 0, 0)
+shape = SubResource("BoxShape3D_h5g4e")
+debug_color = Color(0.812453, 0.154106, 0.174079, 0.42)
+
+[node name="NPC_Chaser" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, 5.84566, 1.49385, 9.21782)
+script = ExtResource("7_4ht7p")
+
+[node name="Area3D" type="Area3D" parent="NPC_Chaser"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC_Chaser/Area3D"]
+transform = Transform3D(3.145, 0, 0, 0, 3.145, 0, 0, 0, 3.145, 0, 0, 0)
+shape = SubResource("BoxShape3D_h5g4e")
+debug_color = Color(0.812453, 0.154106, 0.174079, 0.42)
+
+[connection signal="toggle_npc_menu" from="NPC_Blocker" to="CanvasLayer/NPCBlocker" method="_on_npc_blocker_toggle_npc_menu"]
+[connection signal="body_entered" from="NPC_Blocker/Area3D" to="NPC_Blocker" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="NPC_Blocker/Area3D" to="NPC_Blocker" method="_on_area_3d_body_exited"]
