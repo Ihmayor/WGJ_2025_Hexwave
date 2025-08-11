@@ -8,9 +8,9 @@ func _ready() -> void:
 	%Area3D.connect("body_exited", on_body_exited)
 
 func on_body_entered(body: Node3D) :
-	if body is Player:
+	if body is Player && pickup_screen != null:
 		pickup_screen._on_area_3d_body_entered(body, self)
 
 func on_body_exited(body: Node3D) :
-	if body is Player:
+	if body is Player && pickup_screen != null:
 		pickup_screen._on_area_3d_body_exited(body, self)

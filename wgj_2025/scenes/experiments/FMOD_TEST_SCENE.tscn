@@ -1,11 +1,34 @@
-[gd_scene load_steps=10 format=3 uid="uid://i6fwjbekmvti"]
+[gd_scene load_steps=18 format=3 uid="uid://i6fwjbekmvti"]
 
-[ext_resource type="PackedScene" uid="uid://be6owi1oov24k" path="res://assets/3d_character/alien/alien.tscn" id="1_veve3"]
-[ext_resource type="Script" uid="uid://fcqfrldn7ehh" path="res://scenes/player/character_body_3d.gd" id="2_xmehn"]
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="3_kv37b"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_xmehn"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="5_c5kpn"]
+[ext_resource type="PackedScene" uid="uid://eiqusmpskh30" path="res://scenes/player/Character.tscn" id="5_f0w2r"]
 [ext_resource type="PackedScene" uid="uid://b02vpch2fpg5e" path="res://scenes/assets/Test_Environment/StreetSection.tscn" id="5_v6xhh"]
 [ext_resource type="PackedScene" uid="uid://ducrhu1aoqhph" path="res://scenes/assets/pickable_items_scenes/plant_example_pickable_item.tscn" id="6_b3af4"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_f0w2r"]
+[ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="7_f0w2r"]
+[ext_resource type="Script" uid="uid://dvv53glpllncf" path="res://scenes/experiments/remove_roof.gd" id="10_56nle"]
+
+[sub_resource type="Resource" id="Resource_56nle"]
+script = ExtResource("6_f0w2r")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Resource" id="Resource_hlkie"]
+script = ExtResource("7_f0w2r")
+keep_aspect = 1
+cull_mask = 1048575
+h_offset = 0.0
+v_offset = 1.205
+projection = 0
+fov = 97.5
+size = 1.0
+frustum_offset = Vector2(0, 0)
+near = 0.001
+far = 4000.0
+metadata/_custom_type_script = "uid://b8hhnqsugykly"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kv37b"]
 
@@ -17,21 +40,28 @@ background_mode = 1
 background_color = Color(0.82606, 0.82606, 0.82606, 1)
 sky = SubResource("Sky_rvbi6")
 
+[sub_resource type="Resource" id="Resource_84enc"]
+script = ExtResource("6_f0w2r")
+duration = 3.0
+transition = 1
+ease = 2
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_f0w2r"]
+height = 5.21521
+radius = 6.02979
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f0w2r"]
+size = Vector3(2.47332, 2.40039, 6.88806)
+
 [node name="Node3D" type="Node3D"]
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="."]
-bank_paths = ["res://assets/fmod_build/Desktop/MainStreet.bank", "res://assets/fmod_build/Desktop/PLY_Alien.bank"]
-
-[node name="Alien" parent="." instance=ExtResource("1_veve3")]
-script = ExtResource("2_xmehn")
-self_stats = ExtResource("3_kv37b")
-
-[node name="FmodListener3D" type="FmodListener3D" parent="."]
+bank_paths = ["res://assets/fmod_build/Desktop/PLY_Alien.bank", "res://assets/fmod_build/Desktop/MainStreet.bank", "res://assets/fmod_build/Desktop/Store.bank", "res://assets/fmod_build/Desktop/Master.strings.bank", "res://assets/fmod_build/Desktop/Master.bank"]
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 3.25127, -2.68518)
+transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 2.59536, -2.68518)
 v_offset = 1.205
 fov = 97.5
 near = 0.001
@@ -43,18 +73,110 @@ script = ExtResource("3_xmehn")
 
 [node name="Node3D" type="Node3D" parent="MainCamera3D"]
 
+[node name="Node" type="Node" parent="."]
+
+[node name="FmodListener3D" type="FmodListener3D" parent="Node"]
+is_locked = true
+transform = Transform3D(1, 0, 0, 0, 0.858065, 0.513541, 0, -0.513541, 0.858065, -5.10286, 2.59536, -2.68518)
+
+[node name="PhantomCamera3D" type="Node3D" parent="Node" node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(0.999999, 0, 0, 0, 0.858064, 0.513541, 0, -0.513541, 0.858064, -5.10286, 2.59536, -2.68518)
+top_level = true
+script = ExtResource("5_c5kpn")
+priority = 5
+follow_mode = 5
+follow_target = NodePath("../Player")
+tween_resource = SubResource("Resource_56nle")
+camera_3d_resource = SubResource("Resource_hlkie")
+follow_offset = Vector3(0, 0.945, 0)
+follow_damping = true
+follow_distance = 3.0
+dead_zone_width = 0.174
+dead_zone_height = 0.125
+show_viewfinder_in_play = true
+spring_length = 3.0
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Player" parent="Node" instance=ExtResource("5_f0w2r")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.10286, 0.109736, -5.25937)
+self_stats = ExtResource("3_kv37b")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_br6k5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26044, 0, 0)
 
 [node name="Environment" type="Node" parent="."]
 
 [node name="StreetSection" parent="Environment" instance=ExtResource("5_v6xhh")]
 
 [node name="StreetSection" parent="Environment/StreetSection" instance=ExtResource("5_v6xhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.76348)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.6505)
 
 [node name="StreetSection" parent="Environment/StreetSection/StreetSection" instance=ExtResource("5_v6xhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.37788)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.0173)
 
 [node name="Plant_Example_Pickable_Item" parent="Environment" instance=ExtResource("6_b3af4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.98261)
+
+[node name="DepartmentStore" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.41973, 0, 0)
+
+[node name="PhantomCamera3D" type="Node3D" parent="DepartmentStore"]
+transform = Transform3D(1, 0, 0, 0, 0.519877, 0.854241, 0, -0.854241, 0.519877, -1.75725, 5.02395, 0.537242)
+script = ExtResource("5_c5kpn")
+tween_resource = SubResource("Resource_84enc")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="DepartmentStore"]
+event_name = "event:/Ambiences/AMB_Store_Department"
+event_guid = "{5d113a22-312f-4351-b93c-90eea1cce24f}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
+
+[node name="FmodEventEmitter3D2" type="FmodEventEmitter3D" parent="DepartmentStore"]
+event_name = "event:/Music/MX_Store"
+event_guid = "{67c8c1de-cd01-48bf-98e4-88d9389197ca}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
+
+[node name="Area3D" type="Area3D" parent="DepartmentStore" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30512, 0, 0.228103)
+script = ExtResource("10_56nle")
+triggered_camera = NodePath("../PhantomCamera3D")
+triggered_fmod = NodePath("../FmodEventEmitter3D")
+triggered_fmodMusic = NodePath("../FmodEventEmitter3D2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DepartmentStore/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574921, 2.00934, -3.53722)
+shape = SubResource("CylinderShape3D_f0w2r")
+
+[node name="InsideBuildingTrigger" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06215, 0, 0)
+
+[node name="PhantomCamera3D" type="Node3D" parent="InsideBuildingTrigger"]
+transform = Transform3D(1, 0, 0, 0, 0.519877, 0.854241, 0, -0.854241, 0.519877, -1.75725, 5.02395, 0.537242)
+script = ExtResource("5_c5kpn")
+tween_resource = SubResource("Resource_84enc")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="AreaAmbience" type="FmodEventEmitter3D" parent="InsideBuildingTrigger"]
+event_name = "event:/Ambiences/AMB_Cafe"
+event_guid = "{becb7508-7497-4d60-ba6c-0f6dbc6b370b}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
+
+[node name="AreaMusic" type="FmodEventEmitter3D" parent="InsideBuildingTrigger"]
+event_name = "event:/Music/MX_Cafe"
+event_guid = "{e6af0e9d-3634-4a3c-b123-7c5c9f33da43}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
+
+[node name="Area3DTrigger" type="Area3D" parent="InsideBuildingTrigger" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30512, 0, 0.228103)
+script = ExtResource("10_56nle")
+triggered_camera = NodePath("../PhantomCamera3D")
+triggered_fmod = NodePath("../AreaAmbience")
+triggered_fmodMusic = NodePath("../AreaMusic")
+
+[node name="AreaCollision" type="CollisionShape3D" parent="InsideBuildingTrigger/Area3DTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77624, 1.30914, -2.53557)
+shape = SubResource("BoxShape3D_f0w2r")
