@@ -7,10 +7,12 @@ class_name RemoveRoof extends Area3D
 func _ready():
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
-	
+
 func _on_body_entered(body:Node3D):
 	if body is not Player:
 		return
+	%MainTheme.stop()
+		
 	triggered_fmod.play()
 	triggered_fmodMusic.play()
 	triggered_camera.priority = 30
@@ -29,4 +31,6 @@ func _on_body_exited(body:Node3D):
 		roof.visible = true;
 	triggered_fmod.stop()
 	triggered_fmodMusic.stop()
+	print("what")
+	%MainTheme.play(false)
 	

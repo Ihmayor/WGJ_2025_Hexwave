@@ -42,7 +42,7 @@ sky = SubResource("Sky_rvbi6")
 
 [sub_resource type="Resource" id="Resource_84enc"]
 script = ExtResource("6_f0w2r")
-duration = 3.0
+duration = 2.0
 transition = 1
 ease = 2
 
@@ -99,7 +99,6 @@ follow_damping = true
 follow_distance = 3.0
 dead_zone_width = 0.174
 dead_zone_height = 0.125
-show_viewfinder_in_play = true
 spring_length = 3.0
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
@@ -186,3 +185,8 @@ triggered_fmodMusic = NodePath("../AreaMusic")
 [node name="AreaCollision" type="CollisionShape3D" parent="Building/Area3DTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77624, 1.30914, -2.53557)
 shape = SubResource("BoxShape3D_5clsd")
+
+[node name="MainTheme" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Music/MX_MainStreet"
+event_guid = "{3103837e-5760-4057-86da-bd4443c330e6}"
+unique_name_in_owner = true
