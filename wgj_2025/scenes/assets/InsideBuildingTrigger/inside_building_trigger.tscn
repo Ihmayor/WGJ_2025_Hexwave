@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb1bvphngt5a5"]
+
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="1_ynt11"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="2_2jim3"]
+[ext_resource type="Script" uid="uid://dvv53glpllncf" path="res://scenes/experiments/remove_roof.gd" id="3_0li1i"]
+
+[sub_resource type="Resource" id="Resource_84enc"]
+script = ExtResource("2_2jim3")
+duration = 3.0
+transition = 1
+ease = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f0w2r"]
+size = Vector3(2.47332, 2.40039, 6.88806)
+
+[node name="InsideBuildingTrigger" type="Node3D"]
+
+[node name="PhantomCamera3D" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.519877, 0.854241, 0, -0.854241, 0.519877, -3.22815, 5.02395, 0.537242)
+script = ExtResource("1_ynt11")
+tween_resource = SubResource("Resource_84enc")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="AreaAmbience" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Ambiences/AMB_Cafe"
+event_guid = "{becb7508-7497-4d60-ba6c-0f6dbc6b370b}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
+
+[node name="AreaMusic" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Music/MX_Cafe"
+event_guid = "{e6af0e9d-3634-4a3c-b123-7c5c9f33da43}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
+
+[node name="Area3DTrigger" type="Area3D" parent="." node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30512, 0, 0.228103)
+script = ExtResource("3_0li1i")
+triggered_camera = NodePath("../PhantomCamera3D")
+triggered_fmod = NodePath("../AreaAmbience")
+triggered_fmodMusic = NodePath("../AreaMusic")
+
+[node name="AreaCollision" type="CollisionShape3D" parent="Area3DTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77624, 1.30914, -2.53557)
+shape = SubResource("BoxShape3D_f0w2r")
