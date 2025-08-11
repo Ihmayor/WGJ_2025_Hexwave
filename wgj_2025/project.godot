@@ -29,9 +29,7 @@ DSP/dsp_buffer_count=4
 [application]
 
 config/name="wgj_2025"
-
-run/main_scene="uid://u0617pksr6s3"
-
+run/main_scene="uid://d1nms1x23g6sc"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -46,11 +44,9 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 enabled=PackedStringArray("res://addons/fmod/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
-
 [global_group]
 
 roof=""
-
 
 [input]
 

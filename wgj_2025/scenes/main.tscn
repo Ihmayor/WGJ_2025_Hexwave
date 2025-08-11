@@ -290,6 +290,35 @@ theme_override_font_sizes/font_size = 50
 text = "Wait! You're an alien!"
 autowrap_mode = 2
 
+[node name="HUD_Stats" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD_Stats"]
+layout_mode = 1
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 347.0
+offset_bottom = 115.0
+theme = ExtResource("16_jscy8")
+
+[node name="Business" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_yc10j")]
+custom_minimum_size = Vector2(5, 0)
+layout_mode = 2
+PlayerData = ExtResource("3_jyhfs")
+
+[node name="Edgy" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("18_gqmmt")]
+layout_mode = 2
+PlayerData = ExtResource("3_jyhfs")
+
+[node name="GlamourStat" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_0ld40")]
+layout_mode = 2
+PlayerData = ExtResource("3_jyhfs")
+
 [node name="Panic" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
 visible = false
@@ -300,7 +329,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("12_yc10j")
-small_talk_lines = Array[String](["The temperature that affects us is good when it is tepid. Good weather"])
+small_talk_lines = Array[String](["The temperature that affects us is good when it is tepid. Good weather", "Uh. Nice. Clothing. Yeah.", "It is a good time. Time moves forward. We like that.", "We both are typical. Yes. That is what is desired.", "Perhaps you enjoy cats? Or dogs? That's important.", "Words. Those are what us humans say."])
 
 [node name="Button" type="Button" parent="CanvasLayer/Panic"]
 visible = false
@@ -371,35 +400,6 @@ libraries = {
 }
 autoplay = "panic"
 
-[node name="HUD_Stats" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/HUD_Stats"]
-layout_mode = 1
-offset_left = 15.0
-offset_top = 15.0
-offset_right = 347.0
-offset_bottom = 115.0
-theme = ExtResource("16_jscy8")
-
-[node name="Business" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_yc10j")]
-custom_minimum_size = Vector2(5, 0)
-layout_mode = 2
-PlayerData = ExtResource("3_jyhfs")
-
-[node name="Edgy" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("18_gqmmt")]
-layout_mode = 2
-PlayerData = ExtResource("3_jyhfs")
-
-[node name="GlamourStat" parent="CanvasLayer/HUD_Stats/HBoxContainer" instance=ExtResource("17_0ld40")]
-layout_mode = 2
-PlayerData = ExtResource("3_jyhfs")
-
 [node name="DressupUI" parent="CanvasLayer" instance=ExtResource("15_y6deb")]
 unique_name_in_owner = true
 visible = false
@@ -413,7 +413,7 @@ use_collision = true
 player_stats = ExtResource("3_jyhfs")
 
 [node name="NPC_Reseter2" parent="." instance=ExtResource("17_2wyq8")]
-transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -4.01156, 1.49385, 9.21782)
+transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -12.8249, 1.49385, 1.16917)
 use_collision = true
 player_stats = ExtResource("3_jyhfs")
 glam_check_amount = 2
@@ -421,7 +421,7 @@ business_check_amount = 2
 edgy_check_amount = 2
 
 [node name="NPC_Reseter3" parent="." instance=ExtResource("17_2wyq8")]
-transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -14.9204, 1.49385, 9.21782)
+transform = Transform3D(1.05093, 0, 0, 0, 1, 0, 0, 0, 1.10379, -9.98124, 1.04714, 0.493296)
 use_collision = true
 player_stats = ExtResource("3_jyhfs")
 business_check_amount = 4

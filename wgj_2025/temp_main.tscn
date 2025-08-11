@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1nms1x23g6sc"]
+[gd_scene load_steps=3 format=3 uid="uid://d1nms1x23g6sc"]
 
 [ext_resource type="Script" uid="uid://dvlp8spxidmqd" path="res://scenes/temp_main.gd" id="1_xmdk1"]
+[ext_resource type="Texture2D" uid="uid://dcpobbwgtjwie" path="res://assets/ui/title.png" id="2_27twd"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -19,6 +20,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_27twd")
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -32,9 +39,13 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 60
-text = "A STAR IS WORN"
+text = "A STAR IS WORN
+
+
+
+"
 
 [node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
