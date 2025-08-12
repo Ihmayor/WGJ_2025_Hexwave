@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://drt3803wrif7i"]
+[gd_scene load_steps=47 format=3 uid="uid://drt3803wrif7i"]
 
 [ext_resource type="PackedScene" uid="uid://b02vpch2fpg5e" path="res://scenes/assets/Test_Environment/StreetSection.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_o6xl0"]
@@ -15,7 +15,9 @@
 [ext_resource type="Script" uid="uid://dvv53glpllncf" path="res://scenes/experiments/remove_roof.gd" id="9_2wyq8"]
 [ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="9_dp3eg"]
 [ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="10_0ld40"]
+[ext_resource type="Resource" uid="uid://cs00vdfx2vt7d" path="res://scripts/all_items/apron.tres" id="10_tel4y"]
 [ext_resource type="Script" uid="uid://cvc4u71vpep3y" path="res://scenes/player/npc_reseter_screen.gd" id="11_gqmmt"]
+[ext_resource type="Resource" uid="uid://kuhac8p8yap6" path="res://scripts/all_items/cuffed_jeans.tres" id="12_qkpxi"]
 [ext_resource type="Script" uid="uid://b08w8gwwipdtw" path="res://scenes/player/panic.gd" id="12_yc10j"]
 [ext_resource type="Texture2D" uid="uid://usfm5n5y1qpv" path="res://assets/ui/placholder_npc/normal.png" id="13_fv21b"]
 [ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="13_jscy8"]
@@ -194,9 +196,6 @@ reset_point = NodePath("../../ResetPoint")
 
 [node name="StreetSection" parent="Environment" instance=ExtResource("1_o5qli")]
 
-[node name="sm_Floor" parent="Environment" instance=ExtResource("3_og1vs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7713, 0, 18.3116)
-
 [node name="sm_Floor3" parent="Environment" instance=ExtResource("3_og1vs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.665, 0, -8.06985)
 
@@ -212,14 +211,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5307, 0, -0.537844)
 [node name="sm_Floor2" parent="Environment" instance=ExtResource("3_og1vs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7849, 0, -0.632912)
 
-[node name="Plant_Example_Pickable_Item" parent="Environment" instance=ExtResource("3_dp3eg")]
+[node name="Plant_Example_Pickable_Item4" parent="Environment" instance=ExtResource("3_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14935, 0, -11.9652)
+Stats = ExtResource("10_tel4y")
+
+[node name="cowboyhat" parent="Environment" instance=ExtResource("3_dp3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.98261)
 
-[node name="Plant_Example_Pickable_Item3" parent="Environment" instance=ExtResource("3_dp3eg")]
+[node name="tshirt" parent="Environment" instance=ExtResource("3_dp3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -3.41065)
 Stats = ExtResource("4_y6deb")
 
-[node name="Plant_Example_Pickable_Item2" parent="Environment" instance=ExtResource("3_dp3eg")]
+[node name="cuffed" parent="Environment" instance=ExtResource("3_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.88714, 0, -11.9652)
+Stats = ExtResource("12_qkpxi")
+
+[node name="tutu" parent="Environment" instance=ExtResource("3_dp3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4775, 0, -5.98261)
 Stats = ExtResource("5_y6deb")
 

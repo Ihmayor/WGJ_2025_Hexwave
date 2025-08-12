@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_io3uv")
-icon_for_item = "res://assets/ui/icons-clothes/torso_tshirt.png"
+icon_for_item = "res://assets/ui/icons-clothes/bottom_tutu.png"
 business_stat = 0
 glamour_stat = 4
 edgy_stat = 2

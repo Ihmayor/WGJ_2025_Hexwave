@@ -4,8 +4,9 @@
 
 [resource]
 script = ExtResource("1_17uja")
+icon_for_item = ""
 business_stat = 1
 glamour_stat = 3
 edgy_stat = 1
-item_location = 0
+item_location = ""
 metadata/_custom_type_script = "uid://iqwcs3e4ne8o"

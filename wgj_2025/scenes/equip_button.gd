@@ -20,7 +20,9 @@ func deselect() -> void:
 	is_main_button_pressed = false
 
 func _pressed() -> void:
+	print("what")
 	if !is_main_button_pressed:
 		return
+	print("here")
 	dress_up_root_ui.set_new_selected_item(related_item, selected_category, index)
 	is_main_button_pressed = false

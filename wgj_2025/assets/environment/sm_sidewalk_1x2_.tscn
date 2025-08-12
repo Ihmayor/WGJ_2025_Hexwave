@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0b6nsqixyfif"]
+[gd_scene load_steps=3 format=3 uid="uid://b0b6nsqixyfif"]
 
 [ext_resource type="PackedScene" uid="uid://dko4exyedmfdv" path="res://assets/environment/Envio_FBX/sm_Sidewalk1x2.fbx" id="1_0l6yg"]
 
@@ -6,15 +6,7 @@
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.368627, 0.368627, 0.368627, 1)
 
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_8f4xy"]
-data = PackedVector3Array(2, 0.05, 0, 2, 0.05, 1, 0, 0.05, 1, 0, 0.05, 1, 0, 0.05, 0, 2, 0.05, 0, 2, 0, 1, 2, 0.05, 1, 2, 0.05, 0, 2, 0.05, 0, 2, 0, 0, 2, 0, 1, 0, 0, 1, 2, 0, 1, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0.05, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0.05, 0, 0, 0.05, 1, 2, 0.05, 1, 2, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0.05, 1, 2, 0.05, 1, 2, 0.05, 0, 0, 0.05, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0.05, 0)
-
 [node name="sm_Sidewalk1x2" instance=ExtResource("1_0l6yg")]
 
 [node name="Sidewalk1x2" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_0l6yg")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Sidewalk1x2" index="0"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sidewalk1x2/StaticBody3D" index="0"]
-shape = SubResource("ConcavePolygonShape3D_8f4xy")

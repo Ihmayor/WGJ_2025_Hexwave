@@ -2,9 +2,9 @@ class_name DressUpUI extends Control
 
 @export var PlayerData: PlayerStats
 
-@onready var top_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer5/MarginContainer/TopGrid
-@onready var upper_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer6/MarginContainer/UpperGrid
-@onready var bottom_grid = $PanelContainer4/MarginContainer/GridContainer/PanelContainer7/MarginContainer/BottomGrid
+@onready var top_grid = $PanelContainer4/MarginContainer/VBoxContainer/PanelContainer5/MarginContainer/TopGrid
+@onready var upper_grid = $PanelContainer4/MarginContainer/VBoxContainer/PanelContainer6/MarginContainer/UpperGrid
+@onready var bottom_grid = $PanelContainer4/MarginContainer/VBoxContainer/PanelContainer7/MarginContainer/BottomGrid
 
 signal disable_selection_press
 
@@ -62,7 +62,7 @@ func add_to_inventory_ui(category: String):
 
 	# Update buttons for each category
 	var buttons = container.get_children()
-	for i in range(len(items)): #TODO: check that buttons are not out of range (should not happen though)
+	for i in range(len(items)): 
 		if buttons[i] is TextureButton and buttons[i].disabled:
 			buttons[i].texture_normal = ResourceLoader.load(items[i].icon_for_item)
 			#Tell the buttons what stat they're connected with
