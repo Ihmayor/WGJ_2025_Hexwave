@@ -31,8 +31,7 @@ func _ready():
 	for child in bottom_grid.get_children():
 		if child is TextureButton:
 			child.disabled = true
-func _physics_process(delta: float) -> void:
-	#Check if Player Data has new items
+func _physics_process(delta: float) -> void:	#Check if Player Data has new items
 	if current_inventory_amount < PlayerData.current_inventory.size():
 		current_inventory_amount +=1
 		var found_item:ItemStats = PlayerData.current_inventory.back()

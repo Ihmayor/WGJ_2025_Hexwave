@@ -10,12 +10,15 @@ class_name Player extends CharacterBody3D
 
 var _camera_input_direction  = Vector2.ZERO
 @onready var _camera: Camera3D = %MainCamera3D
+@onready var _npc_reset: Control = %NPCReseter
+@onready var _npc_block: Control = %NPCBlocker 
+@onready var _npc_pickup: Control = %PickUpUI
 
 var can_move:bool = true
 
 func _ready():
 	self_stats.put_on_item.connect(put_on_item)
-
+	
 func reset_to_last_point():
 	position = reset_point.global_position
 	can_move = true
@@ -70,5 +73,10 @@ func put_on_item(category:String):
 func _unhandled_input(event: InputEvent) -> void:
 	if (!can_move):
 		return		
-	if (event.is_action_pressed("open_inventory")):
+	
+
+	if (!is_ui_open() && event.is_action_pressed("open_inventory")):
 		%DressupUI.visible = !%DressupUI.visible
+
+func is_ui_open() -> bool:
+	return _npc_reset.visible || _npc_block.visible ||_npc_pickup.visible

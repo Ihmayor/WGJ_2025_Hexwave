@@ -1,12 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6wfur0t638iy"]
+[gd_scene load_steps=4 format=3 uid="uid://b6wfur0t638iy"]
 
 [ext_resource type="Script" uid="uid://b41i5etwj24hy" path="res://scenes/player/npc_blocker.gd" id="1_rdy4a"]
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="2_33l4w"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_iapa4"]
-size = Vector3(0.351898, 0.549315, 0.172614)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_h5g4e"]
+size = Vector3(0.818954, 1, 0.840238)
 
 [node name="NPC_Blocker" type="CSGCylinder3D"]
 transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, 0, 0, 0)
@@ -17,17 +15,10 @@ glam_check_amount = 1
 business_check_amount = 1
 edgy_check_amount = 1
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.45162, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-transform = Transform3D(6.5, 0, 0, 0, 6.5, 0, 0, 0, 6.5, 0.128544, -6.41014, 0.0766568)
-shape = SubResource("BoxShape3D_iapa4")
-
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(3.145, 0, 0, 0, 3.145, 0, 0, 0, 3.145, 0, 0, 0)
+transform = Transform3D(3.145, 0, 0, 0, 3.145, 0, 0, 0, 3.145, -0.0745987, 0, -0.338188)
 shape = SubResource("BoxShape3D_h5g4e")
 debug_color = Color(0.812453, 0.154106, 0.174079, 0.42)
 

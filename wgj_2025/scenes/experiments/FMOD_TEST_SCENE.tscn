@@ -117,12 +117,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26044, 0, 0)
 
 [node name="StreetSection" parent="Environment" instance=ExtResource("5_v6xhh")]
 
-[node name="StreetSection" parent="Environment/StreetSection" instance=ExtResource("5_v6xhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 26.6505)
-
-[node name="StreetSection" parent="Environment/StreetSection/StreetSection" instance=ExtResource("5_v6xhh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.0173)
-
 [node name="Plant_Example_Pickable_Item" parent="Environment" instance=ExtResource("6_b3af4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.98261)
 
@@ -156,33 +150,33 @@ triggered_fmodMusic = NodePath("../FmodEventEmitter3D2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574921, 2.00934, -4.19588)
 shape = SubResource("CylinderShape3D_f0w2r")
 
-[node name="Building" type="Node3D" parent="."]
+[node name="Cafe" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.33628, 0, 0)
 
-[node name="PhantomCamera3D" type="Node3D" parent="Building"]
+[node name="PhantomCamera3D" type="Node3D" parent="Cafe"]
 transform = Transform3D(1, 0, 0, 0, 0.519877, 0.854241, 0, -0.854241, 0.519877, -0.918139, 5.02395, 0.537242)
 script = ExtResource("5_c5kpn")
 tween_resource = SubResource("Resource_16to8")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="AreaAmbience" type="FmodEventEmitter3D" parent="Building"]
+[node name="AreaAmbience" type="FmodEventEmitter3D" parent="Cafe"]
 event_name = "event:/Ambiences/AMB_Cafe"
 event_guid = "{becb7508-7497-4d60-ba6c-0f6dbc6b370b}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46626, 0, 1.24503)
 
-[node name="AreaMusic" type="FmodEventEmitter3D" parent="Building"]
+[node name="AreaMusic" type="FmodEventEmitter3D" parent="Cafe"]
 event_name = "event:/Music/MX_Cafe"
 event_guid = "{e6af0e9d-3634-4a3c-b123-7c5c9f33da43}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46626, 0, 1.24503)
 
-[node name="Area3DTrigger" type="Area3D" parent="Building" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
+[node name="Area3DTrigger" type="Area3D" parent="Cafe" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20432, 0, -1.11835)
 script = ExtResource("10_56nle")
 triggered_camera = NodePath("../PhantomCamera3D")
 triggered_fmod = NodePath("../AreaAmbience")
 triggered_fmodMusic = NodePath("../AreaMusic")
 
-[node name="AreaCollision" type="CollisionShape3D" parent="Building/Area3DTrigger"]
+[node name="AreaCollision" type="CollisionShape3D" parent="Cafe/Area3DTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77624, 1.30914, -2.53557)
 shape = SubResource("BoxShape3D_5clsd")
 

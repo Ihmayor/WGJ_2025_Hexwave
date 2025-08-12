@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://co7vdpi0hd22v"]
+
+[ext_resource type="PackedScene" uid="uid://bgnwpy0ajvk2q" path="res://assets/environment/Props/sm_ClothesRack_Single.fbx" id="1_8k472"]
+[ext_resource type="Material" uid="uid://c607x7dw7umdc" path="res://assets/models/buildings_with_collisions/dept_store/clothes_rack_single.tres" id="2_s4xlq"]
+
+[node name="sm_ClothesRack_Single" instance=ExtResource("1_8k472")]
+
+[node name="ClothesRack_Single" parent="." index="0"]
+material_override = ExtResource("2_s4xlq")

@@ -8,10 +8,17 @@ signal panic(player:Node3D)
 @export var succeed_message: String = "Oh! never mind..."
 @export var fail_message: String = "WAIT! You're an ALIEN!!!"
 
+@export var npc_flat_image: Texture
+
+
 @onready var NPC_reseter_screen:NPCReseterScreen = %NPCReseter
 @onready var NPC_panic_screen:PanicScreen = %Panic
 
 func _ready() -> void:
+	if npc_flat_image != null:
+		%NPC.texture = npc_flat_image
+	
+	
 	open_npc_menu.connect(NPC_reseter_screen.show_dialogue)
 	close_npc_menu.connect(NPC_reseter_screen.hide_dialogue)
 	panic.connect(NPC_panic_screen._on_npc_reseter_panic)
