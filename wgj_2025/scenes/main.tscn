@@ -541,7 +541,7 @@ transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, -11.5796, 1.49545
 
 [node name="Star_Blocker" parent="." instance=ExtResource("16_og1vs")]
 transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, -11.4636, 1.49545, 7.68228)
-custom_message_block = "Ew! And you're trying to enter the contest with that!?"
+custom_message_block = "Ew! And you're trying to enter the VIP pass contest with that!?"
 custom_message_unblocked = "Best outfit I've seen today!"
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="Star_Blocker"]

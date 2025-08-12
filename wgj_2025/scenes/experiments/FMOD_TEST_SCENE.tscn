@@ -139,12 +139,10 @@ event_name = "event:/Music/MX_Store"
 event_guid = "{67c8c1de-cd01-48bf-98e4-88d9389197ca}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
 
-[node name="Area3D" type="Area3D" parent="DepartmentStore" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
+[node name="Area3D" type="Area3D" parent="DepartmentStore" node_paths=PackedStringArray("triggered_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.30512, 0, 0.228103)
 script = ExtResource("10_56nle")
 triggered_camera = NodePath("../PhantomCamera3D")
-triggered_fmod = NodePath("../FmodEventEmitter3D")
-triggered_fmodMusic = NodePath("../FmodEventEmitter3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DepartmentStore/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574921, 2.00934, -4.19588)
@@ -169,12 +167,10 @@ event_name = "event:/Music/MX_Cafe"
 event_guid = "{e6af0e9d-3634-4a3c-b123-7c5c9f33da43}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46626, 0, 1.24503)
 
-[node name="Area3DTrigger" type="Area3D" parent="Cafe" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
+[node name="Area3DTrigger" type="Area3D" parent="Cafe" node_paths=PackedStringArray("triggered_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20432, 0, -1.11835)
 script = ExtResource("10_56nle")
 triggered_camera = NodePath("../PhantomCamera3D")
-triggered_fmod = NodePath("../AreaAmbience")
-triggered_fmodMusic = NodePath("../AreaMusic")
 
 [node name="AreaCollision" type="CollisionShape3D" parent="Cafe/Area3DTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77624, 1.30914, -2.53557)
