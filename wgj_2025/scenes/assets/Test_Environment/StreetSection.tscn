@@ -24,88 +24,52 @@
 
 [node name="StreetSection" type="Node3D"]
 
-[node name="ground" type="Node3D" parent="."]
+[node name="ground2" type="Node3D" parent="."]
 
-[node name="sm_Floor" parent="ground" instance=ExtResource("1_52wa5")]
+[node name="sm_Floor" parent="ground2" instance=ExtResource("1_52wa5")]
 
-[node name="sm_Floor" parent="ground/sm_Floor" instance=ExtResource("1_52wa5")]
+[node name="sm_Floor" parent="ground2/sm_Floor" instance=ExtResource("1_52wa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
 
-[node name="sm_Floor2" parent="ground/sm_Floor" instance=ExtResource("1_52wa5")]
+[node name="sm_Floor2" parent="ground2/sm_Floor" instance=ExtResource("1_52wa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 
-[node name="sm_Floor" parent="ground/sm_Floor/sm_Floor2" instance=ExtResource("1_52wa5")]
+[node name="sm_Floor" parent="ground2/sm_Floor/sm_Floor2" instance=ExtResource("1_52wa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
 
-[node name="sm_SidewalkCorner" parent="ground" instance=ExtResource("2_4joer")]
-
-[node name="sm_Sidewalk1x2" parent="ground" instance=ExtResource("3_i7u8g")]
+[node name="sm_Sidewalk1x2" parent="ground2" instance=ExtResource("3_i7u8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
-[node name="sm_Sidewalk1x3" parent="ground" instance=ExtResource("3_i7u8g")]
+[node name="sm_Sidewalk1x3" parent="ground2" instance=ExtResource("3_i7u8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
-[node name="sm_Sidewalk1x5" parent="ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_CurbCorner" parent="ground" instance=ExtResource("4_n2ear")]
-
-[node name="sm_Curb1x2" parent="ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Curb1x3" parent="ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Curb1x4" parent="ground" instance=ExtResource("5_182kh")]
+[node name="sm_Sidewalk1x4" parent="ground2" instance=ExtResource("3_i7u8g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 
-[node name="sm_Curb1x5" parent="ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
+[node name="sm_CurbCorner" parent="ground2" instance=ExtResource("4_n2ear")]
 
-[node name="sm_Curb1x6" parent="ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="ground" type="Node3D" parent="ground"]
-
-[node name="sm_Floor" parent="ground/ground" instance=ExtResource("1_52wa5")]
-
-[node name="sm_Floor" parent="ground/ground/sm_Floor" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
-
-[node name="sm_Floor2" parent="ground/ground/sm_Floor" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-
-[node name="sm_Floor" parent="ground/ground/sm_Floor/sm_Floor2" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
-
-[node name="sm_Sidewalk1x2" parent="ground/ground" instance=ExtResource("3_i7u8g")]
+[node name="sm_Curb1x2" parent="ground2" instance=ExtResource("5_182kh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
-[node name="sm_Sidewalk1x3" parent="ground/ground" instance=ExtResource("3_i7u8g")]
+[node name="sm_Curb1x3" parent="ground2" instance=ExtResource("5_182kh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
 
-[node name="sm_Sidewalk1x4" parent="ground/ground" instance=ExtResource("3_i7u8g")]
+[node name="sm_Curb1x4" parent="ground2" instance=ExtResource("5_182kh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
 
-[node name="sm_CurbCorner" parent="ground/ground" instance=ExtResource("4_n2ear")]
-
-[node name="sm_Curb1x2" parent="ground/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Curb1x3" parent="ground/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Curb1x4" parent="ground/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Curb1x5" parent="ground/ground" instance=ExtResource("5_182kh")]
+[node name="sm_Curb1x5" parent="ground2" instance=ExtResource("5_182kh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
-[node name="sm_Sidewalk1x6" parent="ground/ground" instance=ExtResource("3_i7u8g")]
+[node name="sm_Sidewalk1x6" parent="ground2" instance=ExtResource("3_i7u8g")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="sm_Curb1x6" parent="ground/ground" instance=ExtResource("5_182kh")]
+[node name="sm_Curb1x6" parent="ground2" instance=ExtResource("5_182kh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="sm_SidewalkCorner" parent="ground2" instance=ExtResource("2_4joer")]
+
+[node name="sm_Sidewalk1x5" parent="ground2" instance=ExtResource("3_i7u8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
 
 [node name="deptstore" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -4)
@@ -148,6 +112,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.32121, 0, -0.289581)
 
 [node name="sm_ManStand" parent="deptstore/sm_DeptStore_Building3" instance=ExtResource("20_edpoh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0088, -0.0475063, -0.628919)
+
+[node name="sm_Sidewalk1x7" parent="deptstore" instance=ExtResource("3_i7u8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="sm_Sidewalk1x8" parent="deptstore" instance=ExtResource("3_i7u8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 4)
+
+[node name="sm_Sidewalk1x8" parent="deptstore/sm_Sidewalk1x8" instance=ExtResource("3_i7u8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
 [node name="Ground" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0248, -0.0609226, -0.143833)
@@ -199,60 +172,13 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 [node name="sm_Curb1x6" parent="Ground/ground2" instance=ExtResource("5_182kh")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
-[node name="ground" type="Node3D" parent="Ground/ground2"]
-
-[node name="sm_Floor" parent="Ground/ground2/ground" instance=ExtResource("1_52wa5")]
-
-[node name="sm_Floor" parent="Ground/ground2/ground/sm_Floor" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
-
-[node name="sm_Floor2" parent="Ground/ground2/ground/sm_Floor" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-
-[node name="sm_Floor" parent="Ground/ground2/ground/sm_Floor/sm_Floor2" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
-
-[node name="sm_SidewalkCorner" parent="Ground/ground2/ground" instance=ExtResource("2_4joer")]
-
-[node name="sm_Sidewalk1x2" parent="Ground/ground2/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Sidewalk1x3" parent="Ground/ground2/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Sidewalk1x4" parent="Ground/ground2/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Sidewalk1x5" parent="Ground/ground2/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_CurbCorner" parent="Ground/ground2/ground" instance=ExtResource("4_n2ear")]
-
-[node name="sm_Curb1x2" parent="Ground/ground2/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Curb1x3" parent="Ground/ground2/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Curb1x4" parent="Ground/ground2/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Curb1x5" parent="Ground/ground2/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_Sidewalk1x6" parent="Ground/ground2/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="sm_Curb1x6" parent="Ground/ground2/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
 [node name="ground3" type="Node3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6912, 0, 12.0322)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9722, 0, 16.1984)
 
 [node name="sm_Floor" parent="Ground/ground3" instance=ExtResource("1_52wa5")]
 
 [node name="sm_Floor" parent="Ground/ground3/sm_Floor" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.03115, 1.43051e-06, -0.0157032)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.97743, 1.43051e-06, -0.0157032)
 
 [node name="sm_Floor2" parent="Ground/ground3/sm_Floor" instance=ExtResource("1_52wa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
@@ -260,89 +186,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 [node name="sm_Floor" parent="Ground/ground3/sm_Floor/sm_Floor2" instance=ExtResource("1_52wa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
 
-[node name="sm_SidewalkCorner" parent="Ground/ground3" instance=ExtResource("2_4joer")]
-
-[node name="sm_Sidewalk1x2" parent="Ground/ground3" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Sidewalk1x3" parent="Ground/ground3" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Sidewalk1x4" parent="Ground/ground3" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Sidewalk1x5" parent="Ground/ground3" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_CurbCorner" parent="Ground/ground3" instance=ExtResource("4_n2ear")]
-
-[node name="sm_Curb1x2" parent="Ground/ground3" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Curb1x3" parent="Ground/ground3" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Curb1x4" parent="Ground/ground3" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Curb1x5" parent="Ground/ground3" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_Sidewalk1x6" parent="Ground/ground3" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="sm_Curb1x6" parent="Ground/ground3" instance=ExtResource("5_182kh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="ground" type="Node3D" parent="Ground/ground3"]
-
-[node name="sm_Floor" parent="Ground/ground3/ground" instance=ExtResource("1_52wa5")]
-
-[node name="sm_Floor" parent="Ground/ground3/ground/sm_Floor" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
-
-[node name="sm_Floor2" parent="Ground/ground3/ground/sm_Floor" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
-
-[node name="sm_Floor" parent="Ground/ground3/ground/sm_Floor/sm_Floor2" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
-
-[node name="sm_SidewalkCorner" parent="Ground/ground3/ground" instance=ExtResource("2_4joer")]
-
-[node name="sm_Sidewalk1x2" parent="Ground/ground3/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Sidewalk1x3" parent="Ground/ground3/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Sidewalk1x4" parent="Ground/ground3/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Sidewalk1x5" parent="Ground/ground3/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_CurbCorner" parent="Ground/ground3/ground" instance=ExtResource("4_n2ear")]
-
-[node name="sm_Curb1x2" parent="Ground/ground3/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Curb1x3" parent="Ground/ground3/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Curb1x4" parent="Ground/ground3/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Curb1x5" parent="Ground/ground3/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_Sidewalk1x6" parent="Ground/ground3/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="sm_Curb1x6" parent="Ground/ground3/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
 [node name="ground4" type="Node3D" parent="Ground"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158401, 0, 12.0322)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158401, -0.114227, 16.4735)
 
 [node name="sm_Floor" parent="Ground/ground4" instance=ExtResource("1_52wa5")]
 
@@ -355,40 +200,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
 [node name="sm_Floor" parent="Ground/ground4/sm_Floor/sm_Floor2" instance=ExtResource("1_52wa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
 
-[node name="sm_SidewalkCorner" parent="Ground/ground4" instance=ExtResource("2_4joer")]
-
-[node name="sm_Sidewalk1x2" parent="Ground/ground4" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Sidewalk1x3" parent="Ground/ground4" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Sidewalk1x4" parent="Ground/ground4" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Sidewalk1x5" parent="Ground/ground4" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_CurbCorner" parent="Ground/ground4" instance=ExtResource("4_n2ear")]
-
-[node name="sm_Curb1x2" parent="Ground/ground4" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Curb1x3" parent="Ground/ground4" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Curb1x4" parent="Ground/ground4" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Curb1x5" parent="Ground/ground4" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_Sidewalk1x6" parent="Ground/ground4" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="sm_Curb1x6" parent="Ground/ground4" instance=ExtResource("5_182kh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
 [node name="ground" type="Node3D" parent="Ground/ground4"]
 
 [node name="sm_Floor" parent="Ground/ground4/ground" instance=ExtResource("1_52wa5")]
@@ -397,49 +208,16 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
 
 [node name="sm_Floor2" parent="Ground/ground4/ground/sm_Floor" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0700338, -8.42802)
 
 [node name="sm_Floor" parent="Ground/ground4/ground/sm_Floor/sm_Floor2" instance=ExtResource("1_52wa5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00174, 0, 0)
-
-[node name="sm_SidewalkCorner" parent="Ground/ground4/ground" instance=ExtResource("2_4joer")]
-
-[node name="sm_Sidewalk1x2" parent="Ground/ground4/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Sidewalk1x3" parent="Ground/ground4/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Sidewalk1x4" parent="Ground/ground4/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Sidewalk1x5" parent="Ground/ground4/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_CurbCorner" parent="Ground/ground4/ground" instance=ExtResource("4_n2ear")]
-
-[node name="sm_Curb1x2" parent="Ground/ground4/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Curb1x3" parent="Ground/ground4/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0)
-
-[node name="sm_Curb1x4" parent="Ground/ground4/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 0)
-
-[node name="sm_Curb1x5" parent="Ground/ground4/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 0, 0)
-
-[node name="sm_Sidewalk1x6" parent="Ground/ground4/ground" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
-
-[node name="sm_Curb1x6" parent="Ground/ground4/ground" instance=ExtResource("5_182kh")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="sm_Cafe" parent="." instance=ExtResource("22_e0yw5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.50393, 0.0410938, -0.0170851)
 
 [node name="GenericHouse" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0662422, 0)
 
 [node name="sm_Wall_Window3" parent="GenericHouse" instance=ExtResource("8_x44mn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.17734, 0.0423062, -4.09469)
@@ -500,18 +278,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.05,
 
 [node name="sm_Roof_Peak4" parent="GenericHouse" groups=["roof"] instance=ExtResource("10_7g8tw")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.15, 4.9, -2.1)
-
-[node name="sm_Sidewalk1x7" parent="GenericHouse" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 0)
-
-[node name="sm_Sidewalk1x8" parent="GenericHouse" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, 0)
-
-[node name="sm_Sidewalk1x8" parent="GenericHouse/sm_Sidewalk1x8" instance=ExtResource("3_i7u8g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
-
-[node name="sm_Floor2" parent="GenericHouse" instance=ExtResource("1_52wa5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
 
 [node name="sm_Door" parent="GenericHouse" instance=ExtResource("14_x44mn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)

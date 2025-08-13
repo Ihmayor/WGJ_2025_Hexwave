@@ -67,10 +67,10 @@ bank_paths = ["res://assets/fmod_build/Desktop/PLY_Alien.bank", "res://assets/fm
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, -5.10286, 1.57568, -2.30495)
-v_offset = 0.682833
-fov = 87.75
-near = 0.0222333
+transform = Transform3D(0.999999, 0, 0, 0, 0.984807, 0.173648, 0, -0.173648, 0.984807, -5.10286, 1.57568, -2.30495)
+v_offset = 1.205
+fov = 97.5
+near = 0.001
 
 [node name="PhantomCameraHost" type="Node" parent="MainCamera3D"]
 process_priority = 300
