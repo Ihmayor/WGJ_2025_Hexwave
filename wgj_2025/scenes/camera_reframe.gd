@@ -19,7 +19,6 @@ func _on_body_exited(body:Node3D):
 		return
 	triggered_camera.priority = 4
 	var all_roofs = get_tree().get_nodes_in_group("roof");
-	print(all_roofs.size())
 	for roof in all_roofs:
 		roof.visible = true;
 	

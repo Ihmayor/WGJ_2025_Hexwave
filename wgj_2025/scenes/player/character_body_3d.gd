@@ -7,7 +7,7 @@ class_name Player extends CharacterBody3D
 @export var _gravity: float = -30.0
 @export var acceleration: float = 4
 @export var toggle_gravity: bool = true
-@export var fmod:FmodEventEmitter3D
+#@export var fmod:FmodEventEmitter3D
 
 var _camera_input_direction  = Vector2.ZERO
 @onready var _camera: Camera3D = %MainCamera3D
@@ -85,8 +85,8 @@ func is_ui_open() -> bool:
 
 
 func _on_timer_timeout() -> void:
-	if is_moving && can_move:
-		$FmodEventEmitter3D.play_one_shot()
-	else:
-		$FmodEventEmitter3D.stop()
-	
+	#if is_moving && can_move:
+		#$FmodEventEmitter3D.play_one_shot()
+	#else:
+		#$FmodEventEmitter3D.stop()
+	pass	

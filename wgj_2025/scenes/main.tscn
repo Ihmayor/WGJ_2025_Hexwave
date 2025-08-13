@@ -167,21 +167,6 @@ _data = {
 &"panic": SubResource("Animation_1cjgq")
 }
 
-[sub_resource type="Animation" id="Animation_j8jky"]
-resource_name = "fade_out"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.966667),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_kmb1v"]
 length = 0.001
 tracks/0/type = "value"
@@ -195,6 +180,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j8jky"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kmb1v"]
@@ -243,12 +243,11 @@ dead_zone_height = 0.125
 spring_length = 2.0
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="Player" parent="PlayerRelated" node_paths=PackedStringArray("reset_point", "fmod") instance=ExtResource("2_sugp2")]
+[node name="Player" parent="PlayerRelated" node_paths=PackedStringArray("reset_point") instance=ExtResource("2_sugp2")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7707, 0.17824, 6.74129)
 self_stats = ExtResource("3_jyhfs")
 reset_point = NodePath("../../ResetPoint")
-fmod = NodePath("FmodEventEmitter3D")
 
 [node name="Timer" type="Timer" parent="PlayerRelated/Player"]
 wait_time = 0.55
@@ -331,12 +330,10 @@ event_name = "event:/Music/MX_Store"
 event_guid = "{67c8c1de-cd01-48bf-98e4-88d9389197ca}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
 
-[node name="Area3D" type="Area3D" parent="Environment/DepartmentStore" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
+[node name="Area3D" type="Area3D" parent="Environment/DepartmentStore" node_paths=PackedStringArray("triggered_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29926, 0, 0.410861)
 script = ExtResource("9_2wyq8")
 triggered_camera = NodePath("../PhantomCamera3D")
-triggered_fmod = NodePath("../FmodEventEmitter3D")
-triggered_fmodMusic = NodePath("../FmodEventEmitter3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/DepartmentStore/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02228, 1.29913, -5.80049)
@@ -387,12 +384,10 @@ event_name = "event:/Music/MX_Cafe"
 event_guid = "{e6af0e9d-3634-4a3c-b123-7c5c9f33da43}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46626, 0, 1.24503)
 
-[node name="Area3DTrigger" type="Area3D" parent="Environment/Cafe" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
+[node name="Area3DTrigger" type="Area3D" parent="Environment/Cafe" node_paths=PackedStringArray("triggered_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20432, 0, -1.11835)
 script = ExtResource("9_2wyq8")
 triggered_camera = NodePath("../PhantomCamera3D")
-triggered_fmod = NodePath("../AreaAmbience")
-triggered_fmodMusic = NodePath("../AreaMusic")
 
 [node name="AreaCollision" type="CollisionShape3D" parent="Environment/Cafe/Area3DTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55097, 1.30914, -2.53557)
@@ -435,7 +430,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46626, 0, 1.24503)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PickUpUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("SFX")]
+[node name="PickUpUI" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -446,7 +441,6 @@ offset_right = 54.0
 offset_bottom = 152.0
 script = ExtResource("8_muem4")
 PlayerData = ExtResource("3_jyhfs")
-SFX = NodePath("FmodEventEmitter3D")
 
 [node name="Label" type="Label" parent="CanvasLayer/PickUpUI"]
 unique_name_in_owner = true
