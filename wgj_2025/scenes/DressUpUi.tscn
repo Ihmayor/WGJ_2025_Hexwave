@@ -56,10 +56,10 @@ texture = ExtResource("3_r3nmi")
 unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
-offset_left = 62.0
-offset_top = 137.0
-offset_right = 238.0
-offset_bottom = 288.0
+offset_left = 58.0
+offset_top = 119.0
+offset_right = 259.0
+offset_bottom = 304.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("5_okbvk")
@@ -196,7 +196,8 @@ script = ExtResource("6_q0ob3")
 [node name="TopGridLabel" type="Label" parent="PanelContainer4/MarginContainer/VBoxContainer/PanelContainer5/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "CLICK THE SLOT TO EQUIP AN ITEM"
+text = "CLICK THE SLOT THEN CLICK ON THE ITEM
+TO EQUIP"
 
 [node name="PanelContainer6" type="PanelContainer" parent="PanelContainer4/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(350, 150)
@@ -280,7 +281,8 @@ script = ExtResource("6_q0ob3")
 [node name="UpperGridLabel" type="Label" parent="PanelContainer4/MarginContainer/VBoxContainer/PanelContainer6/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "CLICK THE SLOT TO EQUIP AN ITEM"
+text = "CLICK THE SLOT THEN CLICK ON THE ITEM
+TO EQUIP"
 
 [node name="PanelContainer7" type="PanelContainer" parent="PanelContainer4/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(350, 150)
@@ -364,7 +366,8 @@ script = ExtResource("6_q0ob3")
 [node name="BottomGridLabel" type="Label" parent="PanelContainer4/MarginContainer/VBoxContainer/PanelContainer7/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "CLICK THE SLOT TO EQUIP AN ITEM"
+text = "CLICK THE SLOT THEN CLICK ON THE ITEM
+TO EQUIP"
 
 [node name="Button" type="Button" parent="."]
 custom_minimum_size = Vector2(70, 70)

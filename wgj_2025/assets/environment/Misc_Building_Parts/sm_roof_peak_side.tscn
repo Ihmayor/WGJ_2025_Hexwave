@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b35m56cmn3yx6"]
+[gd_scene load_steps=3 format=3 uid="uid://b35m56cmn3yx6"]
 
 [ext_resource type="PackedScene" uid="uid://qwemwfhuakd2" path="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Roof_peak_Side.fbx" id="1_sptre"]
+[ext_resource type="Material" uid="uid://co372uq6yo8yb" path="res://assets/models/buildings_with_collisions/house/house.tres" id="2_dwiyv"]
 
 [node name="sm_Roof_peak_Side" instance=ExtResource("1_sptre")]
+
+[node name="Roof_peak_Side" parent="." index="0"]
+material_override = ExtResource("2_dwiyv")

@@ -7,6 +7,7 @@ class_name Player extends CharacterBody3D
 @export var _gravity: float = -30.0
 @export var acceleration: float = 4
 @export var toggle_gravity: bool = true
+@export var fmod:FmodEventEmitter3D
 
 var _camera_input_direction  = Vector2.ZERO
 @onready var _camera: Camera3D = %MainCamera3D
@@ -15,6 +16,7 @@ var _camera_input_direction  = Vector2.ZERO
 @onready var _npc_pickup: Control = %PickUpUI
 
 var can_move:bool = true
+var is_moving:bool
 
 func _ready():
 	self_stats.put_on_item.connect(put_on_item)
@@ -39,6 +41,8 @@ func _physics_process(delta: float) -> void:
 	velocity.y = 0.0
 	if (toggle_gravity):
 		velocity.y += _gravity
+		
+	is_moving = raw_input != Vector2.ZERO
 	
 	if move_direction:
 		var move_dir: Vector3 = Vector3.ZERO
@@ -51,8 +55,6 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, movement_speed)
 		velocity.z = move_toward(velocity.z, 0, movement_speed)
-
-	move_and_slide()
 	
 	velocity.y = y_velocity + _gravity * delta
 	var raw_velocity = velocity.move_toward(move_direction * movement_speed, delta * acceleration);
@@ -80,3 +82,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func is_ui_open() -> bool:
 	return _npc_reset.visible || _npc_block.visible ||_npc_pickup.visible
+
+
+func _on_timer_timeout() -> void:
+	if is_moving && can_move:
+		$FmodEventEmitter3D.play_one_shot()
+	else:
+		$FmodEventEmitter3D.stop()
+	

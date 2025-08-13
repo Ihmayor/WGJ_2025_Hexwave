@@ -4,12 +4,15 @@ var is_held_interact:bool
 
 var item_in_view: interactable_item
 @export var PlayerData:PlayerStats
+@export var SFX:FmodEventEmitter3D
+
 @onready var progressbar:ProgressBar = %ProgressBar
 
 func _physics_process(delta: float) -> void:
 	if (is_held_interact && visible):
 		if progressbar.value == progressbar.max_value:
 			if (item_in_view != null):
+				SFX.play_one_shot()
 				PlayerData.add_to_inventory(item_in_view.Stats)
 				item_in_view.queue_free()
 		progressbar.value += 10

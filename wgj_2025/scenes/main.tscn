@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://drt3803wrif7i"]
+[gd_scene load_steps=60 format=3 uid="uid://drt3803wrif7i"]
 
 [ext_resource type="PackedScene" uid="uid://b02vpch2fpg5e" path="res://scenes/assets/Test_Environment/StreetSection.tscn" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_o6xl0"]
@@ -7,31 +7,37 @@
 [ext_resource type="Resource" uid="uid://d2x0k5a10tpqn" path="res://scripts/PlayerData.tres" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://ceb1b5uu14w5b" path="res://assets/environment/sm_floor.tscn" id="3_og1vs"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="4_tbgi4"]
-[ext_resource type="Resource" uid="uid://bm7c1p36aqf1k" path="res://scripts/all_items/tshirt.tres" id="4_y6deb"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_tefeu"]
-[ext_resource type="Resource" uid="uid://cvbxob12nmpf0" path="res://scripts/all_items/tutu.tres" id="5_y6deb"]
 [ext_resource type="Script" uid="uid://b8hhnqsugykly" path="res://addons/phantom_camera/scripts/resources/camera_3d_resource.gd" id="6_tefeu"]
 [ext_resource type="Script" uid="uid://b070w2l1b724y" path="res://scenes/player/PickUpUi.gd" id="8_muem4"]
 [ext_resource type="Script" uid="uid://dvv53glpllncf" path="res://scenes/experiments/remove_roof.gd" id="9_2wyq8"]
 [ext_resource type="Script" uid="uid://suipwnr4tclq" path="res://scenes/player/debugger.gd" id="9_dp3eg"]
 [ext_resource type="Script" uid="uid://bwgpgc5c0evj8" path="res://scenes/player/npc_blocker_screen.gd" id="10_0ld40"]
-[ext_resource type="Resource" uid="uid://cs00vdfx2vt7d" path="res://scripts/all_items/apron.tres" id="10_tel4y"]
+[ext_resource type="Resource" uid="uid://dd5tg6cvqt4r7" path="res://scripts/all_items/snake.tres" id="10_kmb1v"]
+[ext_resource type="Resource" uid="uid://bl22i8jkl32ux" path="res://scripts/all_items/underwear.tres" id="11_fuf3a"]
 [ext_resource type="Script" uid="uid://cvc4u71vpep3y" path="res://scenes/player/npc_reseter_screen.gd" id="11_gqmmt"]
-[ext_resource type="Resource" uid="uid://kuhac8p8yap6" path="res://scripts/all_items/cuffed_jeans.tres" id="12_qkpxi"]
+[ext_resource type="Resource" uid="uid://cfququyqg6mt5" path="res://scripts/all_items/plastic_bag.tres" id="12_fuf3a"]
+[ext_resource type="Resource" uid="uid://1qo7rgpanny6" path="res://scripts/all_items/giant_bow.tres" id="12_pibwh"]
 [ext_resource type="Script" uid="uid://b08w8gwwipdtw" path="res://scenes/player/panic.gd" id="12_yc10j"]
+[ext_resource type="Resource" uid="uid://drwgualfuatjp" path="res://scripts/all_items/sock.tres" id="13_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://usfm5n5y1qpv" path="res://assets/ui/placholder_npc/normal.png" id="13_fv21b"]
 [ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="13_jscy8"]
+[ext_resource type="Resource" uid="uid://detllg13oamke" path="res://scripts/all_items/ripped_jeans.tres" id="14_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://slsdesuddqbl" path="res://assets/ui/progress.png" id="14_pm3ni"]
+[ext_resource type="Script" uid="uid://csj0xtejqigum" path="res://scenes/camera_reframe.gd" id="15_5q0nq"]
 [ext_resource type="PackedScene" uid="uid://0aa6wg6yn4t3" path="res://scenes/DressUpUi.tscn" id="15_y6deb"]
 [ext_resource type="Theme" uid="uid://btmloybn8qk8w" path="res://assets/ui/wgj_main_theme.tres" id="16_jscy8"]
 [ext_resource type="PackedScene" uid="uid://b6wfur0t638iy" path="res://scenes/assets/npc_blockers/npc_blocker_example.tscn" id="16_og1vs"]
 [ext_resource type="PackedScene" uid="uid://benk4mr23va0s" path="res://scenes/ui_meter/glamour.tscn" id="17_0ld40"]
 [ext_resource type="PackedScene" uid="uid://bysfwywrx8ywl" path="res://scenes/assets/npc_blockers/npc_reseter.tscn" id="17_2wyq8"]
+[ext_resource type="Script" uid="uid://b57qnktkgnss" path="res://scenes/win_state.gd" id="17_j8jky"]
 [ext_resource type="PackedScene" uid="uid://btsyosl3h5sn3" path="res://scenes/ui_meter/business.tscn" id="17_yc10j"]
 [ext_resource type="PackedScene" uid="uid://c8ri1gcboy4o0" path="res://scenes/ui_meter/edgy.tscn" id="18_gqmmt"]
 [ext_resource type="Texture2D" uid="uid://brup4ogeryfo6" path="res://assets/ui/placholder_npc/npc_1.png" id="27_2f3dj"]
 [ext_resource type="Texture2D" uid="uid://dmp0h830vvm51" path="res://assets/ui/placholder_npc/npc_2.png" id="28_yq6so"]
+[ext_resource type="Script" uid="uid://b4us5rqoe05vn" path="res://scenes/dress_up.gd" id="29_dgi5k"]
 [ext_resource type="Texture2D" uid="uid://xm3ogxb6bsxw" path="res://assets/ui/placholder_npc/npc_4.png" id="29_yq6so"]
+[ext_resource type="Script" uid="uid://d16ugriv4fd8n" path="res://scenes/win_screen.gd" id="31_kmb1v"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o5qli"]
 
@@ -70,7 +76,19 @@ transition = 1
 ease = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2wyq8"]
-size = Vector3(6.94067, 2.42041, 8.22011)
+size = Vector3(6.94067, 2.42041, 7.76426)
+
+[sub_resource type="Resource" id="Resource_dgi5k"]
+script = ExtResource("5_tefeu")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fuf3a"]
+size = Vector3(8.16192, 2.24707, 6.91612)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5q0nq"]
+size = Vector3(28.0054, 2.24707, 7.1974)
 
 [sub_resource type="Resource" id="Resource_yq6so"]
 script = ExtResource("5_tefeu")
@@ -78,11 +96,14 @@ duration = 2.0
 transition = 1
 ease = 2
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fv21b"]
-size = Vector3(7.54159, 2.40039, 6.88806)
+[sub_resource type="BoxShape3D" id="BoxShape3D_pibwh"]
+size = Vector3(6.91153, 2.40039, 5.9418)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qkpxi"]
 size = Vector3(4.87158, 1.88196, 3.89136)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dgi5k"]
+radius = 4.28678
 
 [sub_resource type="Animation" id="Animation_o601j"]
 length = 0.001
@@ -146,15 +167,51 @@ _data = {
 &"panic": SubResource("Animation_1cjgq")
 }
 
+[sub_resource type="Animation" id="Animation_j8jky"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_kmb1v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kmb1v"]
+_data = {
+&"RESET": SubResource("Animation_kmb1v"),
+&"fade_out": SubResource("Animation_j8jky")
+}
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_tel4y"]
-size = Vector3(10.6183, 2.00537, 5.87279)
+size = Vector3(10.6183, 2.00537, 8.0985)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="MainCamera3D" type="Camera3D" parent="."]
 unique_name_in_owner = true
 physics_interpolation_mode = 1
-transform = Transform3D(0.999999, 0, 0, 0, 0.999854, 0, 0, 0, 0.999854, -10.7707, 1.12324, 8.741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7707, 1.12324, 8.74129)
 v_offset = 1.205
 fov = 97.5
 near = 0.001
@@ -170,7 +227,7 @@ environment = SubResource("Environment_0wfyh")
 [node name="PlayerRelated" type="Node" parent="."]
 
 [node name="PhantomCamera3D" type="Node3D" parent="PlayerRelated" node_paths=PackedStringArray("follow_target")]
-transform = Transform3D(0.999999, 0, 0, 0, 0.999854, 0, 0, 0, 0.999854, -10.7707, 1.12324, 8.741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7707, 1.12324, 8.74129)
 top_level = true
 script = ExtResource("4_tbgi4")
 priority = 10
@@ -186,11 +243,22 @@ dead_zone_height = 0.125
 spring_length = 2.0
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="Player" parent="PlayerRelated" node_paths=PackedStringArray("reset_point") instance=ExtResource("2_sugp2")]
+[node name="Player" parent="PlayerRelated" node_paths=PackedStringArray("reset_point", "fmod") instance=ExtResource("2_sugp2")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7707, 0.17824, 6.74129)
 self_stats = ExtResource("3_jyhfs")
 reset_point = NodePath("../../ResetPoint")
+fmod = NodePath("FmodEventEmitter3D")
+
+[node name="Timer" type="Timer" parent="PlayerRelated/Player"]
+wait_time = 0.55
+autostart = true
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="PlayerRelated/Player"]
+event_name = "event:/Player/PLY_Footsteps"
+event_guid = "{1177a9aa-55d3-4a47-92bf-fed03ef1c69a}"
+allow_fadeout = false
+preload_event = false
 
 [node name="Environment" type="Node" parent="."]
 
@@ -211,24 +279,29 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5307, 0, -0.537844)
 [node name="sm_Floor2" parent="Environment" instance=ExtResource("3_og1vs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7849, 0, -0.632912)
 
-[node name="Plant_Example_Pickable_Item4" parent="Environment" instance=ExtResource("3_dp3eg")]
+[node name="snake" parent="Environment" instance=ExtResource("3_dp3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14935, 0, -11.9652)
-Stats = ExtResource("10_tel4y")
+Stats = ExtResource("10_kmb1v")
 
-[node name="cowboyhat" parent="Environment" instance=ExtResource("3_dp3eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.98261)
+[node name="underwear" parent="Environment" instance=ExtResource("3_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.96463)
+Stats = ExtResource("11_fuf3a")
 
-[node name="tshirt" parent="Environment" instance=ExtResource("3_dp3eg")]
+[node name="bow" parent="Environment" instance=ExtResource("3_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6068, 0, -5.96463)
+Stats = ExtResource("12_pibwh")
+
+[node name="plastic" parent="Environment" instance=ExtResource("3_dp3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -3.41065)
-Stats = ExtResource("4_y6deb")
+Stats = ExtResource("12_fuf3a")
 
-[node name="cuffed" parent="Environment" instance=ExtResource("3_dp3eg")]
+[node name="sock" parent="Environment" instance=ExtResource("3_dp3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.88714, 0, -11.9652)
-Stats = ExtResource("12_qkpxi")
+Stats = ExtResource("13_fuf3a")
 
-[node name="tutu" parent="Environment" instance=ExtResource("3_dp3eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4775, 0, -5.98261)
-Stats = ExtResource("5_y6deb")
+[node name="jeans" parent="Environment" instance=ExtResource("3_dp3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4775, 0, -12.6018)
+Stats = ExtResource("14_fuf3a")
 
 [node name="MainTheme" type="FmodEventEmitter3D" parent="Environment"]
 event_name = "event:/Music/MX_MainStreet"
@@ -236,7 +309,7 @@ event_guid = "{3103837e-5760-4057-86da-bd4443c330e6}"
 unique_name_in_owner = true
 
 [node name="FmodBankLoader" type="FmodBankLoader" parent="Environment"]
-bank_paths = ["res://assets/fmod_build/Desktop/Master.strings.bank", "res://assets/fmod_build/Desktop/Master.bank", "res://assets/fmod_build/Desktop/MainStreet.bank", "res://assets/fmod_build/Desktop/Cafe.bank", "res://assets/fmod_build/Desktop/Store.bank"]
+bank_paths = ["res://assets/fmod_build/Desktop/Master.strings.bank", "res://assets/fmod_build/Desktop/Master.bank", "res://assets/fmod_build/Desktop/MainStreet.bank", "res://assets/fmod_build/Desktop/Cafe.bank", "res://assets/fmod_build/Desktop/Store.bank", "res://assets/fmod_build/Desktop/PLY_Alien.bank", "res://assets/fmod_build/Desktop/Concert.bank", "res://assets/fmod_build/Desktop/Menus.bank"]
 
 [node name="DepartmentStore" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.57352, -9.53674e-07, 1.13449)
@@ -266,8 +339,34 @@ triggered_fmod = NodePath("../FmodEventEmitter3D")
 triggered_fmodMusic = NodePath("../FmodEventEmitter3D2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/DepartmentStore/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02228, 1.29913, -6.02842)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02228, 1.29913, -5.80049)
 shape = SubResource("BoxShape3D_2wyq8")
+
+[node name="Street" type="Node3D" parent="Environment"]
+
+[node name="PhantomCamera3D" type="Node3D" parent="Environment/Street" node_paths=PackedStringArray("follow_target")]
+transform = Transform3D(1, 0, 0, 0, 0.437383, 0.899275, 0, -0.899275, 0.437383, -10.7707, 4.823, 9.00037)
+top_level = true
+script = ExtResource("4_tbgi4")
+follow_mode = 5
+follow_target = NodePath("../../../PlayerRelated/Player")
+tween_resource = SubResource("Resource_dgi5k")
+follow_distance = 5.165
+spring_length = 5.165
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Area3D" type="Area3D" parent="Environment/Street" node_paths=PackedStringArray("triggered_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.860679, 0, -12.3555)
+script = ExtResource("15_5q0nq")
+triggered_camera = NodePath("../PhantomCamera3D")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Environment/Street/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.00043, 0.623535, 5.744)
+shape = SubResource("BoxShape3D_fuf3a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Street/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6664, 0.623535, 0.45125)
+shape = SubResource("BoxShape3D_5q0nq")
 
 [node name="Cafe" type="Node3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.74341, 0, -0.937704)
@@ -296,8 +395,8 @@ triggered_fmod = NodePath("../AreaAmbience")
 triggered_fmodMusic = NodePath("../AreaMusic")
 
 [node name="AreaCollision" type="CollisionShape3D" parent="Environment/Cafe/Area3DTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0275, 1.30914, -2.53557)
-shape = SubResource("BoxShape3D_fv21b")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55097, 1.30914, -2.53557)
+shape = SubResource("BoxShape3D_pibwh")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="Environment"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4974, 0, 8.85257)
@@ -315,9 +414,28 @@ texture = ExtResource("13_fv21b")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.93579, 0.440979, -1.93835)
 shape = SubResource("BoxShape3D_qkpxi")
 
+[node name="Concert" type="Node3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2904, 0, 8.72777)
+script = ExtResource("17_j8jky")
+
+[node name="Area3D" type="Area3D" parent="Environment/Concert"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/Concert/Area3D"]
+shape = SubResource("SphereShape3D_dgi5k")
+
+[node name="AreaAmbience" type="FmodEventEmitter3D" parent="Environment/Concert"]
+event_name = "event:/Music/MX_Concert"
+event_guid = "{24506228-09c4-4271-a71f-54d29d3652bd}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46626, 0, 1.24503)
+
+[node name="AreaMusic" type="FmodEventEmitter3D" parent="Environment/Concert"]
+event_name = "event:/Music/MX_Concert"
+event_guid = "{24506228-09c4-4271-a71f-54d29d3652bd}"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46626, 0, 1.24503)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PickUpUI" type="Control" parent="CanvasLayer"]
+[node name="PickUpUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("SFX")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
@@ -328,16 +446,19 @@ offset_right = 54.0
 offset_bottom = 152.0
 script = ExtResource("8_muem4")
 PlayerData = ExtResource("3_jyhfs")
+SFX = NodePath("FmodEventEmitter3D")
 
 [node name="Label" type="Label" parent="CanvasLayer/PickUpUI"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 437.0
-offset_top = 218.0
-offset_right = 783.0
-offset_bottom = 273.0
+offset_left = 371.0
+offset_top = 152.0
+offset_right = 843.0
+offset_bottom = 265.0
 theme_override_font_sizes/font_size = 40
-text = "Press 'E' to pickup"
+text = "Press 'E' to pickup
+and 'I' to open Inventory"
+horizontal_alignment = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PickUpUI"]
 unique_name_in_owner = true
@@ -355,6 +476,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 20
 rounded = true
+
+[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="CanvasLayer/PickUpUI"]
+event_name = "event:/Player/Item_Pickup"
+event_guid = "{adc6be1f-4fe6-4442-899d-d36b393f697a}"
 
 [node name="Debugger" type="Control" parent="CanvasLayer"]
 visible = false
@@ -507,6 +632,7 @@ autostart = true
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Panic/PanicControl"]
 unique_name_in_owner = true
+self_modulate = Color(0.392157, 0.560784, 1, 1)
 layout_mode = 0
 offset_left = 1019.0
 offset_top = 96.0
@@ -547,6 +673,46 @@ autoplay = "panic"
 unique_name_in_owner = true
 visible = false
 
+[node name="Control" type="Control" parent="CanvasLayer/DressupUI"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("29_dgi5k")
+PlayerData = ExtResource("3_jyhfs")
+
+[node name="TopFoley" type="FmodEventEmitter3D" parent="CanvasLayer/DressupUI/Control"]
+event_name = "event:/UI/FOLEY_Torso"
+event_guid = "{8a7537eb-c61c-4315-87b3-503322f57876}"
+
+[node name="BottomFoley" type="FmodEventEmitter3D" parent="CanvasLayer/DressupUI/Control"]
+event_name = "event:/UI/FOLEY_Legs"
+event_guid = "{1595d5d8-6483-42f0-a7e8-f376a042103c}"
+
+[node name="Win" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("31_kmb1v")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Win"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Win/ColorRect"]
+libraries = {
+&"": SubResource("AnimationLibrary_kmb1v")
+}
+
 [node name="NPC_Blocker" parent="." instance=ExtResource("16_og1vs")]
 transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, -11.5796, 1.49545, 0.923515)
 
@@ -554,12 +720,13 @@ transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, -11.5796, 1.49545
 transform = Transform3D(1.10446, 0, 0, 0, 1, 0, 0, 0, 1.21836, -11.4636, 1.49545, 7.68228)
 custom_message_block = "Ew! And you're trying to enter the VIP pass contest with that!?"
 custom_message_unblocked = "Best outfit I've seen today!"
+edgy_check_amount = 4
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="Star_Blocker"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.02717, 0, 1.08332)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Star_Blocker/RigidBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.227819, -0.502686, -0.281959)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.227819, -0.502686, -1.39482)
 shape = SubResource("BoxShape3D_tel4y")
 
 [node name="NPC_Reseter" parent="." instance=ExtResource("17_2wyq8")]
@@ -611,5 +778,8 @@ size = Vector3(32.1871, 1, 2.9729)
 [node name="ResetPoint" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -12)
 
+[connection signal="timeout" from="PlayerRelated/Player/Timer" to="PlayerRelated/Player" method="_on_timer_timeout"]
+[connection signal="body_entered" from="Environment/Concert/Area3D" to="Environment/Concert" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Environment/Concert/Area3D" to="Environment/Concert" method="_on_area_3d_body_exited"]
 [connection signal="pressed" from="CanvasLayer/Panic/Button" to="CanvasLayer/Panic" method="_on_button_pressed"]
 [connection signal="timeout" from="CanvasLayer/Panic/PanicControl/PanicDecreaseTimer" to="CanvasLayer/Panic" method="_on_panic_decrease_timer_timeout"]

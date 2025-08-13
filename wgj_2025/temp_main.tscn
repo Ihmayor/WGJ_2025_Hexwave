@@ -55,4 +55,17 @@ text = "START"
 [node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="FmodBankLoader" type="FmodBankLoader" parent="."]
+bank_paths = ["res://assets/fmod_build/Desktop/Master.strings.bank", "res://assets/fmod_build/Desktop/Master.bank", "res://assets/fmod_build/Desktop/Menus.bank"]
+
+[node name="Music" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/Music/MX_Menus"
+event_guid = "{b0704717-afea-4245-844b-d7de668822aa}"
+autoplay = true
+auto_release = true
+
+[node name="Click" type="FmodEventEmitter3D" parent="."]
+event_name = "event:/UI/UI_Clicks"
+event_guid = "{1374f821-35da-4419-8ab8-2ae2601b9b9f}"
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

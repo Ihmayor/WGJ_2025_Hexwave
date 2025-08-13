@@ -144,22 +144,19 @@ func set_new_selected_item(new_item:ItemStats, category:String, index: int):
 		"top":
 			if (top_button_currently_equipped != null):
 				PlayerData.remove_stats(top_button_currently_equipped)
-			else:
-				PlayerData.put_on_item.emit("top")
+			PlayerData.put_on_item.emit("top")
 			top_button_currently_equipped = new_item
 			main_button = %TopButton
 		"upper":
 			if (upper_button_currently_equipped != null):
 				PlayerData.remove_stats(upper_button_currently_equipped)
-			else:
-				PlayerData.put_on_item.emit("upper")
+			PlayerData.put_on_item.emit("upper")
 			upper_button_currently_equipped = new_item
 			main_button = %UpperButton
 		"bottom":
 			if (bottom_button_currently_equipped != null):
 				PlayerData.remove_stats(bottom_button_currently_equipped)
-			else:
-				PlayerData.put_on_item.emit("bottom")
+			PlayerData.put_on_item.emit("bottom")
 			bottom_button_currently_equipped = new_item
 			main_button = %BottomButton
 	PlayerData.add_stats(new_item)

@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ck3gjet8aig8o"]
+[gd_scene load_steps=5 format=3 uid="uid://ck3gjet8aig8o"]
 
 [ext_resource type="PackedScene" uid="uid://do457uu078jal" path="res://assets/environment/Misc_Building_Parts/Building_Parts_FBX/sm_Wall_DoorWindow.fbx" id="1_5j573"]
+[ext_resource type="Material" uid="uid://co372uq6yo8yb" path="res://assets/models/buildings_with_collisions/house/house.tres" id="2_1gybo"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1gybo"]
 vertex_color_use_as_albedo = true
@@ -13,6 +14,7 @@ data = PackedVector3Array(-0.004, 0.0014, 0.005, -0.004, -0.005, 0.005, -0.005, 
 [node name="sm_Wall_DoorWindow" instance=ExtResource("1_5j573")]
 
 [node name="Wall_DoorWindow" parent="." index="0"]
+material_override = ExtResource("2_1gybo")
 surface_material_override/0 = SubResource("StandardMaterial3D_1gybo")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall_DoorWindow" index="0"]

@@ -10,7 +10,13 @@ func check_player_stats() -> bool:
 		return false
 	var diff_glam = glam_check_amount - player_stats.glamour_stat 
 	var diff_business = business_check_amount - player_stats.business_stat
-	var diff_edgy 	= edgy_check_amount - player_stats.business_stat
+	var diff_edgy 	= edgy_check_amount - player_stats.edgy_stat
+
+	print('stats')
+	print(diff_glam)
+	print(diff_business)
+	print(diff_edgy)
+	print("===========")
 
 	if (diff_glam > 0 || diff_business > 0 || diff_edgy > 0):
 		return true
