@@ -14,6 +14,6 @@ replace addons/FMods files
 
 Current Known Bugs:
 
-UI are NOT scaling on all devices
-MAC users have an awful web experience
-No MAC export
+- UI are NOT scaling on all devices
+- MAC users have an awful web experience
+- No MAC export
