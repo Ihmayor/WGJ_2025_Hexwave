@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://brup4ogeryfo6"
 path.s3tc="res://.godot/imported/npc_1.png-a6859fa0ed5732b1da2bcc6524f6d195.s3tc.ctex"
+path.etc2="res://.godot/imported/npc_1.png-a6859fa0ed5732b1da2bcc6524f6d195.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/ui/placholder_npc/npc_1.png"
-dest_files=["res://.godot/imported/npc_1.png-a6859fa0ed5732b1da2bcc6524f6d195.s3tc.ctex"]
+dest_files=["res://.godot/imported/npc_1.png-a6859fa0ed5732b1da2bcc6524f6d195.s3tc.ctex", "res://.godot/imported/npc_1.png-a6859fa0ed5732b1da2bcc6524f6d195.etc2.ctex"]
 
 [params]
 

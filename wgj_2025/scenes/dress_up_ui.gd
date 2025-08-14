@@ -31,12 +31,17 @@ func _ready():
 	for child in bottom_grid.get_children():
 		if child is TextureButton:
 			child.disabled = true
+			
 func _physics_process(delta: float) -> void:	#Check if Player Data has new items
 	if current_inventory_amount < PlayerData.current_inventory.size():
 		current_inventory_amount +=1
 		var found_item:ItemStats = PlayerData.current_inventory.back()
+		print(found_item.item_location)
 		player_found_item(found_item.resource_path, found_item.item_location)
-
+	if %PickUpUI.visible || %NPCBlocker.visible || %NPCReseter.visible || %Panic.visible:
+		visible = false
+		
+		
 func player_found_item(item_id: String, category: String):
 	match category:
 		"top":
@@ -45,6 +50,8 @@ func player_found_item(item_id: String, category: String):
 			add_to_inventory_ui("upper")
 		"bottom":
 			add_to_inventory_ui("bottom")
+		_:
+			add_to_inventory_ui("top")
 
 func add_to_inventory_ui(category: String):
 	var items: Array[ItemStats]

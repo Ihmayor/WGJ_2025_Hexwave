@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://p8t6ji76anq7"
 path.s3tc="res://.godot/imported/eb_house_plant_01_c.tga-1c10596fc2da09c0baf99ab7ce9e318b.s3tc.ctex"
+path.etc2="res://.godot/imported/eb_house_plant_01_c.tga-1c10596fc2da09c0baf99ab7ce9e318b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://assets/models/eb_house_plant_01/eb_house_plant_01_c.tga"
-dest_files=["res://.godot/imported/eb_house_plant_01_c.tga-1c10596fc2da09c0baf99ab7ce9e318b.s3tc.ctex"]
+dest_files=["res://.godot/imported/eb_house_plant_01_c.tga-1c10596fc2da09c0baf99ab7ce9e318b.s3tc.ctex", "res://.godot/imported/eb_house_plant_01_c.tga-1c10596fc2da09c0baf99ab7ce9e318b.etc2.ctex"]
 
 [params]
 
