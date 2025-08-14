@@ -14,6 +14,6 @@ replace addons/FMods files
 
 Current Known Bugs:
 
-- UI are NOT scaling on all devices
-- MAC users have an awful web experience
-- No MAC export
+- MAC users have an awful web experience <---- Known general GODOT issue 
+- MAC Crashes when installing FMOD library, even with manual permissions.
+- Unsure if issue is with old machine. Delete all references of FMOD if using MAC for project
