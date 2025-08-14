@@ -17,7 +17,7 @@ var _camera_input_direction  = Vector2.ZERO
 var can_move:bool = true
 var is_moving:bool
 
-#@export var fmod:FmodEventEmitter3D
+@export var fmod:FmodEventEmitter3D
 
 
 func _ready():
@@ -77,7 +77,6 @@ func put_on_item(category:String):
 func _unhandled_input(event: InputEvent) -> void:
 	if (!can_move):
 		return		
-	
 
 	if (!is_ui_open() && event.is_action_pressed("open_inventory")):
 		%DressupUI.visible = !%DressupUI.visible
@@ -87,8 +86,8 @@ func is_ui_open() -> bool:
 
 
 func _on_timer_timeout() -> void:
-	#if is_moving && can_move:
-		#$FmodEventEmitter3D.play_one_shot()
-	#else:
-		#$FmodEventEmitter3D.stop()
+	if is_moving && can_move:
+		$FmodEventEmitter3D.play_one_shot()
+	else:
+		$FmodEventEmitter3D.stop()
 	pass	

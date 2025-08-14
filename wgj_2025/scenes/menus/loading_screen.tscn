@@ -11,19 +11,25 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h0sde")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="progress_number" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
 
-[node name="progress_bar" type="ProgressBar" parent="."]
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="progress_number" type="Label" parent="CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
-layout_mode = 0
-offset_right = 4.0
-offset_bottom = 27.0
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+
+[node name="progress_bar" type="ProgressBar" parent="CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2

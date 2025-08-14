@@ -4,6 +4,7 @@ class_name PanicScreen extends Control
 func _on_npc_reseter_panic(player: Node3D) -> void:
 	visible = true
 	$Button.visible = false
+	$PanicControl/PanicDecreaseTimer.start()
 	%TextureProgressBar.value = 50
 	%PanicControl.visible = true
 	
@@ -21,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		$Button.visible = false
 		visible = false
 		
-	elif %TextureProgressBar.value >= 100:
+	elif %TextureProgressBar.value >= 100 && %PanicControl.visible:
 		%TextureProgressBar.value = 50
 		%PanicControl.visible = false
 		$Button.visible = true
@@ -32,6 +33,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 
 func _on_panic_decrease_timer_timeout() -> void:
+	if !visible:
+		return
 	%TextureProgressBar.value -= 8
 	if %TextureProgressBar.value < 0:
 		%TextureProgressBar.value = 0

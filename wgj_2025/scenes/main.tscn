@@ -21,7 +21,7 @@
 [ext_resource type="Resource" uid="uid://drwgualfuatjp" path="res://scripts/all_items/sock.tres" id="13_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://usfm5n5y1qpv" path="res://assets/ui/placholder_npc/normal.png" id="13_fv21b"]
 [ext_resource type="Texture2D" uid="uid://bsbg231nw2bp7" path="res://assets/ui/progress_under.png" id="13_jscy8"]
-[ext_resource type="Resource" uid="uid://cfququyqg6mt5" path="res://scripts/all_items/toilet_paper_scarf.tres" id="13_pibwh"]
+[ext_resource type="Resource" uid="uid://cfququyqg6mt5" path="res://scripts/all_items/plastic_bag.tres" id="13_pibwh"]
 [ext_resource type="Resource" uid="uid://detllg13oamke" path="res://scripts/all_items/ripped_jeans.tres" id="14_fuf3a"]
 [ext_resource type="Texture2D" uid="uid://slsdesuddqbl" path="res://assets/ui/progress.png" id="14_pm3ni"]
 [ext_resource type="Script" uid="uid://csj0xtejqigum" path="res://scenes/camera_reframe.gd" id="15_5q0nq"]
@@ -228,10 +228,9 @@ environment = SubResource("Environment_0wfyh")
 
 [node name="PhantomCamera3D" type="Node3D" parent="PlayerRelated" node_paths=PackedStringArray("follow_target")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7707, 1.12324, 8.74129)
-top_level = true
 script = ExtResource("4_tbgi4")
 priority = 10
-follow_mode = 5
+follow_mode = 6
 follow_target = NodePath("../Player")
 tween_resource = SubResource("Resource_o6xl0")
 camera_3d_resource = SubResource("Resource_tipki")
@@ -283,7 +282,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.14935, 0, -11.9652)
 Stats = ExtResource("10_kmb1v")
 
 [node name="underwear" parent="Environment" instance=ExtResource("3_dp3eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2682, 0, -5.96463)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78893, 0, 2.72108)
 Stats = ExtResource("11_fuf3a")
 
 [node name="bow" parent="Environment" instance=ExtResource("3_dp3eg")]
@@ -291,15 +290,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6068, 0, -5.96463)
 Stats = ExtResource("12_pibwh")
 
 [node name="plastic" parent="Environment" instance=ExtResource("3_dp3eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.96238, 0, -3.41065)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.0699, 0, -1.49679)
 Stats = ExtResource("13_pibwh")
 
 [node name="sock" parent="Environment" instance=ExtResource("3_dp3eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.88714, 0, -11.9652)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.1894, 0, 3.54555)
 Stats = ExtResource("13_fuf3a")
 
 [node name="jeans" parent="Environment" instance=ExtResource("3_dp3eg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4775, 0, -12.6018)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.52552, 0, -9.48752)
 Stats = ExtResource("14_fuf3a")
 
 [node name="MainTheme" type="FmodEventEmitter3D" parent="Environment"]
@@ -320,20 +319,22 @@ script = ExtResource("4_tbgi4")
 tween_resource = SubResource("Resource_vxglm")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="FmodEventEmitter3D" type="FmodEventEmitter3D" parent="Environment/DepartmentStore"]
+[node name="Amb" type="FmodEventEmitter3D" parent="Environment/DepartmentStore"]
 event_name = "event:/Ambiences/AMB_Store_Department"
 event_guid = "{5d113a22-312f-4351-b93c-90eea1cce24f}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
 
-[node name="FmodEventEmitter3D2" type="FmodEventEmitter3D" parent="Environment/DepartmentStore"]
+[node name="Music" type="FmodEventEmitter3D" parent="Environment/DepartmentStore"]
 event_name = "event:/Music/MX_Store"
 event_guid = "{67c8c1de-cd01-48bf-98e4-88d9389197ca}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.41725, 0, 1.24503)
 
-[node name="Area3D" type="Area3D" parent="Environment/DepartmentStore" node_paths=PackedStringArray("triggered_camera")]
+[node name="Area3D" type="Area3D" parent="Environment/DepartmentStore" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29926, 0, 0.410861)
 script = ExtResource("9_2wyq8")
 triggered_camera = NodePath("../PhantomCamera3D")
+triggered_fmod = NodePath("../Amb")
+triggered_fmodMusic = NodePath("../Music")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/DepartmentStore/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.02228, 1.29913, -5.80049)
@@ -384,10 +385,12 @@ event_name = "event:/Music/MX_Cafe"
 event_guid = "{e6af0e9d-3634-4a3c-b123-7c5c9f33da43}"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46626, 0, 1.24503)
 
-[node name="Area3DTrigger" type="Area3D" parent="Environment/Cafe" node_paths=PackedStringArray("triggered_camera")]
+[node name="Area3DTrigger" type="Area3D" parent="Environment/Cafe" node_paths=PackedStringArray("triggered_camera", "triggered_fmod", "triggered_fmodMusic")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.20432, 0, -1.11835)
 script = ExtResource("9_2wyq8")
 triggered_camera = NodePath("../PhantomCamera3D")
+triggered_fmod = NodePath("../AreaAmbience")
+triggered_fmodMusic = NodePath("../AreaMusic")
 
 [node name="AreaCollision" type="CollisionShape3D" parent="Environment/Cafe/Area3DTrigger"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.55097, 1.30914, -2.53557)
@@ -430,44 +433,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.46626, 0, 1.24503)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PickUpUI" type="Control" parent="CanvasLayer"]
+[node name="PickUpUI" type="Control" parent="CanvasLayer" node_paths=PackedStringArray("SFX")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 3
-anchors_preset = 0
-offset_left = 14.0
-offset_top = 112.0
-offset_right = 54.0
-offset_bottom = 152.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("8_muem4")
 PlayerData = ExtResource("3_jyhfs")
+SFX = NodePath("FmodEventEmitter3D")
 
-[node name="Label" type="Label" parent="CanvasLayer/PickUpUI"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 371.0
-offset_top = 152.0
-offset_right = 843.0
-offset_bottom = 265.0
-theme_override_font_sizes/font_size = 40
-text = "Press 'E' to pickup
-and 'I' to open Inventory"
-horizontal_alignment = 1
-
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PickUpUI"]
-unique_name_in_owner = true
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PickUpUI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 481.0
-offset_top = 288.0
-offset_right = 631.0
-offset_bottom = 320.0
+offset_left = -236.0
+offset_top = -74.5
+offset_right = 236.0
+offset_bottom = 74.5
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/PickUpUI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("16_jscy8")
+theme_override_font_sizes/font_size = 40
+text = "Press 'E' to pickup
+and 'I' to open Inventory"
+horizontal_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/PickUpUI/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
 theme_override_font_sizes/font_size = 20
 rounded = true
 
@@ -508,22 +512,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 476.0
+offset_top = 455.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/NPCBlocker/Panel"]
-layout_mode = 0
-offset_left = 43.0
-offset_top = 17.0
-offset_right = 1068.0
-offset_bottom = 112.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Hey! You can't enter here looking like that!"
 autowrap_mode = 2
 
 [node name="NPCReseter" type="Control" parent="CanvasLayer"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -537,20 +543,24 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 476.0
+offset_top = 446.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CanvasLayer/NPCReseter/Panel"]
-layout_mode = 0
-anchor_left = 0.0373264
-anchor_top = 0.0523256
-anchor_right = 0.927083
-anchor_bottom = 0.906977
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 34.0
+offset_right = -36.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "Wait! You're an alien!"
 autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="HUD_Stats" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -613,6 +623,7 @@ text = "ENGAGE SMALL TALK"
 
 [node name="PanicControl" type="Control" parent="CanvasLayer/Panic"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -622,16 +633,27 @@ grow_vertical = 2
 
 [node name="PanicDecreaseTimer" type="Timer" parent="CanvasLayer/Panic/PanicControl"]
 wait_time = 0.2
-autostart = true
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Panic/PanicControl"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panic/PanicControl"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -41.0
+offset_top = -222.5
+offset_bottom = 222.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("16_jscy8")
+theme_type_variation = &"SideProgressBar"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="CanvasLayer/Panic/PanicControl/MarginContainer"]
 unique_name_in_owner = true
 self_modulate = Color(0.392157, 0.560784, 1, 1)
-layout_mode = 0
-offset_left = 1019.0
-offset_top = 96.0
-offset_right = 1060.0
-offset_bottom = 541.0
+layout_mode = 2
+theme = ExtResource("16_jscy8")
 value = 60.0
 fill_mode = 3
 texture_under = ExtResource("13_jscy8")

@@ -2,4 +2,4 @@ extends Control
 
 func _on_button_pressed() -> void:
 	#$Click.play()
-	get_tree().change_scene_to_file("res://scenes/main.tscn")
+	get_tree().change_scene_to_file("res://scenes/menus/loading_screen.tscn")
